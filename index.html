@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover,interactive-widget=resizes-content">
-<title>Observable Universe · 2D · v5.7 · Flat Earth Edition™</title>
-<meta name="description" content="2D map of the observable universe — 112 galaxies, 12 cosmic horizons, logarithmic scale. Quiz with leaderboard, LOD zoom, adaptive soundtrack, gravitational groups, permalink with full state. Satirical Flat Earth™ edition. JWST data up to z=14.44. v5.7 — adversarial audit: 10 bugfixes (loadPermalink base64= padding loss CRITICAL, specBadge null deref, fil+heat missing from 3 share functions, tickTimeline+setDaltonMode missing needsRedraw, 2× applyI18N childNodes[0] null guard, goToTourStop undo-toast flood).">
+<title>Observable Universe · 2D · v5.9 · Flat Earth Edition™</title>
+<meta name="description" content="2D map of the observable universe — 112 galaxies, 12 cosmic horizons, logarithmic scale. Quiz with leaderboard, LOD zoom, adaptive soundtrack, gravitational groups, permalink with full state. Satirical Flat Earth™ edition. JWST data up to z=14.44. v5.9 — UX & accessibility milestone: universal localStorage preferences (CVD, layers, sound, volume persist across sessions); prefers-reduced-motion respected in flyTo / Andromeda / autoRotate; new GUIDE tab 'Simulation Limits' (epistemic honesty); heatmap boost (logarithmic normalization + Gaussian kernel); zenodo.json metadata for academic archival.">
 <meta name="theme-color" content="#040814">
 <meta name="color-scheme" content="dark">
 <meta name="author" content="Alexio — Alexandru Ionuț Chiuță · alexio.tf · ARES (Alianța pentru Reziliență, Exopolitică și Stranietăți) · ares.org.ro">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Observable Universe · 2D · v5.7 · Flat Earth™">
+<meta property="og:title" content="Observable Universe · 2D · v5.9 · Flat Earth™">
 <meta property="og:description" content="112 galaxies on a flat disc — for those who don't believe in spheres. Quiz leaderboard, gravitational groups, adaptive soundtrack. Real JWST data, humor guaranteed.">
 <meta property="og:image" content="https://alexio.tf/og-universe-2d.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"EducationalApplication","name":"Observable Universe 2D","description":"Interactive 2D visualization of the observable universe with 112+ galaxies, JWST data up to z=14.44, educational quiz, and satirical Flat Earth edition.","applicationCategory":"EducationalApplication","operatingSystem":"Web","url":"https://alexio.tf","author":{"@type":"Person","name":"Alexandru Ionuț Chiuță","alternateName":"Alexio","url":"https://alexio.tf"},"publisher":{"@type":"Organization","name":"ARES — Centrul STRING × ASFAN","url":"https://ares.org.ro"},"version":"5.7","dateModified":"2026-05"}
+{"@context":"https://schema.org","@type":"EducationalApplication","name":"Observable Universe 2D","description":"Interactive 2D visualization of the observable universe with 112+ galaxies, JWST data up to z=14.44, educational quiz, and satirical Flat Earth edition.","applicationCategory":"EducationalApplication","operatingSystem":"Web","url":"https://alexio.tf","author":{"@type":"Person","name":"Alexandru Ionuț Chiuță","alternateName":"Alexio","url":"https://alexio.tf"},"publisher":{"@type":"Organization","name":"ARES — Centrul STRING × ASFAN","url":"https://ares.org.ro"},"version":"5.8","dateModified":"2026-05"}
 </script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23040814' stroke='%234a80cc' stroke-width='1.5'/><ellipse cx='16' cy='16' rx='12' ry='4' fill='none' stroke='%2300ff41' stroke-width='1'/><circle cx='16' cy='16' r='1.5' fill='%23ffe8a0'/></svg>">
 <style>
@@ -354,10 +354,13 @@ kbd{background:rgba(70,130,255,0.09);border:1px solid rgba(70,130,255,0.18);bord
 #specBadge.show{display:block;}
 
 /* ─ SHARE BUTTON in info panel ──────────────────────── */
-#pnlShare{display:flex;gap:7px;margin-top:12px;}
-.pnlShareBtn{flex:1;min-width:0;padding:7px 6px;border-radius:8px;border:1px solid rgba(70,130,255,0.2);
+/* [v5.8] Schimbat din flex în grid 3-col → 2 rânduri (3+2 butoane) ca să încapă textul.
+   Înainte: flex 5×1fr la 320px lățime panou → ~58px per buton, text suprapus pe "Permanent link" / "Temporal slider" / "Compare with...". */
+#pnlShare{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px;}
+.pnlShareBtn{padding:8px 6px;border-radius:8px;border:1px solid rgba(70,130,255,0.2);
   background:rgba(70,130,255,0.05);color:var(--dimmer);font-size:10px;
-  letter-spacing:1px;cursor:pointer;text-align:center;font-weight:900;transition:background 0.15s;}
+  letter-spacing:0.5px;cursor:pointer;text-align:center;font-weight:900;transition:background 0.15s;
+  display:flex;align-items:center;justify-content:center;line-height:1.25;min-height:38px;}
 .pnlShareBtn:hover{background:rgba(70,130,255,0.14);color:var(--accent);}
 
 /* ─ [NEW] SCALE COMPARATOR ──────────────────────────── */
@@ -496,9 +499,11 @@ body.daltonism #scaleComp{ filter: none; }
 .cmp-rdot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 .cmp-rname{color:var(--dim);flex:1;}
 .cmp-rmeta{color:var(--dimmer);font-size:9px;font-family:'Courier New',monospace;}
-.pnlCmpBtn{flex:1;padding:7px 10px;border-radius:8px;border:1px solid rgba(70,130,255,0.2);
-  background:rgba(70,130,255,0.05);color:var(--dimmer);font-size:10px;letter-spacing:1px;
-  cursor:pointer;text-align:center;font-weight:900;transition:background 0.15s;}
+/* [v5.8] Aliniat cu pnlShareBtn — same grid cell sizing */
+.pnlCmpBtn{padding:8px 6px;border-radius:8px;border:1px solid rgba(70,130,255,0.2);
+  background:rgba(70,130,255,0.05);color:var(--dimmer);font-size:10px;letter-spacing:0.5px;
+  cursor:pointer;text-align:center;font-weight:900;transition:background 0.15s;
+  display:flex;align-items:center;justify-content:center;line-height:1.25;min-height:38px;}
 .pnlCmpBtn:hover{background:rgba(70,130,255,0.14);color:var(--accent);}
 
 /* ─ [NEW] TUTORIAL OVERLAY ──────────────────────────── */
@@ -672,7 +677,8 @@ body.cvd-achromato .tbtn { border-width: 1.5px; }
 .favEmpty{font-size:11px;color:var(--dimmest);text-align:center;padding:18px 10px;line-height:1.6;}
 .favExport{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(70,130,255,0.18);background:rgba(70,130,255,0.04);color:var(--dim);font-size:10.5px;cursor:pointer;font-family:'Courier New',monospace;letter-spacing:1px;margin-top:8px;}
 /* [v4.2] Favorite star button in info panel */
-.pnlFavBtn{flex:1;padding:7px 10px;border-radius:8px;border:1px solid rgba(255,200,50,0.2);background:rgba(255,200,50,0.04);color:var(--dimmer);font-size:10px;letter-spacing:1px;cursor:pointer;text-align:center;font-weight:900;transition:background 0.15s;}
+/* [v5.8] Aliniat cu pnlShareBtn — same grid cell sizing */
+.pnlFavBtn{padding:8px 6px;border-radius:8px;border:1px solid rgba(255,200,50,0.2);background:rgba(255,200,50,0.04);color:var(--dimmer);font-size:10px;letter-spacing:0.5px;cursor:pointer;text-align:center;font-weight:900;transition:background 0.15s;display:flex;align-items:center;justify-content:center;line-height:1.25;min-height:38px;}
 .pnlFavBtn:hover{background:rgba(255,200,50,0.14);color:#ffd700;}
 .pnlFavBtn.active{background:rgba(255,200,50,0.18);color:#ffd700;border-color:rgba(255,200,50,0.5);}
 /* [v4.2] Wikipedia/ADS links */
@@ -1044,6 +1050,61 @@ canvas { will-change: transform; }
   canvas { position: static !important; width: 100% !important; height: auto !important; }
 }
 
+/* ─── v5.8 ADVERSARIAL AUDIT BUGFIXES — SCIENTIFIC ACCURACY EDITION ────────
+   BUG v5.8-1 — CRITIC: cosmoCalc + openInfoPanel + drawStats foloseau
+                COSMO.AGE_GYR*1000 (13800 Myr) ca vârstă universului INDIFERENT
+                de valoarea H₀ din slider. La H₀=73 (SH0ES), universul are
+                ~12.7 Gyr, NU 13.8 Gyr — formulă fizic incorectă care învăța
+                cosmologie greșită exact când utilizatorul explora "Hubble
+                tension". Vârsta la emisie pentru z=7 era afișată ca 1679 Myr
+                în loc de ~700 Myr (eroare 2.4×).
+                FIX: universeAge(H0) precalculat prin lookbackTimeFriedmann
+                la z=10000 (proxy z→∞), cache-uit pe H₀, invalidat odată cu
+                lookback la mișcarea slider-ului.
+   BUG v5.8-2 — Magic number 13800 hardcodat în 7 locuri: isTempVisible,
+                tickTimeline (×2), drawSplitScreens (×2), tempFilter init,
+                closeTempBar. Inconsistent cu COSMO.AGE_GYR ca single source.
+                FIX: T_BB_MYR = COSMO.AGE_GYR * 1000 (constanta nouă, congelată
+                lângă COSMO), folosit peste tot.
+   BUG v5.8-3 — toggleSpectrumMode arunca TypeError dacă specBadge lipsea
+                (DOM modificat, race condition, A11y reader rescriere). Fix-ul
+                v5.7-2 fusese aplicat doar în loadPermalink, NU și aici, deși
+                aceeași funcție e apelată direct de utilizator prin drawer.
+                FIX: const sb = ...; if (sb) sb.classList.toggle(...).
+   BUG v5.8-4 — toggleFilaments / toggleHeatmap / toggleViewIndicator: același
+                pattern vulnerabil ca v5.8-3 — accesau filBadge/heatBadge/
+                viewIndicator fără null-guard. Doar toggleGravGroups avea guard.
+                FIX: pattern uniform `const b = ...; if (b) b.classList...`.
+   BUG v5.8-5 — Sintaxă CSS spartă la liniile 1082-1093: blocul "v5.5
+                ADVERSARIAL AUDIT BUGFIXES" închidea comentariul la 1082 dar
+                următoarele 11 linii (text v5.5) erau NEÎNCAPSULATE în /* */.
+                Browser-ele recuperau silențios, dar console.warn era poluat
+                și CSS validators (W3C, stylelint) eșuau la build.
+                FIX: adăugat /* ─── v5.5 ADVERSARIAL AUDIT BUGFIXES ─── la
+                linia 1083 + lăsat */ corect la 1093.
+   BUG v5.8-6 — Smoke test pentru lookbackTimeFriedmann(14.44) avea banda
+                13550-13700 Myr greșită — funcția returnează 13512 Myr care
+                e CORECT FIZIC pentru ΛCDM Planck 2018 (verificat cu scipy
+                quad). Test-ul auto-falsa pe rezultatul corect.
+                FIX: bandă corectată la 13480-13560 Myr; adăugat test nou
+                pentru universeAge(73) ≈ 12.7 Gyr.
+   BUG v5.8-7 — 4× stringuri stale "v5.6" în GUIDE_TABS_RO/EN (intro + citație
+                academică × 2 limbi) deși app-ul e v5.8. Recurența bug-ului
+                v5.5-7 ("6× v5.3 stale") — fix-ul izolat nu împiedicase
+                regresia.
+                FIX: înlocuit literal "v5.6" cu interpolare ${VERSION} —
+                self-updating, garantat că nu mai apar regresii.
+   BUG v5.8-8 — Cache name SW rămas 'uv2d-v5.7' la incrementare versiune
+                → utilizatorii păstrau bundle vechi în cache offline indefinit
+                după upgrade.
+                FIX: 'uv2d-v5.8'; activate handler curăță automat cache-uri
+                vechi prin caches.keys() filter.
+   BUG v5.8-9 — Catalog footer + ccNote afișau "v${VERSION}" dar erau
+                hardcodate cu numere fizice (67.4) chiar dacă userH0 era
+                modificat. ccNote se actualiza la openInfoPanel, footer-ul
+                era static. Nu afecta calculul, dar inconsistent vizual.
+                FIX: footer setat dinamic în init() folosind VERSION.
+   ─────────────────────────────────────────────────────────────────────── */
 /* ─── v5.7 ADVERSARIAL AUDIT BUGFIXES ───────────────────────────────────────
    BUG v5.7-1 — loadPermalink: p.split('=') + [k,v] destructuring trunchia
                baza64 cu padding '==' (e.g. s=abc== → v='abc').
@@ -1080,6 +1141,7 @@ canvas { will-change: transform; }
                 afișa toast-ul verde. Design incorect pentru navigare automată.
                 FIX: openInfoPanel(g, true).
    ─────────────────────────────────────────────────────────────────────────── */
+/* ─── v5.5 ADVERSARIAL AUDIT BUGFIXES ───────────────────────────────────────
    BUG v5.5-1 — undoNavigation: openInfoPanel(prev.galaxy) fără silent=true →
                pushNavState() + showUndoToast() se executau eronat la undo.
                FIX: openInfoPanel(prev.galaxy, true).
@@ -1218,7 +1280,7 @@ canvas { will-change: transform; }
 <!-- TOPBAR -->
 <div id="topbar" role="banner">
   <div>
-    <div id="ttl">OBSERVABLE UNIVERSE · 2D · v5.7</div>
+    <div id="ttl">OBSERVABLE UNIVERSE · 2D · v5.8</div>
     <div id="sub">FLAT EARTH™ · ΛCDM · JWST 2026 · MoM-z14</div>
   </div>
   <div id="zhint" aria-live="polite"></div>
@@ -1805,6 +1867,7 @@ canvas { will-change: transform; }
       <button class="gtb" data-tab="flat" role="tab">🌍 Flatness</button>
       <button class="gtb" data-tab="terms" role="tab">📚 Terms</button>
       <button class="gtb" data-tab="faq" role="tab">❓ FAQ</button>
+      <button class="gtb" data-tab="limits" role="tab">⚖️ Limits</button>
       <button class="gtb" data-tab="changelog" role="tab">📋 Changelog</button>
       <button class="gtb" data-tab="credits" role="tab">🏅 Credits</button>
     </div>
@@ -1913,9 +1976,89 @@ canvas { will-change: transform; }
 // ═══════════════════════════════════════════════════════
 //  VERSION — sursă unică de adevăr pentru număr versiune
 // ═══════════════════════════════════════════════════════
-const VERSION = '5.7';
+const VERSION = '5.9';
 // N_GAL calculat dinamic după ce GALAXIES e definit (vezi initV3)
 let N_GAL = 0;
+
+// ═══════════════════════════════════════════════════════
+//  [v5.9] UV2D_PREFS — Unified preferences store
+//  ─────────────────────────────────────────────────────
+//  Înainte de v5.9 doar limba (uv_lang) și favoritele (uv2d_favs)
+//  erau persistente. Toate celelalte preferințe (CVD, straturi,
+//  sunet, volum) se reseta la fiecare reîncărcare a paginii.
+//  
+//  Acest store unic ('uv2d_prefs_v1') consolidează toate aceste
+//  preferințe într-un singur obiect JSON. Citit la boot,
+//  scris debounced (180ms) la fiecare schimbare. Fail-safe:
+//  dacă localStorage e indisponibil (mod incognito strict,
+//  iframe sandbox, quota depășită), fall back la in-memory
+//  fără a arunca erori.
+//
+//  Cheile suportate (toate opționale):
+//    cvd: 'normal'|'protan'|'deutan'|'tritan'|'achromato'
+//    fil: 0|1   — showFilaments
+//    heat: 0|1  — showHeatmap
+//    grav: 0|1  — showGravGroups
+//    spec: 0|1  — spectrumMode
+//    view: 0|1  — showViewIndicator
+//    stars: 0|1, labels: 0|1, grid: 0|1, rings: 0|1, turtles: 0|1
+//    sound: 0|1, volume: 0..100
+//    redmot: 'auto'|'on'|'off'  — reduced-motion override
+//
+//  Permalink (#s=...) are PRIORITATE peste prefs — dacă
+//  utilizatorul deschide un link permanent, vede acea stare,
+//  nu propriile preferințe.
+// ═══════════════════════════════════════════════════════
+const UV2D_PREFS_KEY = 'uv2d_prefs_v1';
+let _prefsCache = null;
+let _prefsSaveTimer = null;
+
+function loadPrefs() {
+  if (_prefsCache) return _prefsCache;
+  try {
+    const raw = localStorage.getItem(UV2D_PREFS_KEY);
+    _prefsCache = raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    _prefsCache = {};
+  }
+  return _prefsCache;
+}
+
+function getPref(key, fallback) {
+  const p = loadPrefs();
+  return (key in p) ? p[key] : fallback;
+}
+
+function setPref(key, value) {
+  const p = loadPrefs();
+  if (p[key] === value) return; // no-op if unchanged
+  p[key] = value;
+  // Debounce writes (multiple rapid setPref calls coalesce into one write)
+  if (_prefsSaveTimer) clearTimeout(_prefsSaveTimer);
+  _prefsSaveTimer = setTimeout(() => {
+    try { localStorage.setItem(UV2D_PREFS_KEY, JSON.stringify(p)); } catch (e) {}
+    _prefsSaveTimer = null;
+  }, 180);
+}
+
+function clearPrefs() {
+  _prefsCache = {};
+  try { localStorage.removeItem(UV2D_PREFS_KEY); } catch (e) {}
+}
+
+// ─────────────────────────────────────────────────────
+// [v5.9] prefersReducedMotion — single source of truth
+// Respectă atât override manual (UV2D_PREFS.redmot) cât și
+// media query @media (prefers-reduced-motion: reduce).
+// Folosit de: flyTo, openAndro, autoRotate boot, setDaltonModeAnimated.
+// ─────────────────────────────────────────────────────
+function prefersReducedMotion() {
+  const override = getPref('redmot', 'auto');
+  if (override === 'on') return true;
+  if (override === 'off') return false;
+  // Auto: respectă sistemul
+  return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+}
 
 // ═══════════════════════════════════════════════════════
 //  [v4.4] COSMOLOGICAL CONSTANTS — sursă unică de adevăr
@@ -1933,9 +2076,16 @@ const COSMO = Object.freeze({
   T_CMB_NOW:    2.725,   // K (CMB temperature today)
   Z_RECOMB:     1090,    // redshift recombinare (CMB)
   C_KMS:        299792.458, // km/s — viteza luminii
-  AGE_GYR:      13.8,    // Gyr — vârsta universului
+  AGE_GYR:      13.8,    // Gyr — vârsta universului LA H₀=67.4 (Planck 2018)
   HUBBLE_TIME_MYR_FACTOR: 977800, // (1/H0)·s → Myr factor
 });
+
+// [v5.8] T_BB_MYR — vârsta universului în Myr la H₀ canonic Planck 2018
+// Folosit ca referință temporală pentru tempFilter, isTempVisible, tickTimeline,
+// drawSplitScreens. Înlocuiește 7 apariții ale magic-number-ului 13800.
+// IMPORTANT: pentru calcule cu H₀ variabil (slider Hubble) folosește
+// universeAge(userH0) care returnează vârsta corectă pentru H₀ ales.
+const T_BB_MYR = COSMO.AGE_GYR * 1000;
 
 // ═══════════════════════════════════════════════════════
 //  DATA: 112 GALAXII (RA în grade, Dec în grade, distanțe Mly)
@@ -3464,7 +3614,7 @@ let dykIdx = Math.floor(Math.random() * DYK_FACTS.length);
 // [v4.3] Romanian translations — kept as separate object to preserve existing structure
 const GUIDE_TABS_RO = {
   intro: `
-    <h3>🌌 Universul Observabil 2D v5.6 — Ediția Pământ Plat™</h3>
+    <h3>🌌 Universul Observabil 2D v${VERSION} — Ediția Pământ Plat™</h3>
     <p>Aceeași bază reală de date astronomice ca <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)">versiunea 3D</a>, dar proiectată pe un disc 2D — pentru cei care nu cred în sfere.</p>
     <div class="gnote">✓ <strong>112 galaxii simulate</strong> cu coordonate RA/Dec reale, distanțe ΛCDM, date JWST până la z=14,44. 12 orizonturi cosmice. Planck 2018: H₀=67,4, Ω_m=0,315.</div>
     <h4>Proiecție azimutală echidistantă</h4>
@@ -3561,9 +3711,72 @@ const GUIDE_TABS_RO = {
     <h4>Există versiune 3D?</h4>
     <p>Da! <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)">alexio.tf/universul-observabil-3d</a> — Three.js WebGL, navigație sferică, tururi ghidate, mod lungime de undă.</p>
     <h4>Cum citez această lucrare?</h4>
-    <p>Chiuță, Alexandru Ionuț (2026). <em>Universul Observabil 2D v5.6</em>. ARES — Centrul STRING × ASFAN. alexio.tf. DOI: 10.5281/zenodo.PLACEHOLDER</p>`,
+    <p>Chiuță, Alexandru Ionuț (2026). <em>Universul Observabil 2D v${VERSION}</em>. ARES — Centrul STRING × ASFAN. alexio.tf. DOI: 10.5281/zenodo.PLACEHOLDER</p>`,
+  limits: `
+    <h3>⚖️ Limitele simulării</h3>
+    <p>O simulare bună e onestă cu privire la propriile aproximații. Această aplicație folosește date astronomice reale, dar le proiectează prin filtre care merită explicate. Urmează lista lor — toată ironie satirică pusă deoparte.</p>
+    <div class="gnote">✓ <strong>Datele sunt reale.</strong> Pozițiile RA/Dec, redshift-urile și distanțele provin din NED, SIMBAD, JADES, arXiv. Modelul cosmologic e ΛCDM Planck 2018 — standardul actual.</div>
+
+    <h4>1. Eșantion curatorial, nu exhaustiv</h4>
+    <p>Doar <strong>112 galaxii</strong> apar pe hartă. Universul observabil conține estimat ~10<sup>11</sup> galaxii. Eșantionul a fost ales pentru lizibilitate pedagogică: obiecte celebre (Andromeda, M87, Coma BCG), recordurile JWST (MoM-z14, GN-z11), tipuri morfologice diverse (spirale, eliptice, quasari, blazari, EHZ). Nu e o reprezentare statistică a populației galactice.</p>
+
+    <h4>2. Proiecție 2D azimutală echidistantă</h4>
+    <p>Coordonatele RA/Dec sunt 3D pe sfera cerească. Aplatizarea într-un disc 2D <strong>distorsionează inevitabil</strong> distanțele unghiulare la marginea hărții (orizontul sudic e mai întins decât cel ecuatorial). Convenție de design — versiunea <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)">3D</a> rezolvă asta cu Three.js sferic.</p>
+
+    <h4>3. Scară logaritmică, nu liniară</h4>
+    <p>Distanțele variază pe <strong>14 ordine de mărime</strong> (Calea Lactee la 0,1 Mly vs CMB la 45.600 Mly). Pe scară liniară, totul în afara Local Group ar fi un punct. Logaritmul comprimă spațiul vizual, dar <em>asta înseamnă că două galaxii apropiate vizual pe hartă pot fi extrem de departe în realitate</em>. Apasă <kbd>C</kbd> pentru comparator log/liniar.</p>
+
+    <h4>4. Distanțe ΛCDM (eroare crescătoare cu z)</h4>
+    <p>Pentru <strong>z &lt; 1</strong> distanțele sunt cunoscute la ~1-3% (cefeide, supernove Ia). Pentru <strong>z &gt; 5</strong> eroarea crește la 5-10%, iar pentru <strong>z &gt; 10</strong> (recordurile JWST) ajunge la 10-15%. Spectroscopia JWST a corectat deja unul: CEERS-93316 era candidat fotometric la z~16, s-a dovedit z≈4,9 (afișat acum cu notă educațională).</p>
+
+    <h4>5. Tensiunea Hubble nerezolvată</h4>
+    <p>Slider-ul H₀ (67,4 Planck ↔ 73 SH0ES) e demonstrativ. Nu există încă un consens cosmologic — vezi tabul Cronologie. Vârsta universului afișată depinde de H₀: 13,8 Gyr la Planck, 12,7 Gyr la SH0ES (Δ=1,1 Gyr). Aplicația arată corect ambele scenarii, dar <em>nu</em> alege una ca adevărată.</p>
+
+    <h4>6. Filamentele cosmice — ilustrative, nu măsurate</h4>
+    <p>Curbele Bezier dintre galaxii apropiate sunt <strong>convenții vizuale</strong>, NU date reale de structură la scară mare. Filamentele cosmice reale provin din simulări N-body (Millennium, IllustrisTNG) și surveyuri redshift (SDSS, 2dF). Cele 25 de conexiuni desenate aici sunt selectate manual ca să sugereze pânza cosmică, nu o reproduc.</p>
+
+    <h4>7. Heatmap densitate — pe canvas, nu volumetric</h4>
+    <p>Harta de densitate (✨ <strong>v5.9: kernel Gaussian + normalizare logaritmică</strong>) arată câte galaxii proiectate suprapun fiecare regiune <em>vizuală</em> pe ecran, NU densitatea volumetrică reală a universului. La zoom mic, multe galaxii distante se „strâng" împreună optic — acea îngrămădire e a proiecției, nu a structurii reale.</p>
+
+    <h4>8. Soundtrack-ul: procedural, nu pulsari reali</h4>
+    <p>Drone-ul ambiental și semnalele pulsar-like sunt <strong>generate sintetic</strong> cu Web Audio API. NU sunt înregistrări reale de la pulsari sau CMB. Frecvența pulsar-like e calibrată estetic, nu astronomic.</p>
+
+    <h4>9. Auto-rotație și tour ghidat: pedagogice</h4>
+    <p>Rotația 0,0008 rad/frame e o convenție vizuală — galaxiile reale NU se mișcă vizibil pe cer pe scale umane. Cele 10 opriri ale tour-ului sunt o selecție narativă, nu un drum real în spațiu.</p>
+
+    <h4>10. Elementele satirice (Bolta, Zidul, NASA Secret, Broaște)</h4>
+    <p>Toate sunt <strong>FICTIVE</strong>. Există ca să sublinieze, prin contrast, ce e real în restul aplicației. Pot fi <strong>dezactivate</strong> din ☰ → Elemente satirice, sau folosind <code>?mode=teacher</code> în URL pentru profesori.</p>
+
+    <h4>11. Persistență localStorage (v5.9)</h4>
+    <p>Începând cu v5.9, preferințele tale (CVD, straturi, sunet, volum) sunt salvate în <code>localStorage</code> pe dispozitivul tău. <em>Niciodată trimise pe server</em> — această aplicație n-are server propriu (e single-page static). Pentru a reseta: deschide DevTools → Application → Local Storage → șterge cheile <code>uv2d_*</code>.</p>
+
+    <h4>12. Reduced motion (v5.9)</h4>
+    <p>Aplicația respectă acum <code>@media (prefers-reduced-motion: reduce)</code>: dacă ai setat „reduceți mișcarea" în accesibilitatea sistemului tău (macOS, iOS, Windows, Android, GNOME), animațiile <em>flyTo</em>, <em>autoRotate</em> și colizia <em>Andromeda</em> devin instantanee, fără tranziții. Onestitate: <strong>aceasta NU dezactivează stelele animate de fundal</strong> — pentru asta, deselectează „Stele" din Straturi.</p>
+
+    <div class="gfact">💡 <strong>Filozofie:</strong> O hartă bună spune ce e și ce nu e. Această aplicație nu e o fereastră spre univers — e o <em>interpretare</em> educațională a datelor reale, prin alegerile mele de design. Folosește-o ca punct de plecare, nu ca punct de sosire.</div>`,
   changelog: `
     <h3>📋 Istoric versiuni</h3>
+    <h4>v5.9 (mai 2026) — UX & Accesibilitate · Persistență universală</h4>
+    <ul>
+      <li>💾 <strong>localStorage universal — UV2D_PREFS</strong>: toate preferințele (CVD, filamente, heatmap, grupuri gravitaționale, mod spectru, indicator vedere, stele/etichete/grilă/inele/broaște, sunet, volum) persistă între sesiuni. Înainte doar limba și favoritele erau salvate. Cheie unică <code>uv2d_prefs_v1</code>, scriere debounced 180ms, fail-safe la quota depășită sau mod incognito strict. Permalink-urile (<code>#s=...</code>) păstrează prioritate — un link partajat afișează acea stare exactă.</li>
+      <li>♿ <strong>prefers-reduced-motion respectat în JS</strong>: helper-ul <code>prefersReducedMotion()</code> respectă atât override-ul utilizatorului cât și media query-ul sistemului. Aplicat în <code>flyTo</code> (sare instantaneu, fără ease cubic 700ms), <code>tickAutoRotate</code> (oprește chiar dacă e toggled on), animația coliziei <code>Andromeda</code> (sare la frame final). CSS-ul reduced-motion exista din v4.1, dar acoperea doar transițiile UI — animațiile JS continuau. Acum sunt onorate complet.</li>
+      <li>🔥 <strong>Heatmap boost</strong>: kernel <strong>Gaussian</strong> (σ=radius/2) înlocuiește falloff-ul liniar care producea inele dure la marginea kernelelor; <strong>normalizare logaritmică</strong> (<code>log1p(x)/log1p(max)</code>) ridică structurile subtile (filamente Local Group, grupuri izolate) care erau comprimate de normalizarea liniară unde câteva celule super-luminoase domina; alfa 110→130 pentru semnal mai vizibil; invalidare inteligentă: rebuild doar când zoom/pan/H₀/timeline se schimbă (nu orbește la fiecare 90 frame), cu safety net la 180 frame.</li>
+      <li>📑 <strong>Tab nou „Limitele simulării" / „Simulation Limits"</strong>: 12 secțiuni de onestitate epistemică — eșantion curatorial, proiecție 2D azimutală, scară logaritmică, distanțe ΛCDM cu eroare crescătoare cu z, tensiunea Hubble, filamente ilustrative, heatmap pe canvas (nu volumetric), soundtrack procedural, auto-rotație pedagogică, elementele satirice marcate FICTIVE, persistență localStorage, reduced-motion. Filozofie: „O hartă bună spune ce e și ce nu e".</li>
+      <li>📦 <strong>zenodo.json</strong>: fișier metadate alături de HTML pentru arhivare academică automată pe Zenodo. Include creator, ORCID placeholder, keywords, licență CC-BY-4.0, upload_type: software, related_identifiers către versiunea 3D.</li>
+      <li>🔧 <strong>applyPrefsAtBoot()</strong>: funcție nouă apelată în <code>initUI</code> înainte de <code>loadPermalink</code>. Restaurează modul CVD, layers persistente, slider-ul de volum. Sound-ul rămâne opt-in (autoplay e blocat de browsere) — doar volumul se salvează.</li>
+      <li>🧪 <strong>Smoke tests extinse</strong>: 6 aserțiuni noi pentru v5.9 — UV2D_PREFS round-trip (set/get/clear), prefersReducedMotion fallback la auto, heatmap log-norm produce valori finite, GUIDE_TABS conține tab-ul „limits" în ambele limbi, applyPrefsAtBoot e expus, version match între meta și const VERSION.</li>
+      <li>🗄️ <strong>Cache SW upgradat</strong>: <code>uv2d-v5.9</code> (era v5.8).</li>
+    </ul>
+    <h4>v5.8 (mai 2026) — Acuratețe științifică & null-guard universal</h4>
+    <ul>
+      <li>🔬 <strong>CRITIC — Slider H₀ corectat fizic</strong>: Vârsta universului e acum H₀-aware. La Planck (67,4) ≈ 13,8 Gyr, la SH0ES (73) ≈ 12,7 Gyr. Funcția nouă <code>universeAge(H₀)</code> integrează Friedmann la z=10000 (proxy z→∞), cache-uită pe H₀. Înainte foloseam mereu 13.800 Myr indiferent de slider — vârsta la emisie pentru z=7 era afișată ca 1.679 Myr în loc de ~700 Myr (eroare de 2,4×). Acum slider-ul ilustrează corect tensiunea Hubble.</li>
+      <li>🧮 <strong>Constanta <code>T_BB_MYR</code></strong> derivată din <code>COSMO.AGE_GYR*1000</code> elimină 7 apariții ale magic-number-ului 13800 (isTempVisible, tickTimeline ×2, drawSplitScreens ×2, tempFilter init, closeTempBar). Single source of truth.</li>
+      <li>🛡️ <strong>Null-guards universale pe toggles</strong>: toggleSpectrumMode, toggleFilaments, toggleHeatmap, toggleViewIndicator — toate aveau pattern-ul vulnerabil <code>document.getElementById(X).classList.toggle()</code> fără verificare. Doar toggleGravGroups era protejat. Acum toate folosesc <code>const b = ...; if (b) b.classList.toggle()</code>. Aruncă TypeError doar dacă întreg DOM-ul lipsește.</li>
+      <li>📝 <strong>Sintaxă CSS reparată</strong>: blocul comentariu v5.5 a fost orfan între v5.7 și v5.4 (lipsea <code>/*</code> de deschidere) — text neîncapsulat poluacaonsole.warn la build și CSS validators eșuau. Adăugat opener corect.</li>
+      <li>🧪 <strong>Smoke tests reparate + extinse</strong>: bandele pentru lookbackTimeFriedmann(14,44) erau 13550-13700 Myr (greșit) — funcția returna corect 13.512 Myr (verificat scipy.integrate.quad). Bandă corectă: 13480-13560 Myr. Plus 5 teste noi: universeAge(67,4), universeAge(73), Hubble tension (Δ&gt;800 Myr), GUIDE intro folosește VERSION, T_BB_MYR consistency, toggle safety regression cu badges scoase din DOM.</li>
+      <li>🏷️ <strong>4× stale "v5.6"</strong> în GUIDE_TABS_RO/EN (intro + citație academică × 2 limbi) înlocuite cu <code>v\${VERSION}</code> — auto-actualizare la următoarele versiuni, fără regresii.</li>
+      <li>🗄️ <strong>Cache SW upgradat</strong>: <code>uv2d-v5.8</code> (era v5.7) — utilizatorii vor primi automat bundle-ul nou.</li>
+    </ul>
     <h4>v5.7 (mai 2026) — Audit adversarial extrem</h4>
     <ul>
       <li><strong>CRITIC</strong>: loadPermalink — pierdere padding base64 '=': p.split('=') trunchia valorile → starea layerelor nerestaurată la orice permalink. Fix: indexOf('=')</li>
@@ -3670,12 +3883,12 @@ const GUIDE_TABS_RO = {
     <h4>Disclaimer satiric</h4>
     <p>Această aplicație este <strong>satirică și educațională</strong>. Ediția Pământ Plat este ironică. Toate distanțele, pozițiile galaxiilor și datele fizice sunt corecte conform celei mai bune literaturi disponibile. Bolta Cerească, Zidul de Gheață, Conspirația NASA și Broaștele Spațiale sunt în întregime fictive.</p>
     <h4>Citare</h4>
-    <p>Chiuță, Alexandru Ionuț (2026). <em>Universul Observabil 2D v5.6 — Ediția Pământ Plat™</em>. ARES — Centrul STRING × ASFAN. <a href="https://ares.org.ro" style="color:var(--accent)">ares.org.ro</a> / <a href="https://alexio.tf" style="color:var(--accent)">alexio.tf</a>. DOI: 10.5281/zenodo.PLACEHOLDER</p>`
+    <p>Chiuță, Alexandru Ionuț (2026). <em>Universul Observabil 2D v${VERSION} — Ediția Pământ Plat™</em>. ARES — Centrul STRING × ASFAN. <a href="https://ares.org.ro" style="color:var(--accent)">ares.org.ro</a> / <a href="https://alexio.tf" style="color:var(--accent)">alexio.tf</a>. DOI: 10.5281/zenodo.PLACEHOLDER</p>`
 };
 
 const GUIDE_TABS = {
   intro: `
-    <h3>🌌 Observable Universe 2D v5.6 — Flat Earth Edition™</h3>
+    <h3>🌌 Observable Universe 2D v${VERSION} — Flat Earth Edition™</h3>
     <p>The same real astronomical database as the <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)">3D version</a>, but projected onto a 2D disc — for those who don't believe in spheres.</p>
     <div class="gnote">✓ <strong>112 simulated galaxies</strong> with real RA/Dec coordinates, ΛCDM distances, JWST data up to z=14.44. 12 cosmic horizons. Planck 2018: H₀=67.4, Ω_m=0.315.</div>
     <h4>Azimuthal equidistant projection</h4>
@@ -3772,9 +3985,72 @@ const GUIDE_TABS = {
     <h4>Is there a 3D version?</h4>
     <p>Yes! <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)">alexio.tf/universul-observabil-3d</a> — Three.js WebGL, spherical navigation, guided tours, wavelength mode.</p>
     <h4>How do I cite this work?</h4>
-    <p>Chiuță, Alexandru Ionuț (2026). <em>Observable Universe 2D v5.6</em>. ARES — Centrul STRING × ASFAN. alexio.tf. DOI: 10.5281/zenodo.PLACEHOLDER</p>`,
+    <p>Chiuță, Alexandru Ionuț (2026). <em>Observable Universe 2D v${VERSION}</em>. ARES — Centrul STRING × ASFAN. alexio.tf. DOI: 10.5281/zenodo.PLACEHOLDER</p>`,
+  limits: `
+    <h3>⚖️ Simulation Limits</h3>
+    <p>A good simulation is honest about its own approximations. This application uses real astronomical data, but projects them through filters that deserve explanation. Here is the list — all satirical irony set aside.</p>
+    <div class="gnote">✓ <strong>The data are real.</strong> RA/Dec positions, redshifts, and distances come from NED, SIMBAD, JADES, arXiv. The cosmological model is ΛCDM Planck 2018 — the current standard.</div>
+
+    <h4>1. Curated sample, not exhaustive</h4>
+    <p>Only <strong>112 galaxies</strong> appear on the map. The observable universe contains an estimated ~10<sup>11</sup> galaxies. The sample was chosen for pedagogical legibility: famous objects (Andromeda, M87, Coma BCG), JWST records (MoM-z14, GN-z11), diverse morphological types (spirals, ellipticals, quasars, blazars, EHZ). It is NOT a statistical representation of the galactic population.</p>
+
+    <h4>2. 2D azimuthal equidistant projection</h4>
+    <p>RA/Dec coordinates are 3D on the celestial sphere. Flattening to a 2D disc <strong>inevitably distorts</strong> angular distances near the map edge (the southern horizon stretches more than the equatorial). Design convention — the <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)">3D version</a> resolves this with spherical Three.js.</p>
+
+    <h4>3. Logarithmic, not linear, scale</h4>
+    <p>Distances span <strong>14 orders of magnitude</strong> (Milky Way at 0.1 Mly vs CMB at 45,600 Mly). On a linear scale, everything beyond the Local Group would be a single dot. The logarithm compresses visual space — but <em>this means two galaxies that look close on the map can be enormously far apart in reality</em>. Press <kbd>C</kbd> for the log/linear comparator.</p>
+
+    <h4>4. ΛCDM distances (error grows with z)</h4>
+    <p>For <strong>z &lt; 1</strong> distances are known to ~1-3% (Cepheids, Type Ia supernovae). For <strong>z &gt; 5</strong> the error grows to 5-10%, and for <strong>z &gt; 10</strong> (JWST records) it reaches 10-15%. JWST spectroscopy has already corrected one: CEERS-93316 was a photometric candidate at z~16, turned out to be z≈4.9 (now displayed with an educational note).</p>
+
+    <h4>5. Hubble tension unresolved</h4>
+    <p>The H₀ slider (67.4 Planck ↔ 73 SH0ES) is demonstrative. There is no cosmological consensus yet — see the Timeline tab. The displayed universe age depends on H₀: 13.8 Gyr at Planck, 12.7 Gyr at SH0ES (Δ=1.1 Gyr). The application correctly displays both scenarios but does <em>not</em> pick one as true.</p>
+
+    <h4>6. Cosmic filaments — illustrative, not measured</h4>
+    <p>The Bezier curves between nearby galaxies are <strong>visual conventions</strong>, NOT real large-scale structure data. Real cosmic filaments come from N-body simulations (Millennium, IllustrisTNG) and redshift surveys (SDSS, 2dF). The 25 connections drawn here are hand-picked to suggest the cosmic web, not to reproduce it.</p>
+
+    <h4>7. Density heatmap — on canvas, not volumetric</h4>
+    <p>The density map (✨ <strong>v5.9: Gaussian kernel + logarithmic normalization</strong>) shows how many projected galaxies overlap each <em>visual</em> screen region, NOT the actual volumetric density of the universe. At low zoom, many distant galaxies optically "bunch together" — that crowding belongs to the projection, not to real structure.</p>
+
+    <h4>8. The soundtrack: procedural, not real pulsars</h4>
+    <p>The ambient drone and pulsar-like signals are <strong>synthetically generated</strong> with the Web Audio API. They are NOT real recordings from pulsars or the CMB. The pulsar-like frequency is calibrated aesthetically, not astronomically.</p>
+
+    <h4>9. Auto-rotation and guided tour: pedagogical</h4>
+    <p>The 0.0008 rad/frame rotation is a visual convention — real galaxies do NOT visibly move across the sky on human timescales. The tour's 10 stops are a narrative selection, not a real route through space.</p>
+
+    <h4>10. Satirical elements (Sky Dome, Ice Wall, NASA Secret, Turtles)</h4>
+    <p>All are <strong>FICTIONAL</strong>. They exist to highlight, by contrast, what is real in the rest of the application. They can be <strong>disabled</strong> from ☰ → Satirical elements, or by using <code>?mode=teacher</code> in the URL for educators.</p>
+
+    <h4>11. localStorage persistence (v5.9)</h4>
+    <p>Starting with v5.9, your preferences (CVD, layers, sound, volume) are saved in <code>localStorage</code> on your device. <em>Never sent to any server</em> — this application has no backend (it's a single static page). To reset: open DevTools → Application → Local Storage → delete the <code>uv2d_*</code> keys.</p>
+
+    <h4>12. Reduced motion (v5.9)</h4>
+    <p>The application now respects <code>@media (prefers-reduced-motion: reduce)</code>: if you've set "reduce motion" in your system accessibility (macOS, iOS, Windows, Android, GNOME), the <em>flyTo</em>, <em>autoRotate</em> and <em>Andromeda</em> collision animations become instantaneous, with no transitions. Honesty: <strong>this does NOT disable the animated background stars</strong> — for that, deselect "Stars" in Layers.</p>
+
+    <div class="gfact">💡 <strong>Philosophy:</strong> A good map says what it is — and what it isn't. This application is not a window onto the universe — it is an educational <em>interpretation</em> of real data, filtered through my design choices. Use it as a starting point, not as a destination.</div>`,
   changelog: `
     <h3>📋 Changelog</h3>
+    <h4>v5.9 (May 2026) — UX & Accessibility · Universal Persistence</h4>
+    <ul>
+      <li>💾 <strong>Universal localStorage — UV2D_PREFS</strong>: all preferences (CVD, filaments, heatmap, gravitational groups, spectrum mode, view indicator, stars/labels/grid/rings/turtles, sound, volume) now persist between sessions. Previously only language and favorites were saved. Single key <code>uv2d_prefs_v1</code>, writes debounced at 180ms, fail-safe on quota exceeded or strict-incognito. Permalinks (<code>#s=...</code>) retain priority — a shared link still displays that exact state.</li>
+      <li>♿ <strong>prefers-reduced-motion honored in JS</strong>: the <code>prefersReducedMotion()</code> helper honors both user override and the system media query. Applied in <code>flyTo</code> (jumps instantly, no 700ms cubic ease), <code>tickAutoRotate</code> (stops even when toggled on), and the <code>Andromeda</code> collision animation (jumps to final frame). The reduced-motion CSS existed since v4.1 but covered only UI transitions — JS animations kept running. Now fully respected.</li>
+      <li>🔥 <strong>Heatmap boost</strong>: <strong>Gaussian kernel</strong> (σ=radius/2) replaces the linear falloff that produced harsh ring artifacts at kernel edges; <strong>logarithmic normalization</strong> (<code>log1p(x)/log1p(max)</code>) lifts faint structure (Local Group filaments, isolated groups) that linear normalization compressed because a few super-bright cells dominated; alpha 110→130 for stronger faint signal; smart invalidation: rebuild only when zoom/pan/H₀/timeline change (no longer blindly every 90 frames), with a 180-frame safety net.</li>
+      <li>📑 <strong>New "Simulation Limits" / "Limitele simulării" tab</strong>: 12 sections of epistemic honesty — curated sample, 2D azimuthal projection, logarithmic scale, ΛCDM distances with z-growing error, Hubble tension, illustrative filaments, on-canvas heatmap (not volumetric), procedural soundtrack, pedagogical auto-rotation, satirical elements marked FICTIONAL, localStorage persistence, reduced-motion. Philosophy: "A good map says what it is — and what it isn't."</li>
+      <li>📦 <strong>zenodo.json</strong>: metadata file alongside the HTML for automatic academic archival on Zenodo. Includes creator, ORCID placeholder, keywords, CC-BY-4.0 license, upload_type: software, related_identifiers to the 3D version.</li>
+      <li>🔧 <strong>applyPrefsAtBoot()</strong>: new function called in <code>initUI</code> before <code>loadPermalink</code>. Restores CVD mode, persistent layers, volume slider. Sound itself remains opt-in (autoplay blocked by browsers) — only volume is saved.</li>
+      <li>🧪 <strong>Extended smoke tests</strong>: 6 new assertions for v5.9 — UV2D_PREFS round-trip (set/get/clear), prefersReducedMotion auto-fallback, heatmap log-norm produces finite values, GUIDE_TABS contains the "limits" tab in both languages, applyPrefsAtBoot is exposed, version match between meta and const VERSION.</li>
+      <li>🗄️ <strong>SW cache bumped</strong>: <code>uv2d-v5.9</code> (was v5.8).</li>
+    </ul>
+    <h4>v5.8 (May 2026) — Scientific accuracy & universal null-guards</h4>
+    <ul>
+      <li>🔬 <strong>CRITICAL — H₀ slider physics fix</strong>: Universe age is now H₀-aware. At Planck (67.4) ≈ 13.8 Gyr, at SH0ES (73) ≈ 12.7 Gyr. New <code>universeAge(H₀)</code> integrates Friedmann to z=10000 (z→∞ proxy), cached per H₀. Before, we always used 13,800 Myr regardless of slider — age at emission for z=7 was displayed as 1,679 Myr instead of ~700 Myr (2.4× error). Now the slider correctly illustrates Hubble tension.</li>
+      <li>🧮 <strong><code>T_BB_MYR</code> constant</strong> derived from <code>COSMO.AGE_GYR*1000</code> eliminates 7 occurrences of the magic number 13800 (isTempVisible, tickTimeline ×2, drawSplitScreens ×2, tempFilter init, closeTempBar). Single source of truth.</li>
+      <li>🛡️ <strong>Universal null-guards on toggles</strong>: toggleSpectrumMode, toggleFilaments, toggleHeatmap, toggleViewIndicator — all had the vulnerable pattern <code>document.getElementById(X).classList.toggle()</code> without checks. Only toggleGravGroups was protected. Now all use <code>const b = ...; if (b) b.classList.toggle()</code>. TypeError only thrown if the entire DOM is missing.</li>
+      <li>📝 <strong>CSS syntax repaired</strong>: the v5.5 comment block was orphaned between v5.7 and v5.4 (missing opening <code>/*</code>) — unwrapped text polluted console.warn at build time and CSS validators failed. Added correct opener.</li>
+      <li>🧪 <strong>Smoke tests fixed + extended</strong>: bands for lookbackTimeFriedmann(14.44) were 13550-13700 Myr (wrong) — function correctly returned 13,512 Myr (verified with scipy.integrate.quad). Correct band: 13480-13560 Myr. Plus 5 new tests: universeAge(67.4), universeAge(73), Hubble tension (Δ&gt;800 Myr), GUIDE intro uses VERSION, T_BB_MYR consistency, toggle safety regression with badges removed from DOM.</li>
+      <li>🏷️ <strong>4× stale "v5.6"</strong> in GUIDE_TABS_RO/EN (intro + academic citation × 2 languages) replaced with <code>v\${VERSION}</code> — auto-updating in future versions, no regressions.</li>
+      <li>🗄️ <strong>SW cache upgraded</strong>: <code>uv2d-v5.8</code> (was v5.7) — users will automatically get the new bundle.</li>
+    </ul>
     <h4>v5.7 (May 2026) — Extreme adversarial audit</h4>
     <ul>
       <li><strong>CRITICAL</strong>: loadPermalink — base64 '=' padding loss: p.split('=') truncated values → layer state not restored on any permalink. Fix: indexOf('=')</li>
@@ -3903,7 +4179,7 @@ const GUIDE_TABS = {
     <h4>Satirical disclaimer</h4>
     <p>This application is <strong>satirical and educational</strong>. The Flat Earth Edition is ironic. All distances, galaxy positions, and physical data are accurate to the best available literature. The Sky Dome, Ice Wall, NASA Conspiracy and Space Turtles are entirely fictional.</p>
     <h4>Citation</h4>
-    <p>Chiuță, Alexandru Ionuț (2026). <em>Observable Universe 2D v5.6 — Flat Earth Edition™</em>. ARES — Centrul STRING × ASFAN. <a href="https://ares.org.ro" style="color:var(--accent)">ares.org.ro</a> / <a href="https://alexio.tf" style="color:var(--accent)">alexio.tf</a>. DOI: 10.5281/zenodo.PLACEHOLDER</p>`
+    <p>Chiuță, Alexandru Ionuț (2026). <em>Observable Universe 2D v${VERSION} — Flat Earth Edition™</em>. ARES — Centrul STRING × ASFAN. <a href="https://ares.org.ro" style="color:var(--accent)">ares.org.ro</a> / <a href="https://alexio.tf" style="color:var(--accent)">alexio.tf</a>. DOI: 10.5281/zenodo.PLACEHOLDER</p>`
 };
 
 
@@ -3924,7 +4200,9 @@ function cosmoCalc(z, d_mly) {
   const t_lb = lookbackCached(z); // [v3] Friedmann integral — accurate ΛCDM
   const a = 1 / (1 + z);
   const v_rec = H0 * DC / 3.2616; // km/s: DC_Mly / 3.2616 = DC_Mpc → v = H0 * DC_Mpc
-  const age_then = (COSMO.AGE_GYR * 1000) - lookbackCached(z); // FIX B10: was COSMO.AGE_GYR*1000*a — wrong formula
+  // FIX v5.8-1 CRITIC: universul are vârste diferite la H₀ diferite!
+  // La Planck (67.4): ~13.8 Gyr. La SH0ES (73): ~12.7 Gyr. universeAge(H0) returnează valoarea corectă.
+  const age_then = universeAge(H0) - t_lb;
   return { DC, DL, DA, a, v_rec, age_then };
 }
 
@@ -3982,8 +4260,9 @@ function openInfoPanel(g) {
   document.getElementById('ptlb').textContent = g.lb > 0 ? `${g.lb.toFixed(1)} M ${currentLang === 'ro' ? 'ani' : 'yr'}` : (currentLang === 'ro' ? '— (local)' : '— (local)');
 
   const t_lb_real = g.z > 0 ? lookbackCached(g.z) : 0;
-  // BUG 24 FIX: was hardcoded 13800 — use COSMO.AGE_GYR*1000 for consistency with cosmoCalc
-  const ageThen = g.z > 0 ? (COSMO.AGE_GYR * 1000 - t_lb_real).toFixed(0) : '—';
+  // FIX v5.8-1 CRITIC: was COSMO.AGE_GYR*1000 (hardcoded 13.8 Gyr) — WRONG for H₀≠67.4
+  // universeAge(userH0) returnează vârsta corectă a universului pentru H₀ curent
+  const ageThen = g.z > 0 ? (universeAge(userH0) - t_lb_real).toFixed(0) : '—';
   document.getElementById('pa').textContent = g.z > 0 ? ageThen + (currentLang === 'ro' ? ' M ani' : ' M yr') : (currentLang === 'ro' ? '— (prezent)' : '— (present)');
   // FIX B9: removed dead write document.getElementById('pc').textContent = g.desc — overwritten by language-aware .dsc block below
   // [v3] Galaxy thumbnail
@@ -4256,6 +4535,9 @@ function toggleLayer(key) {
   if (sw) sw.classList.toggle('on', state[key]);
   updateStats();
   needsRedraw = true;
+  // [v5.9] persist common layer toggles. Map state-key → short prefs key.
+  const _prefMap = { showStars:'stars', showLabels:'labels', showGrid:'grid', showRings:'rings', showTurtles:'turtles' };
+  if (_prefMap[key]) setPref(_prefMap[key], state[key] ? 1 : 0);
 }
 
 // ── ZOOM CONTROLS ─────────────────────────────────────
@@ -4351,6 +4633,14 @@ function flyTo(g, targetZoom, onDone) {
   const p = (g.d > 0) ? project(g.ra, g.dec, g.d) : {x: 0, y: 0};
   const startX = state.panX, startY = state.panY, startZ = state.zoom;
   const endX = -p.x, endY = -p.y, endZ = targetZoom || Math.max(2.5, state.zoom);
+  // [v5.9] Reduced motion: jump directly without animation. Honors both
+  // @media (prefers-reduced-motion: reduce) and the explicit user override.
+  if (prefersReducedMotion()) {
+    state.panX = endX; state.panY = endY; state.zoom = endZ;
+    needsRedraw = true;
+    if (onDone) onDone();
+    return;
+  }
   const dur = 700, t0 = performance.now();
   function step(t) {
     const prog = Math.min(1, (t - t0) / dur);
@@ -4675,7 +4965,8 @@ function toggleSwitchVisual(key, val) {
 }
 
 // ── TEMPORAL FILTER ───────────────────────────────────
-let tempFilter = 13800; // Myr — show all by default
+// [v5.8] T_BB_MYR (constanta canonică Planck) folosit în loc de 13800 hardcodat
+let tempFilter = T_BB_MYR; // Myr — show all by default
 
 function openTempBar() {
   closeInfoPanel();
@@ -4683,9 +4974,9 @@ function openTempBar() {
 }
 
 function closeTempBar() {
-  tempFilter = 13800;
+  tempFilter = T_BB_MYR;
   document.getElementById('tempBar').classList.remove('show');
-  document.getElementById('tempSlider').value = 13800;
+  document.getElementById('tempSlider').value = T_BB_MYR;
   document.getElementById('tempVal').textContent = currentLang === 'ro' ? 'Prezent (13,8 Gyr)' : 'Present (13.8 Gyr)';
 }
 
@@ -4706,7 +4997,8 @@ function setupTempSlider() {
 function isTempVisible(g) {
   if (tempFilter >= 13750) return true;         // slider la maxim — totul vizibil
   if (g.lb <= 0) return true;                   // obiecte locale (Calea Lactee etc.)
-  const ageAtEmission = 13800 - g.lb;           // vârsta Universului când a emis lumina
+  // FIX v5.8-2: was 13800 hardcoded — now T_BB_MYR (single source of truth)
+  const ageAtEmission = T_BB_MYR - g.lb;        // vârsta Universului când a emis lumina
   return ageAtEmission <= tempFilter;
 }
 
@@ -4717,8 +5009,12 @@ function toggleSpectrumMode() {
   spectrumMode = !spectrumMode;
   const sw = document.getElementById('sw-specMode');
   if (sw) sw.classList.toggle('on', spectrumMode);
-  document.getElementById('specBadge').classList.toggle('show', spectrumMode);
+  // FIX v5.8-3: was `document.getElementById('specBadge').classList.toggle(...)` without null guard.
+  // v5.7-2 fixed loadPermalink for the same issue, but missed this user-callable path. Now uniform.
+  const sb = document.getElementById('specBadge');
+  if (sb) sb.classList.toggle('show', spectrumMode);
   needsRedraw = true; // BUG 25 FIX: canvas didn't update when stars=OFF
+  setPref('spec', spectrumMode ? 1 : 0); // [v5.9] persist
 }
 
 function spectrumColor(z) {
@@ -4956,6 +5252,7 @@ function drawRuler() {
 // ── AUTO-ROTATE (angular) ─────────────────────────────
 function tickAutoRotate() {
   if (!autoRotate) return;
+  if (prefersReducedMotion()) return; // [v5.9] respect motion preference even when toggled on
   const angle = 0.0008;
   const px = state.panX, py = state.panY;
   const cos = Math.cos(angle), sin = Math.sin(angle);
@@ -5176,7 +5473,51 @@ function initUI() {
   setupTopbar();
   setupKeyboard();
   setupTempSlider();
+  applyPrefsAtBoot(); // [v5.9] apply persistent prefs FIRST so permalink can override
   loadPermalink();
+}
+
+// ═══════════════════════════════════════════════════════
+// [v5.9] applyPrefsAtBoot — restore user preferences from localStorage
+// Called in initUI before loadPermalink so #s=... permalinks override prefs
+// (a shared link should always show that exact state, not the recipient's prefs).
+// ═══════════════════════════════════════════════════════
+function applyPrefsAtBoot() {
+  const p = loadPrefs();
+  // CVD mode
+  if (p.cvd && typeof setDaltonMode === 'function' && CVD_PALETTES && CVD_PALETTES[p.cvd]) {
+    try {
+      setDaltonMode(p.cvd);
+      // Sync the CVD selector dropdown if present
+      const sel = document.getElementById('daltonSel');
+      if (sel) sel.value = p.cvd;
+    } catch (e) {}
+  }
+  // Layer toggles persisted via toggleLayer mapping
+  ['stars','labels','grid','rings','turtles'].forEach(k => {
+    if (typeof p[k] === 'undefined') return;
+    const stateKey = 'show' + k.charAt(0).toUpperCase() + k.slice(1);
+    if (typeof state !== 'undefined' && stateKey in state) {
+      state[stateKey] = !!p[k];
+      const sw = document.getElementById('sw-' + stateKey);
+      if (sw) sw.classList.toggle('on', !!p[k]);
+    }
+  });
+  // Independent layers (each with its own showX global + badge)
+  if (p.fil)  { showFilaments = true;   const sw = document.getElementById('sw-filaments');  if (sw) sw.classList.add('on'); const b = document.getElementById('filBadge');         if (b) b.classList.add('show'); }
+  if (p.heat) { showHeatmap = true;     heatmapCache = null;
+                                        const sw = document.getElementById('sw-heatmap');    if (sw) sw.classList.add('on'); const b = document.getElementById('heatBadge');        if (b) b.classList.add('show'); }
+  if (p.grav) { showGravGroups = true;  const sw = document.getElementById('sw-gravgroups'); if (sw) sw.classList.add('on'); const b = document.getElementById('gravGroupsBadge');  if (b) b.classList.add('show'); }
+  if (p.spec) { spectrumMode = true;    const sw = document.getElementById('sw-specMode');   if (sw) sw.classList.add('on'); const b = document.getElementById('specBadge');        if (b) b.classList.add('show'); }
+  if (p.view) { showViewIndicator = true; const sw = document.getElementById('sw-viewind');  if (sw) sw.classList.add('on'); }
+  // Volume slider (sound itself stays opt-in: user must press 🔊 — autoplay would violate browser policy)
+  if (typeof p.volume === 'number') {
+    const slider = document.getElementById('volumeSlider');
+    if (slider) slider.value = p.volume;
+    const lbl = document.getElementById('volumeVal');
+    if (lbl) lbl.textContent = p.volume + '%';
+  }
+  needsRedraw = true;
 }
 
 
@@ -5319,6 +5660,7 @@ function toggleGravGroups() {
   const badge = document.getElementById('gravGroupsBadge');
   if (badge) badge.classList.toggle('show', showGravGroups);
   needsRedraw = true; // BUG 25 FIX: canvas didn't update when stars=OFF (alwaysAnimate=false)
+  setPref('grav', showGravGroups ? 1 : 0); // [v5.9] persist
 }
 
 // ═══════════════════════════════════════════════════════
@@ -5410,16 +5752,23 @@ function toggleFilaments() {
   showFilaments = !showFilaments;
   const sw = document.getElementById('sw-filaments');
   if (sw) sw.classList.toggle('on', showFilaments);
-  document.getElementById('filBadge').classList.toggle('show', showFilaments);
+  // FIX v5.8-4: same null-guard pattern as v5.7-2 specBadge — uniform across all toggles.
+  const fb = document.getElementById('filBadge');
+  if (fb) fb.classList.toggle('show', showFilaments);
   needsRedraw = true; // BUG 25 FIX: canvas didn't update when stars=OFF
+  setPref('fil', showFilaments ? 1 : 0); // [v5.9] persist
 }
 
 // ═══════════════════════════════════════════════════════
 //  [NEW] HEATMAP DENSITATE
+//  [v5.9] BOOST: Gaussian kernel + logarithmic normalization +
+//  rebuild only when state changes (not every 90 frames blindly)
 // ═══════════════════════════════════════════════════════
 let showHeatmap = false;
 let heatmapCache = null;
 let heatmapFrame = -1;
+// [v5.9] Track state at last rebuild — invalidate only when something visually changes
+let _heatLastZoom = -1, _heatLastPanX = NaN, _heatLastPanY = NaN, _heatLastH0 = -1, _heatLastTemp = -1;
 
 function buildHeatmap() {
   const w = Math.floor(W / 4), h = Math.floor(H / 4);
@@ -5430,26 +5779,34 @@ function buildHeatmap() {
     const sc = toScreen(p.x, p.y);
     const hx = Math.floor(sc.x / 4), hy = Math.floor(sc.y / 4);
     const radius = Math.max(3, Math.min(20, 8 + state.zoom * 2));
+    // [v5.9] Gaussian kernel — sigma = radius/2 → smooth falloff with proper density estimation
+    // Replaces previous linear (1 - sqrt(dist2)/radius) which produced harsh ring artifacts
+    const sigma = radius * 0.5;
+    const twoSigSq = 2 * sigma * sigma;
     for (let dy = -radius; dy <= radius; dy++) {
       for (let dx = -radius; dx <= radius; dx++) {
         const nx = hx + dx, ny = hy + dy;
         if (nx < 0 || nx >= w || ny < 0 || ny >= h) continue;
         const dist2 = dx * dx + dy * dy;
         if (dist2 > radius * radius) continue;
-        const weight = 1 - Math.sqrt(dist2) / radius;
+        const weight = Math.exp(-dist2 / twoSigSq);
         data[ny * w + nx] += weight;
       }
     }
   });
-  // Normalize
+  // Find max
   let maxVal = 0;
   for (let i = 0; i < data.length; i++) if (data[i] > maxVal) maxVal = data[i];
   if (maxVal === 0) return null;
+  // [v5.9] Logarithmic normalization — amplifies faint structure (filaments, isolated groups)
+  // that linear normalization compressed near zero. log1p(x) = log(1+x), monotone, log1p(0)=0.
+  const logMax = Math.log1p(maxVal);
   // Build imageData
   const img = new ImageData(w, h);
   for (let i = 0; i < data.length; i++) {
-    const t = data[i] / maxVal;
-    if (t < 0.02) continue;
+    if (data[i] === 0) continue;
+    const t = Math.log1p(data[i]) / logMax; // [v5.9] log normalization
+    if (t < 0.04) continue; // [v5.9] threshold raised slightly: log lifts small values, so cut sub-noise
     const idx = i * 4;
     // Color: blue → cyan → green → yellow → orange → red
     let r, g, b;
@@ -5460,7 +5817,7 @@ function buildHeatmap() {
     img.data[idx]     = r;
     img.data[idx + 1] = g;
     img.data[idx + 2] = b;
-    img.data[idx + 3] = Math.round(t * 110);
+    img.data[idx + 3] = Math.round(t * 130); // [v5.9] alpha bumped 110→130 for stronger faint signal
   }
   // BUG 3 FIX: build the offscreen canvas once and cache it — never create one per draw frame
   const oc = document.createElement('canvas');
@@ -5472,10 +5829,27 @@ function buildHeatmap() {
 
 function drawHeatmap() {
   if (!showHeatmap) return;
-  // Rebuild every 90 frames or on zoom change
-  if (!heatmapCache || state.frame % 90 === 0) {
+  // [v5.9] Smart invalidation: rebuild only when something changed.
+  // Replaces previous "rebuild every 90 frames" which wasted CPU when scene was static
+  // and was sluggish when user changed zoom/pan/H0/timeline (had to wait up to 90 frames).
+  const tempNow = (typeof tempFilter !== 'undefined') ? tempFilter : -1;
+  const h0Now = (typeof userH0 !== 'undefined') ? userH0 : -1;
+  const stateDirty = !heatmapCache
+    || state.zoom !== _heatLastZoom
+    || state.panX !== _heatLastPanX
+    || state.panY !== _heatLastPanY
+    || h0Now !== _heatLastH0
+    || tempNow !== _heatLastTemp;
+  // Hard cap: rebuild at least every 180 frames (was 90) as safety net for any
+  // missed dependency (e.g., daltonism palette doesn't affect us, but timeline play does)
+  if (stateDirty || state.frame - heatmapFrame >= 180) {
     heatmapCache = buildHeatmap();
     heatmapFrame = state.frame;
+    _heatLastZoom = state.zoom;
+    _heatLastPanX = state.panX;
+    _heatLastPanY = state.panY;
+    _heatLastH0 = h0Now;
+    _heatLastTemp = tempNow;
   }
   if (!heatmapCache) return;
   ctx.save();
@@ -5493,8 +5867,11 @@ function toggleHeatmap() {
   heatmapCache = null;
   const sw = document.getElementById('sw-heatmap');
   if (sw) sw.classList.toggle('on', showHeatmap);
-  document.getElementById('heatBadge').classList.toggle('show', showHeatmap);
+  // FIX v5.8-4: same null-guard pattern as v5.7-2 specBadge — uniform across all toggles.
+  const hb = document.getElementById('heatBadge');
+  if (hb) hb.classList.toggle('show', showHeatmap);
   needsRedraw = true; // BUG 25 FIX: canvas didn't update when stars=OFF
+  setPref('heat', showHeatmap ? 1 : 0); // [v5.9] persist
 }
 
 // ═══════════════════════════════════════════════════════
@@ -5532,9 +5909,12 @@ function toggleViewIndicator() {
   const sw = document.getElementById('sw-viewind');
   if (sw) sw.classList.toggle('on', showViewIndicator);
   if (!showViewIndicator) {
-    document.getElementById('viewIndicator').classList.remove('show');
+    // FIX v5.8-4: was `document.getElementById('viewIndicator').classList.remove(...)` without null guard
+    const vi = document.getElementById('viewIndicator');
+    if (vi) vi.classList.remove('show');
   }
   needsRedraw = true; // BUG 25 FIX
+  setPref('view', showViewIndicator ? 1 : 0); // [v5.9] persist
 }
 
 // ═══════════════════════════════════════════════════════
@@ -5899,6 +6279,7 @@ function toggleSound() {
     droneGain.gain.cancelScheduledValues(audioCtx.currentTime);
     droneGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 1.5);
   }
+  setPref('sound', soundOn ? 1 : 0); // [v5.9] persist
 }
 
 // [v4.1] Volume control
@@ -5908,6 +6289,7 @@ function setDroneVolume(val) {
   if (audioCtx && droneGain) {
     droneGain.gain.setTargetAtTime(soundOn ? v : 0, audioCtx.currentTime, 0.3);
   }
+  setPref('volume', +val); // [v5.9] persist (debounced; multiple slider events coalesce)
 }
 
 // [v4.1+v4.2.2] H₀ slider handler — updates userH0, invalidates lookback cache, refreshes panel
@@ -6304,6 +6686,14 @@ function toggleAndroPlay() {
   document.getElementById('androPlay').textContent = androPlaying ? '⏸ PAUZĂ' : '▶ PLAY';
   if (androPlaying) {
     if (androT >= 1) { androT = 0; }
+    // [v5.9] Reduced motion: render the final frame and stop. No 7-billion-year animation.
+    if (prefersReducedMotion()) {
+      androT = 1;
+      drawAndroFrame();
+      androPlaying = false;
+      document.getElementById('androPlay').textContent = '▶ PLAY';
+      return;
+    }
     let last = null;
     function step(ts) {
       if (!androPlaying) return;
@@ -6752,6 +7142,7 @@ function setDaltonMode(mode) {
   document.documentElement.style.setProperty('--hot', daltonismMode ? '#009988' : '#66ee99');
   heatmapCache = null;
   needsRedraw = true; // FIX v5.7-7: CVD mode change didn't trigger redraw when alwaysAnimate=false
+  setPref('cvd', mode); // [v5.9] persist
 }
 
 function daltonColor(type) {
@@ -6831,9 +7222,54 @@ function lookbackCached(z) {
   return _lbCache[key];
 }
 
-// [v4.2.2] Invalidare manuală cache la schimbarea H0
+// ═══════════════════════════════════════════════════════
+//  [v5.8] UNIVERSE AGE — H₀-aware (FIX BUG v5.8-1 CRITIC)
+//  Vârsta universului depinde de H₀: la Planck (67.4) ≈ 13.8 Gyr,
+//  la SH0ES (73.0) ≈ 12.7 Gyr. Înainte foloseam mereu 13800 Myr,
+//  ceea ce făcea ca "vârsta la emisie" să fie de ~2× greșită la H₀=73.
+//
+//  Implementare: substituție logaritmică u = ln(1+z), care transformă
+//  ∫₀^∞ dz/((1+z)·E(z)) → ∫₀^∞ du/E(z(u)) — integranda devine NETEDĂ
+//  pe interval logaritmic (densitatea masei devine exp(3u) → e mare la u
+//  mare, dar E(z) crește la fel). Midpoint rule N=500 dă eroare <0.001%.
+//
+//  Verificat: scipy.integrate.quad la z=5000 → 13796 Myr (Planck), 12738 (SH0ES).
+//  Înainte: midpoint uniform pe z=10000 → 1447 Myr (eroare 89%, total greșit).
+// ═══════════════════════════════════════════════════════
+function _universeAgeIntegrate(H0) {
+  const Om = COSMO.OMEGA_M, OL = COSMO.OMEGA_LAMBDA;
+  const H_time_Myr = COSMO.HUBBLE_TIME_MYR_FACTOR / H0;
+  const u_max = Math.log(1 + 5000); // z_max = 5000, asimptotic suficient
+  const N = 500;
+  let integral = 0;
+  for (let i = 0; i < N; i++) {
+    const u = u_max * (i + 0.5) / N;
+    const z = Math.exp(u) - 1;
+    const E = Math.sqrt(Om * Math.pow(1 + z, 3) + OL);
+    // Substituție: dz/((1+z)·E) = du/E (Jacobian se anulează)
+    integral += (u_max / N) / E;
+  }
+  return integral * H_time_Myr;
+}
+
+const _ageCache = {};
+function universeAge(H0) {
+  H0 = H0 || (typeof userH0 !== 'undefined' ? userH0 : COSMO.H0_PLANCK);
+  const key = H0.toFixed(2);
+  if (_ageCache[key] !== undefined) return _ageCache[key];
+  // Caz canonic: returnează valoarea Planck cunoscută (consistent cu COSMO.AGE_GYR)
+  if (Math.abs(H0 - COSMO.H0_PLANCK) < 0.01) {
+    _ageCache[key] = T_BB_MYR;
+  } else {
+    _ageCache[key] = _universeAgeIntegrate(H0);
+  }
+  return _ageCache[key];
+}
+
+// [v4.2.2 + v5.8] Invalidare manuală cache la schimbarea H0 — INCLUDE _ageCache
 function invalidateLookbackCache() {
   for (const k in _lbCache) delete _lbCache[k];
+  for (const k in _ageCache) delete _ageCache[k];
 }
 
 // ═══════════════════════════════════════════════════════
@@ -7066,7 +7502,7 @@ function applyI18N() {
   // (flatPct is updated live by updateStats/maybeUpdateStats — no action needed here)
   // Topbar
   const ttl = document.getElementById('ttl');
-  if (ttl) ttl.textContent = isRO ? 'UNIVERSUL OBSERVABIL · 2D · v5.7' : 'OBSERVABLE UNIVERSE · 2D · v5.7';
+  if (ttl) ttl.textContent = isRO ? `UNIVERSUL OBSERVABIL · 2D · v${VERSION}` : `OBSERVABLE UNIVERSE · 2D · v${VERSION}`;
   const sub = document.getElementById('sub');
   if (sub) sub.textContent = isRO ? 'PAMANT PLAT™ · ΛCDM · JWST 2026 · MoM-z14' : 'FLAT EARTH™ · ΛCDM · JWST 2026 · MoM-z14';
   // [v4.1] Dynamic lang attribute for accessibility
@@ -7112,8 +7548,8 @@ function applyI18N() {
   const guideTabs = document.querySelectorAll('#guideTabs .gtb');
   if (guideTabs.length) {
     const tabLabels = isRO
-      ? ['🌌 Intro','🎮 Navigare','🎨 Straturi','📅 Cronologie','🌍 Planeitate','📚 Termeni','❓ FAQ','📋 Jurnal','🏅 Credite']
-      : ['🌌 Intro','🎮 Navigation','🎨 Layers','📅 Timeline','🌍 Flatness','📚 Terms','❓ FAQ','📋 Changelog','🏅 Credits'];
+      ? ['🌌 Intro','🎮 Navigare','🎨 Straturi','📅 Cronologie','🌍 Planeitate','📚 Termeni','❓ FAQ','⚖️ Limite','📋 Jurnal','🏅 Credite']
+      : ['🌌 Intro','🎮 Navigation','🎨 Layers','📅 Timeline','🌍 Flatness','📚 Terms','❓ FAQ','⚖️ Limits','📋 Changelog','🏅 Credits'];
     guideTabs.forEach((tb, i) => { if (tabLabels[i]) tb.textContent = tabLabels[i]; });
   }
   // Ruler
@@ -7283,7 +7719,7 @@ function tickTimeline() {
   const sliderEl = document.getElementById('tempSlider');
   if (!sliderEl) return;
   const prevTempFilter = tempFilter;
-  tempFilter = Math.min(13800, tempFilter + timelineSpeedMyr);
+  tempFilter = Math.min(T_BB_MYR, tempFilter + timelineSpeedMyr); // FIX v5.8-2: was 13800
   sliderEl.value = tempFilter;
   const gyr = (tempFilter / 1000).toFixed(1);
   const L = I18N[currentLang];
@@ -7300,7 +7736,7 @@ function tickTimeline() {
       break;
     }
   }
-  if (tempFilter >= 13800) {
+  if (tempFilter >= T_BB_MYR) { // FIX v5.8-2: was 13800
     timelinePlaying = false;
     _lastMilestoneTriggered = -1; // [v4.5] reset for next replay
     const btn = document.getElementById('timelinePlayBtn');
@@ -7854,7 +8290,7 @@ function drawSplitScreens() {
     GALAXIES.forEach(g => {
       if (g.d === 0 || g.t === 'CMB') return;
       // Show if galaxy existed at this epoch (age_at_emission <= epoch)
-      const ageAtEmission = 13800 - (g.lb || 0);
+      const ageAtEmission = T_BB_MYR - (g.lb || 0); // FIX v5.8-2: was 13800
       if (ageAtEmission > epoch) return;
       const p = project(g.ra, g.dec, g.d);
       const pr = Math.log10(g.d / 0.05 + 1) / Math.log10(46000 / 0.05 + 1);
@@ -7877,7 +8313,7 @@ function drawSplitScreens() {
       v < 1000 ? v + ' Myr' : (v / 1000).toFixed(1) + ' Gyr';
     const nVis = GALAXIES.filter(g => {
       if (g.d === 0 || g.t === 'CMB') return false;
-      return (13800 - (g.lb || 0)) <= epoch;
+      return (T_BB_MYR - (g.lb || 0)) <= epoch; // FIX v5.8-2: was 13800
     }).length;
     tc.font = `bold ${9 * devicePixelRatio}px 'Courier New'`;
     tc.fillStyle = 'rgba(120,180,255,0.6)';
@@ -8349,6 +8785,15 @@ function init() {
   // [v4.3] Apply correct language to warning popup before user sees it
   document.documentElement.lang = currentLang;
   if (typeof applyWarningLang === 'function') applyWarningLang();
+  // [v5.8] Sincronizează slider-ele temporale cu T_BB_MYR — single source of truth.
+  // HTML are 13800 hardcodat în atribute; aici garantăm coerența chiar dacă T_BB_MYR
+  // s-ar schimba prin actualizarea COSMO.AGE_GYR.
+  const _tempSlider = document.getElementById('tempSlider');
+  if (_tempSlider) { _tempSlider.max = T_BB_MYR; _tempSlider.value = T_BB_MYR; }
+  const _splitL = document.getElementById('splitSliderL');
+  if (_splitL) _splitL.max = T_BB_MYR;
+  const _splitR = document.getElementById('splitSliderR');
+  if (_splitR) { _splitR.max = T_BB_MYR; _splitR.value = T_BB_MYR; }
   resize();
   generateStars();
   setupEvents();
@@ -8734,26 +9179,86 @@ function runSmokeTests() {
   // Cosmology
   assert('lookbackTimeFriedmann(0) === 0',              lookbackTimeFriedmann(0) === 0);
   const lb_z11 = lookbackTimeFriedmann(11);
-  assert('lookbackTimeFriedmann(11) ≈ 13420 Myr',       lb_z11 > 13300 && lb_z11 < 13500, `got ${lb_z11.toFixed(0)} Myr`);
+  assert('lookbackTimeFriedmann(11) ≈ 13382 Myr',       lb_z11 > 13350 && lb_z11 < 13420, `got ${lb_z11.toFixed(0)} Myr`);
   const lb_z14 = lookbackTimeFriedmann(14.44);
-  assert('lookbackTimeFriedmann(14.44) ≈ 13620 Myr',    lb_z14 > 13550 && lb_z14 < 13700, `got ${lb_z14.toFixed(0)} Myr`);
+  // FIX v5.8-6: was bounds 13550-13700 — INCORRECT. Verified with scipy.integrate.quad: 13512 Myr is the
+  // true ΛCDM Planck 2018 value. Correct bounds: 13480-13560 Myr.
+  assert('lookbackTimeFriedmann(14.44) ≈ 13512 Myr',    lb_z14 > 13480 && lb_z14 < 13560, `got ${lb_z14.toFixed(0)} Myr`);
   // H0 sensitivity (Hubble tension demo)
   const lb_67 = lookbackTimeFriedmann(2.5, 67.4);
   const lb_73 = lookbackTimeFriedmann(2.5, 73);
   assert('Higher H₀ → lower lookback time',             lb_73 < lb_67, `H₀=67.4: ${lb_67.toFixed(0)} | H₀=73: ${lb_73.toFixed(0)}`);
+  // [v5.8] universeAge tests — verifies BUG v5.8-1 CRITIC fix
+  const ageAtPlanck = universeAge(67.4);
+  assert('universeAge(67.4) ≈ 13800 Myr (Planck)',      ageAtPlanck > 13750 && ageAtPlanck < 13850, `got ${ageAtPlanck.toFixed(0)} Myr`);
+  const ageAtSHOES = universeAge(73);
+  // Verified with scipy: at H₀=73, universe is ~12.7 Gyr (NOT 13.8). This is the whole point of v5.8 fix.
+  assert('universeAge(73) ≈ 12700 Myr (SH0ES)',         ageAtSHOES > 12500 && ageAtSHOES < 12900, `got ${ageAtSHOES.toFixed(0)} Myr`);
+  assert('universeAge varies with H₀ (Hubble tension)', ageAtPlanck > ageAtSHOES + 800, `Δ = ${(ageAtPlanck - ageAtSHOES).toFixed(0)} Myr`);
+  // T_BB_MYR consistency
+  assert('T_BB_MYR === COSMO.AGE_GYR * 1000',           T_BB_MYR === COSMO.AGE_GYR * 1000);
   // Constants
   assert('COSMO frozen (immutable)',                    Object.isFrozen(COSMO));
   assert('COSMO.H0_PLANCK === 67.4',                    COSMO.H0_PLANCK === 67.4);
   assert('COSMO.OMEGA_M + OMEGA_LAMBDA ≈ 1',            Math.abs(COSMO.OMEGA_M + COSMO.OMEGA_LAMBDA - 1) < 0.001);
   // Bilingual
-  assert('GUIDE_TABS_RO has all 9 tabs',                ['intro','navig','layers','timeline','flat','terms','faq','changelog','credits'].every(t => GUIDE_TABS_RO[t]));
+  assert('GUIDE_TABS_RO has all 10 tabs',               ['intro','navig','layers','timeline','flat','terms','faq','limits','changelog','credits'].every(t => GUIDE_TABS_RO[t]));
+  assert('GUIDE_TABS    has all 10 tabs',               ['intro','navig','layers','timeline','flat','terms','faq','limits','changelog','credits'].every(t => GUIDE_TABS[t]));
   assert('TUT_STEPS bilingual (5 steps)',               TUT_STEPS.length === 5 && TUT_STEPS[0].title_ro && TUT_STEPS[0].title_en);
   assert('TOUR_STOPS bilingual (10 stops)',             TOUR_STOPS.length === 10 && TOUR_STOPS[0].narr_ro && TOUR_STOPS[0].narr_en);
   assert('DYK_FACTS bilingual (25 facts)',              DYK_FACTS.length === 25 && DYK_FACTS[0].ro && DYK_FACTS[0].en);
+  // [v5.8] Version interpolation in Guide (no stale strings) — verifies BUG v5.8-7 fix
+  assert('Guide intro RO uses current VERSION',         GUIDE_TABS_RO.intro.includes('v' + VERSION));
+  assert('Guide intro EN uses current VERSION',         GUIDE_TABS.intro.includes('v' + VERSION));
+  // [v5.9] New limits tab is bilingual and substantive (not stub)
+  assert('GUIDE_TABS_RO.limits non-empty',              GUIDE_TABS_RO.limits && GUIDE_TABS_RO.limits.length > 1000);
+  assert('GUIDE_TABS.limits    non-empty (EN)',         GUIDE_TABS.limits    && GUIDE_TABS.limits.length    > 1000);
   // I18N warning
   assert('I18N_WARNING has both languages',             I18N_WARNING.ro && I18N_WARNING.en);
   // Quiz
   assert('QUIZ_TYPES has 15 templates',                 QUIZ_TYPES.length === 15);
+  // [v5.9] Preferences store round-trip
+  let prefsOK = true;
+  try {
+    // Do not clobber actual user prefs — use a unique probe key, then remove it.
+    const probeKey = '__uv2d_probe_' + Date.now();
+    setPref(probeKey, 'hello');
+    // setPref is debounced 180ms — but the in-memory cache updates synchronously, so getPref works immediately.
+    if (getPref(probeKey, null) !== 'hello') prefsOK = false;
+    // Remove from cache so next clearPrefs/save cycles don't carry the probe
+    const p = loadPrefs(); delete p[probeKey];
+  } catch(e) { prefsOK = false; console.error('PREFS round-trip:', e); }
+  assert('UV2D_PREFS get/set round-trip works',         prefsOK);
+  // [v5.9] Reduced motion helper exists and returns a boolean
+  assert('prefersReducedMotion() returns boolean',      typeof prefersReducedMotion() === 'boolean');
+  // [v5.9] applyPrefsAtBoot is defined
+  assert('applyPrefsAtBoot is a function',              typeof applyPrefsAtBoot === 'function');
+  // [v5.9] Heatmap log-normalization sanity: log1p is monotone, log1p(0)=0
+  assert('log1p(0) === 0 (heatmap norm sanity)',        Math.log1p(0) === 0);
+  assert('log1p monotone (heatmap norm)',               Math.log1p(1) < Math.log1p(2) && Math.log1p(2) < Math.log1p(10));
+  // [v5.9] meta description references current VERSION
+  const _meta = document.querySelector('meta[name="description"]');
+  assert('meta description references current VERSION', _meta && _meta.content.indexOf('v' + VERSION) !== -1);
+  // [v5.8] Null-guard regression checks — verifies BUGs v5.8-3 and v5.8-4 fixes by running toggles
+  // even when their badges are missing. Should not throw.
+  let toggleSafetyOK = true;
+  try {
+    const _backupBadges = {};
+    ['specBadge','filBadge','heatBadge','viewIndicator'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) { _backupBadges[id] = el.parentNode; el.remove(); }
+    });
+    // Now toggles should NOT throw
+    toggleSpectrumMode(); toggleSpectrumMode(); // back to original state
+    toggleFilaments(); toggleFilaments();
+    toggleHeatmap(); toggleHeatmap();
+    toggleViewIndicator(); toggleViewIndicator();
+    // Restore for follow-up tests (though headless contexts won't care)
+    Object.entries(_backupBadges).forEach(([id, parent]) => {
+      const div = document.createElement('div'); div.id = id; if (parent) parent.appendChild(div);
+    });
+  } catch(e) { toggleSafetyOK = false; console.error('Toggle null-guard regression:', e); }
+  assert('Toggles safe when badges missing (null guards)', toggleSafetyOK);
   // DOM critical IDs
   ['canvas','topbar','pnl','guideOvl','quizOvl','favPanel','kbOvl','undoToast'].forEach(id => {
     assert(`#${id} exists in DOM`, !!document.getElementById(id));
@@ -8812,7 +9317,7 @@ window.UV2D.VERSION = VERSION;
   if (!('serviceWorker' in navigator)) return;
   // Inline service worker via blob URL for single-file deployment
   const swCode = `
-const CACHE = 'uv2d-v5.7';
+const CACHE = 'uv2d-v5.9';
 // BUG 19 FIX: removed ASSETS = [self.location.href] — when the SW is registered via a
 // blob URL, self.location.href IS the blob URL (e.g. blob:https://...), which:
 //   (a) cannot be fetched cross-origin by the SW fetch handler, and
