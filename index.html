@@ -6033,21 +6033,51 @@ function buildCurrentShareURL() {
 }
 
 /**
- * [v4.6] Load a QR code as Image via api.qrserver.com.
- * Returns Promise<HTMLImageElement> on success, null on failure (network/CORS/timeout).
+ * [v4.7] Generate a QR code LOCALLY (offline) using bundled qrcode.min.js (./vendor/).
+ * No third-party request anymore (replaces api.qrserver.com — keeps the app offline
+ * and stops leaking the share URL to a third party).
+ * Returns Promise<HTMLCanvasElement> on success, null on failure.
  * Posters degrade gracefully: if QR fails, just print URL as text.
  */
-function loadQRCodeImage(url, sizePx) {
+function _ensureQRCodeLib() {
   return new Promise((resolve) => {
-    const img = new Image();
-    img.crossOrigin = 'anonymous';
-    let done = false;
-    const finish = (val) => { if (!done) { done = true; resolve(val); } };
-    img.onload = () => finish(img);
-    img.onerror = () => finish(null);
-    setTimeout(() => finish(null), 5000); // 5s timeout
-    const apiURL = `https://api.qrserver.com/v1/create-qr-code/?size=${sizePx}x${sizePx}&format=png&margin=0&qzone=2&ecc=M&data=${encodeURIComponent(url)}`;
-    img.src = apiURL;
+    if (window.QRCode) return resolve(true);
+    const existing = document.querySelector('script[src*="qrcode.min.js"]');
+    if (existing) {
+      existing.addEventListener('load', () => resolve(!!window.QRCode));
+      existing.addEventListener('error', () => resolve(false));
+      return;
+    }
+    const s = document.createElement('script');
+    s.src = './vendor/qrcode.min.js';
+    s.onload = () => resolve(!!window.QRCode);
+    s.onerror = () => resolve(false);
+    document.head.appendChild(s);
+  });
+}
+function loadQRCodeImage(url, sizePx) {
+  return new Promise(async (resolve) => {
+    try {
+      const ok = await _ensureQRCodeLib();
+      if (!ok || !window.QRCode) return resolve(null);
+      const holder = document.createElement('div');
+      holder.style.cssText = 'position:absolute;left:-99999px;top:0';
+      document.body.appendChild(holder);
+      // davidshimjs QRCode renders synchronously into a <canvas>
+      new QRCode(holder, { text: url, width: sizePx, height: sizePx, correctLevel: QRCode.CorrectLevel.M });
+      const srcCanvas = holder.querySelector('canvas');
+      let outCanvas = null;
+      if (srcCanvas) {
+        outCanvas = document.createElement('canvas');
+        outCanvas.width = srcCanvas.width;
+        outCanvas.height = srcCanvas.height;
+        outCanvas.getContext('2d').drawImage(srcCanvas, 0, 0);
+      }
+      document.body.removeChild(holder);
+      resolve(outCanvas);
+    } catch (e) {
+      resolve(null);
+    }
   });
 }
 
