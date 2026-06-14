@@ -31,6 +31,7 @@
 </style>
 
 <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; worker-src 'self' blob:; script-src 'self' 'unsafe-inline' blob:; connect-src 'self'">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover,interactive-widget=resizes-content">
 <title>Observable Universe · 2D · v5.9 · Flat Earth Edition™</title>
 <meta name="description" content="2D map of the observable universe — 112 galaxies, 12 cosmic horizons, logarithmic scale. Quiz with leaderboard, LOD zoom, adaptive soundtrack, gravitational groups, permalink with full state. Satirical Flat Earth™ edition. JWST data up to z=14.44. v5.9 — UX & accessibility milestone: universal localStorage preferences (CVD, layers, sound, volume persist across sessions); prefers-reduced-motion respected in flyTo / Andromeda / autoRotate; new GUIDE tab 'Simulation Limits' (epistemic honesty); heatmap boost (logarithmic normalization + Gaussian kernel); zenodo.json metadata for academic archival.">
@@ -3641,7 +3642,7 @@ let dykIdx = Math.floor(Math.random() * DYK_FACTS.length);
 const GUIDE_TABS_RO = {
   intro: `
     <h3>🌌 Universul Observabil 2D v${VERSION} — Ediția Pământ Plat™</h3>
-    <p>Aceeași bază reală de date astronomice ca <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)">versiunea 3D</a>, dar proiectată pe un disc 2D — pentru cei care nu cred în sfere.</p>
+    <p>Aceeași bază reală de date astronomice ca <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)" rel="noopener noreferrer">versiunea 3D</a>, dar proiectată pe un disc 2D — pentru cei care nu cred în sfere.</p>
     <div class="gnote">✓ <strong>112 galaxii simulate</strong> cu coordonate RA/Dec reale, distanțe ΛCDM, date JWST până la z=14,44. 12 orizonturi cosmice. Planck 2018: H₀=67,4, Ω_m=0,315.</div>
     <h4>Proiecție azimutală echidistantă</h4>
     <p>Coordonatele RA/Dec sunt transpuse în 2D: centru = Calea Lactee, raza crește logaritmic până la orizontul CMB. Fiecare punct reflectă poziția reală pe sfera cerească.</p>
@@ -3735,7 +3736,7 @@ const GUIDE_TABS_RO = {
     <h4>De ce CEERS-93316 nu mai e la z~12?</h4>
     <p>Era candidat fotometric la z~16. Spectroscopia JWST (Fujimoto et al. 2023) a confirmat z≈4,9. Impostor cosmic corectat — afișat acum cu o notă educațională.</p>
     <h4>Există versiune 3D?</h4>
-    <p>Da! <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)">alexio.tf/universul-observabil-3d</a> — Three.js WebGL, navigație sferică, tururi ghidate, mod lungime de undă.</p>
+    <p>Da! <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)" rel="noopener noreferrer">alexio.tf/universul-observabil-3d</a> — Three.js WebGL, navigație sferică, tururi ghidate, mod lungime de undă.</p>
     <h4>Cum citez această lucrare?</h4>
     <p>Chiuță, Alexandru Ionuț (2026). <em>Universul Observabil 2D v${VERSION}</em>. ARES — Centrul STRING × ASFAN. alexio.tf. DOI: 10.5281/zenodo.PLACEHOLDER</p>`,
   limits: `
@@ -3747,7 +3748,7 @@ const GUIDE_TABS_RO = {
     <p>Doar <strong>112 galaxii</strong> apar pe hartă. Universul observabil conține estimat ~10<sup>11</sup> galaxii. Eșantionul a fost ales pentru lizibilitate pedagogică: obiecte celebre (Andromeda, M87, Coma BCG), recordurile JWST (MoM-z14, GN-z11), tipuri morfologice diverse (spirale, eliptice, quasari, blazari, EHZ). Nu e o reprezentare statistică a populației galactice.</p>
 
     <h4>2. Proiecție 2D azimutală echidistantă</h4>
-    <p>Coordonatele RA/Dec sunt 3D pe sfera cerească. Aplatizarea într-un disc 2D <strong>distorsionează inevitabil</strong> distanțele unghiulare la marginea hărții (orizontul sudic e mai întins decât cel ecuatorial). Convenție de design — versiunea <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)">3D</a> rezolvă asta cu Three.js sferic.</p>
+    <p>Coordonatele RA/Dec sunt 3D pe sfera cerească. Aplatizarea într-un disc 2D <strong>distorsionează inevitabil</strong> distanțele unghiulare la marginea hărții (orizontul sudic e mai întins decât cel ecuatorial). Convenție de design — versiunea <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)" rel="noopener noreferrer">3D</a> rezolvă asta cu Three.js sferic.</p>
 
     <h4>3. Scară logaritmică, nu liniară</h4>
     <p>Distanțele variază pe <strong>14 ordine de mărime</strong> (Calea Lactee la 0,1 Mly vs CMB la 45.600 Mly). Pe scară liniară, totul în afara Local Group ar fi un punct. Logaritmul comprimă spațiul vizual, dar <em>asta înseamnă că două galaxii apropiate vizual pe hartă pot fi extrem de departe în realitate</em>. Apasă <kbd>C</kbd> pentru comparator log/liniar.</p>
@@ -3892,7 +3893,7 @@ const GUIDE_TABS_RO = {
   credits: `
     <h3>🏅 Credite &amp; Surse</h3>
     <h4>Autor</h4>
-    <p><strong>Alexandru Ionuț Chiuță „Alexio"</strong> · <a href="https://ares.org.ro" target="_blank" style="color:var(--accent)">ARES</a> (Alianța pentru Reziliență, Exopolitică și Stranietăți — Centrul STRING × ASFAN) · <a href="https://alexio.tf" target="_blank" style="color:var(--accent)">alexio.tf</a></p>
+    <p><strong>Alexandru Ionuț Chiuță „Alexio"</strong> · <a href="https://ares.org.ro" target="_blank" style="color:var(--accent)" rel="noopener noreferrer">ARES</a> (Alianța pentru Reziliență, Exopolitică și Stranietăți — Centrul STRING × ASFAN) · <a href="https://alexio.tf" target="_blank" style="color:var(--accent)" rel="noopener noreferrer">alexio.tf</a></p>
     <h4>Surse de date</h4>
     <table>
       <tr><th>Sursa</th><th>Utilizare</th></tr>
@@ -3915,7 +3916,7 @@ const GUIDE_TABS_RO = {
 const GUIDE_TABS = {
   intro: `
     <h3>🌌 Observable Universe 2D v${VERSION} — Flat Earth Edition™</h3>
-    <p>The same real astronomical database as the <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)">3D version</a>, but projected onto a 2D disc — for those who don't believe in spheres.</p>
+    <p>The same real astronomical database as the <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)" rel="noopener noreferrer">3D version</a>, but projected onto a 2D disc — for those who don't believe in spheres.</p>
     <div class="gnote">✓ <strong>112 simulated galaxies</strong> with real RA/Dec coordinates, ΛCDM distances, JWST data up to z=14.44. 12 cosmic horizons. Planck 2018: H₀=67.4, Ω_m=0.315.</div>
     <h4>Azimuthal equidistant projection</h4>
     <p>RA/Dec coordinates are transposed to 2D: center = Milky Way, radius grows logarithmically to the CMB horizon. Each point reflects the real position on the celestial sphere.</p>
@@ -4009,7 +4010,7 @@ const GUIDE_TABS = {
     <h4>Why is CEERS-93316 no longer at z~12?</h4>
     <p>It was a photometric candidate at z~16. JWST spectroscopy (Fujimoto et al. 2023) confirmed z≈4.9. Corrected cosmic impostor — now displayed with an educational note.</p>
     <h4>Is there a 3D version?</h4>
-    <p>Yes! <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)">alexio.tf/universul-observabil-3d</a> — Three.js WebGL, spherical navigation, guided tours, wavelength mode.</p>
+    <p>Yes! <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)" rel="noopener noreferrer">alexio.tf/universul-observabil-3d</a> — Three.js WebGL, spherical navigation, guided tours, wavelength mode.</p>
     <h4>How do I cite this work?</h4>
     <p>Chiuță, Alexandru Ionuț (2026). <em>Observable Universe 2D v${VERSION}</em>. ARES — Centrul STRING × ASFAN. alexio.tf. DOI: 10.5281/zenodo.PLACEHOLDER</p>`,
   limits: `
@@ -4021,7 +4022,7 @@ const GUIDE_TABS = {
     <p>Only <strong>112 galaxies</strong> appear on the map. The observable universe contains an estimated ~10<sup>11</sup> galaxies. The sample was chosen for pedagogical legibility: famous objects (Andromeda, M87, Coma BCG), JWST records (MoM-z14, GN-z11), diverse morphological types (spirals, ellipticals, quasars, blazars, EHZ). It is NOT a statistical representation of the galactic population.</p>
 
     <h4>2. 2D azimuthal equidistant projection</h4>
-    <p>RA/Dec coordinates are 3D on the celestial sphere. Flattening to a 2D disc <strong>inevitably distorts</strong> angular distances near the map edge (the southern horizon stretches more than the equatorial). Design convention — the <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)">3D version</a> resolves this with spherical Three.js.</p>
+    <p>RA/Dec coordinates are 3D on the celestial sphere. Flattening to a 2D disc <strong>inevitably distorts</strong> angular distances near the map edge (the southern horizon stretches more than the equatorial). Design convention — the <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)" rel="noopener noreferrer">3D version</a> resolves this with spherical Three.js.</p>
 
     <h4>3. Logarithmic, not linear, scale</h4>
     <p>Distances span <strong>14 orders of magnitude</strong> (Milky Way at 0.1 Mly vs CMB at 45,600 Mly). On a linear scale, everything beyond the Local Group would be a single dot. The logarithm compresses visual space — but <em>this means two galaxies that look close on the map can be enormously far apart in reality</em>. Press <kbd>C</kbd> for the log/linear comparator.</p>
@@ -4188,7 +4189,7 @@ const GUIDE_TABS = {
   credits: `
     <h3>🏅 Credits &amp; Sources</h3>
     <h4>Author</h4>
-    <p><strong>Alexandru Ionuț Chiuță "Alexio"</strong> · <a href="https://ares.org.ro" target="_blank" style="color:var(--accent)">ARES</a> (Alliance for Resilience, Exopolitics &amp; Strangeness — Centrul STRING × ASFAN) · <a href="https://alexio.tf" target="_blank" style="color:var(--accent)">alexio.tf</a></p>
+    <p><strong>Alexandru Ionuț Chiuță "Alexio"</strong> · <a href="https://ares.org.ro" target="_blank" style="color:var(--accent)" rel="noopener noreferrer">ARES</a> (Alliance for Resilience, Exopolitics &amp; Strangeness — Centrul STRING × ASFAN) · <a href="https://alexio.tf" target="_blank" style="color:var(--accent)" rel="noopener noreferrer">alexio.tf</a></p>
     <h4>Data sources</h4>
     <table>
       <tr><th>Source</th><th>Usage</th></tr>
@@ -4587,7 +4588,7 @@ const I18N_WARNING = {
     title: '🌍 Universul Observabil<br>Ediția Pământ Plat™',
     p1: 'Bine ai venit la <strong>vizualizarea 2D a Universului Observabil</strong> — reproiectat convenabil pe un disc plat pentru cei care resping geometria sferică.',
     p2: 'Aceeași bază de date: <strong>112 galaxii</strong>, date JWST până la z=14,44, 12 orizonturi cosmice. Toate aplatizate pe un singur plan.',
-    p3: '⚠ Această aplicație este <strong>satirică și educațională</strong>. Galaxiile și distanțele sunt reale. Pământul plat nu este.<br>Dacă preferi știința → <a href="https://alexio.tf/universul-observabil-3d" style="color:var(--accent)" target="_blank">versiunea 3D originală ↗</a>',
+    p3: '⚠ Această aplicație este <strong>satirică și educațională</strong>. Galaxiile și distanțele sunt reale. Pământul plat nu este.<br>Dacă preferi știința → <a href="https://alexio.tf/universul-observabil-3d" style="color:var(--accent)" target="_blank" rel="noopener noreferrer">versiunea 3D originală ↗</a>',
     footer: 'Date cosmologice: ΛCDM, H₀=67,4 km/s/Mpc, Ω_m=0,315. Catalog actualizat mai 2026. Bolta Cerească, Zidul de Gheață și Conspirația NASA sunt fictive. alexio.tf · Printre Inteligențe 2026',
     btn: '✓ AM ÎNȚELES — INTRU ÎN UNIVERS'
   },
@@ -4596,7 +4597,7 @@ const I18N_WARNING = {
     title: '🌍 Observable Universe<br>Flat Earth Edition™',
     p1: 'Welcome to the <strong>2D visualization of the Observable Universe</strong> — redesigned on a convenient disc for those who reject spherical geometry.',
     p2: 'Same database: <strong>112 galaxies</strong>, JWST data up to z=14.44, 12 cosmic horizons. All flattened onto a single plane.',
-    p3: '⚠ This application is <strong>satirical and educational</strong>. The galaxies and distances are real. The flat Earth is not.<br>If you prefer science → <a href="https://alexio.tf/universul-observabil-3d" style="color:var(--accent)" target="_blank">original 3D version ↗</a>',
+    p3: '⚠ This application is <strong>satirical and educational</strong>. The galaxies and distances are real. The flat Earth is not.<br>If you prefer science → <a href="https://alexio.tf/universul-observabil-3d" style="color:var(--accent)" target="_blank" rel="noopener noreferrer">original 3D version ↗</a>',
     footer: 'Cosmological data: ΛCDM, H₀=67.4 km/s/Mpc, Ω_m=0.315. Catalog updated May 2026. The Sky Dome, Ice Wall and NASA Conspiracy are fictional. alexio.tf · Among Intelligences 2026',
     btn: '✓ UNDERSTOOD — ENTERING THE UNIVERSE'
   }
