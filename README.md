@@ -1,0 +1,54 @@
+# Observable Universe 2D · v5.9 · Flat Earth Edition™
+
+Harta 2D interactivă a universului observabil, pe scară logaritmică, cu 112 galaxii — în ediție satirică „Pământ Plat”.
+
+**Live:** https://chiuta.github.io/Universul-Observabil-2D/
+
+![Captura de ecran](screenshot.png)
+
+## Ce este
+
+O aplicație single-file (`index.html`, canvas + JavaScript) care afișează universul observabil ca disc plat, pe scară logaritmică, cu 112 galaxii, orizonturi cosmice și date JWST (catalogul din aplicație este datat mai 2026; recordul afișat: MoM-z14, z=14.44). Ediția „Pământ Plat™” este umoristică/satirică, iar aplicația include și o secțiune care demontează teoria Pământului plat și una despre limitele simulării.
+
+## Funcții
+
+- Navigare: zoom (scroll, +/-), deplasare, reset vizualizare, anulare navigare (Z), meniu lateral.
+- Straturi vizuale (etichete, grilă, inele, filamente, heatmap, grupuri gravitaționale, mod spectru etc.), cu corecții pentru daltonism (deuteranopie, protanopie, tritanopie, acromatopsie).
+- Căutare galaxie, galaxie aleatoare, favorite (cu export CSV), export CSV al celor 112 galaxii.
+- Tur ghidat, Quiz cosmic cu clasament local, „Puterile lui 10”, comparator de scară, ecran împărțit, simulare Andromeda, „Știai că…”, instrument de măsurare, statistici.
+- Coloană sonoră adaptivă (Web Audio) cu activare/dezactivare și volum.
+- Export PNG și imprimare; permalink cu starea completă (`#s=...`).
+- Ghid integrat: Intro, Navigare, Straturi vizuale, Cronologia recordurilor de distanță, Pământ plat, Glosar, Întrebări frecvente, Limitele simulării, Istoric versiuni, Credite și surse.
+- Interfață bilingvă română / engleză.
+
+## Manual de utilizare
+
+1. La prima vizită apare un tutorial scurt; îl poți omite („Skip tutorial”).
+2. Navighează: scroll pentru zoom, trage pentru deplasare, **R** resetează, **Z** revine la poziția anterioară.
+3. Deschide meniul ☰ sau folosește bara de sus pentru Căutare, Tur, Quiz, Powers×10, Scale, Andromeda, Split Screen, Did you know, Measure, Favorites, Stats, Random, Export PNG.
+4. Taste: **/** căutare, **R** reset, **L** etichete, **S** sunet, **C** comparator de scară, **H** heatmap, **P** export PNG, **T** tur, **M** măsurare, **Q** quiz, **D** galaxie aleatoare, **F** favorite, **G** grupuri gravitaționale, **N** schimbă limba, **O** Powers of Ten, **X** ecran împărțit, **A** simulare Andromeda, **Z** anulează navigarea, **`** meniu lateral, **?** lista scurtăturilor, **Esc** închide panourile.
+5. Limba: tasta **N** sau butonul RO/EN.
+6. Daltonism: alege modul din panoul de straturi (Normal, Deuteranopia, Protanopia, Tritanopia, Achromatopsia).
+7. Salvare: stea ⭐ pentru favorite, „⬇ Export favorites CSV”, „⬇ Export CSV (112 galaxies)” sau „📸 Export PNG”.
+
+## Confidențialitate și rețea
+
+- **Stocare locală:** `localStorage` — `uv_lang` (limba), `uv2d_favs` (favorite), `uv2d_prefs_v1` (preferințe: daltonism, straturi, sunet, volum), plus scorurile quiz-ului; `sessionStorage` — `tut_done`, `uv_eventGreetingShown`. Aplicația afirmă că nimic nu este trimis unui server (nu are backend).
+- **Service worker:** aplicația înregistrează un service worker creat dintr-un blob, cu cache la rulare pentru răspunsuri GET reușite, pentru funcționare repetată fără rețea.
+- **Rețea:** nu am găsit apeluri `fetch` de date către servicii terțe. Linkurile către alexio.tf, ares.org.ro, Patreon, Buy Me a Coffee, Wikipedia, ADS și ESA Sky se deschid doar la click. Meta-etichetele (Open Graph, imagine de previzualizare) indică alexio.tf, fără efect la rulare.
+
+## Rulare locală / offline
+
+Descarcă `index.html` și deschide-l în browser; funcționează fără internet. Service worker-ul poate fi indisponibil la deschiderea din `file://`, dar aplicația rămâne funcțională.
+
+## Licență
+
+CC0 1.0 Universal (domeniu public) — vezi fișierul LICENSE
+
+## Autor
+
+Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. Aplicația îl creditează pe autor împreună cu ARES (ares.org.ro) și Centrul StrING.
+
+## English summary
+
+A single-file interactive 2D map of the observable universe on a logarithmic scale with 112 galaxies, JWST data (catalog dated May 2026), tour, quiz with local leaderboard, Powers of Ten, split screen, Andromeda simulation, colour-blind modes, CSV/PNG export and a satirical "Flat Earth Edition" with a built-in guide. Bilingual RO/EN. Preferences stored in localStorage; no data requests to third parties. CC0.
