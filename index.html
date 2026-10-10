@@ -32,7 +32,7 @@
 </style>
 
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; worker-src 'self' blob:; script-src 'self' 'unsafe-inline' blob:; connect-src 'self'">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover,interactive-widget=resizes-content">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
 <title>Observable Universe · 2D · v5.9 · Flat Earth Edition™</title>
 <meta name="description" content="2D map of the observable universe — 112 galaxies, 12 cosmic horizons, logarithmic scale. Quiz with leaderboard, LOD zoom, adaptive soundtrack, gravitational groups, permalink with full state. Satirical Flat Earth™ edition. JWST data up to z=14.44. v5.9 — UX & accessibility milestone: universal localStorage preferences (CVD, layers, sound, volume persist across sessions); prefers-reduced-motion respected in flyTo / Andromeda / autoRotate; new GUIDE tab 'Simulation Limits' (epistemic honesty); heatmap boost (logarithmic normalization + Gaussian kernel); zenodo.json metadata for academic archival.">
 <meta name="theme-color" content="#040814">
@@ -1698,8 +1698,8 @@ canvas { will-change: transform; }
     <div class="sCardFull">
       <div class="sSecTtl">Distance filter</div>
       <div class="filtRow"><span>Min: <span id="fMinVal">0</span> Mly</span><span>Max: <span id="fMaxVal">46,500</span> Mly</span></div>
-      <input type="range" class="filtSlider" id="fMin" min="0" max="46500" value="0" step="100">
-      <input type="range" class="filtSlider" id="fMax" min="0" max="46500" value="46500" step="100">
+      <input type="range" class="filtSlider" id="fMin" aria-label="Min distance (Mly)" min="0" max="46500" value="0" step="100">
+      <input type="range" class="filtSlider" id="fMax" aria-label="Max distance (Mly)" min="0" max="46500" value="46500" step="100">
     </div>
     <button id="csvBtn">⬇ Export CSV (112 galaxies)</button>
   </div>
