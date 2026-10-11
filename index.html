@@ -71,6 +71,7 @@ canvas{display:block;position:fixed;top:0;left:0;width:100vw;height:100vh;z-inde
 #topbar{position:fixed;top:0;left:0;right:0;height:48px;background:rgba(1,4,18,0.92);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 14px;z-index:100;}
 #ttl{font-size:11px;font-weight:900;letter-spacing:1.5px;color:var(--accent);line-height:1.2;}
 #sub{font-size:8px;color:var(--dimmest);letter-spacing:1px;margin-top:2px;}
+#satireTag{font-size:9px;font-weight:700;letter-spacing:1px;color:#ffd27a;border:1px solid #ffd27a;border-radius:4px;padding:2px 5px;white-space:nowrap;flex-shrink:0;}
 #zhint{font-size:9px;color:var(--dimmer);letter-spacing:1px;text-align:center;flex:1;padding:0 8px;}
 #topbtns{display:flex;gap:7px;}
 .tbtn{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:rgba(70,130,255,0.07);color:var(--dim);font-size:14px;display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none;flex-shrink:0;transition:background 0.12s,border-color 0.12s,box-shadow 0.18s;}
@@ -1306,9 +1307,12 @@ canvas { will-change: transform; }
 
 <!-- TOPBAR -->
 <div id="topbar" role="banner">
-  <div>
-    <div id="ttl">OBSERVABLE UNIVERSE · 2D · v5.8</div>
-    <div id="sub">FLAT EARTH™ · ΛCDM · JWST 2026 · MoM-z14</div>
+  <div style="display:flex;align-items:center;gap:8px;min-width:0">
+    <div>
+      <div id="ttl">OBSERVABLE UNIVERSE · 2D · v5.8</div>
+      <div id="sub">FLAT EARTH™ · ΛCDM · JWST 2026 · MoM-z14</div>
+    </div>
+    <span id="satireTag" title="Satirical edition: the Flat Earth elements are fictional / Ediție satirică: elementele Pământ Plat sunt fictive">SATIRĂ · SATIRE</span>
   </div>
   <div id="zhint" aria-live="polite"></div>
   <div id="topbtns" role="toolbar">

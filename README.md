@@ -37,6 +37,10 @@ O aplicație single-file (`index.html`, canvas + JavaScript) care afișează uni
 - **Service worker:** aplicația înregistrează un service worker creat dintr-un blob, cu cache la rulare pentru răspunsuri GET reușite, pentru funcționare repetată fără rețea.
 - **Rețea:** nu am găsit apeluri `fetch` de date către servicii terțe. Linkurile către alexio.tf, ares.org.ro, Patreon, Buy Me a Coffee, Wikipedia, ADS și ESA Sky se deschid doar la click. Meta-etichetele (Open Graph, imagine de previzualizare) indică alexio.tf, fără efect la rulare.
 
+## Notă: ediție satirică
+
+Ediția „Pământ Plat™” este satirică. Elementele Bolta Cerească, Zidul de Gheață, „Conspirația NASA" și Broasca Țestoasă Spațială sunt fictive; galaxiile și distanțele sunt cele din catalog. Pe lângă avertismentul de la deschidere, pagina afișează acum permanent, în bara de sus (inclusiv pe mobil), eticheta „SATIRĂ · SATIRE".
+
 ## Rulare locală / offline
 
 Descarcă `index.html` și deschide-l în browser; funcționează fără internet. Service worker-ul poate fi indisponibil la deschiderea din `file://`, dar aplicația rămâne funcțională.
