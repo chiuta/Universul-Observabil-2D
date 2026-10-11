@@ -1,4 +1,4 @@
-# Observable Universe 2D · v5.9.2 · Flat Earth Edition™
+# Observable Universe 2D · v5.9.3 · Flat Earth Edition™
 
 Harta 2D interactivă a universului observabil, pe scară logaritmică, cu 112 intrări de catalog (111 galaxii + fundalul cosmic CMB) — în ediție satirică „Pământ Plat”.
 
@@ -53,6 +53,10 @@ Afirmațiile „record” (MoM-z14, z = 14,44) sunt valabile **la data catalogul
 Descarcă `index.html` și deschide-l în browser; funcționează fără internet. Aplicația rămâne funcțională fără internet (service worker-ul din blob este inactiv).
 
 ## Istoric / Changelog
+
+### 11 octombrie 2026 (a treia trecere) — versiunea 5.9.3
+- Rigla: potrivire parțială a numelui (la Enter/ieșire din câmp) cu mesaj clar când nu există sau sunt mai multe potriviri.
+- Widgetul de sprijin se ascunde cât timp e afișat avertismentul inițial (pe 360 px acoperea butonul RO/EN). CSP: hash recalculat.
 
 ### 11 octombrie 2026 (a doua trecere) — versiunea 5.9.2
 - Rigla: alegerea galaxiilor A/B după nume (fără clic pe hartă) și „Copiază rezultatul”; textele afirmă acum „111 galaxii” (+ CMB = 112 intrări) în loc de „112 galaxii”; istoric RO/EN în ghid; CSP: hash recalculat.
