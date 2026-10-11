@@ -1373,7 +1373,7 @@ canvas { will-change: transform; }
 
 <!-- KEYBOARD SHORTCUTS OVERLAY -->
 <div id="kbOvl" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts">
-  <div id="kbBox">
+  <div id="kbBox" tabindex="0" role="region" aria-label="Keyboard shortcuts / Scurtături de tastatură">
     <span class="kbClose" onclick="closeKb()" aria-label="Close">✕</span>
     <h3>⌨ KEYBOARD SHORTCUTS</h3>
     <div class="kbGrid">
@@ -2250,8 +2250,8 @@ const GALAXIES = [
    desc:"Record JWST mai 2024 → ian. 2026 (depășit de MoM-z14). z=14,32. Universul: ~290M ani. Diametru surprinzător de mare (~1.700 al). Conține deja oxigen — chimie complexă neașteptată la această vârstă.",
    de:"JWST record May 2024 → Jan. 2026 (surpassed by MoM-z14). z=14.32. Universe age: ~290M years. Surprisingly large diameter (~1,700 ly). Already contains oxygen — unexpectedly complex chemistry this early."},
   {n:"MoM-z14",ra:150.2,dec:2.5,d:35200.0,t:"EHZ",m:"🔴",z:14.44,lb:13620,
-   desc:"RECORD ABSOLUT (arXiv mai 2025 · publicat OJA ian. 2026 · curent mai 2026). z=14,44. Descoperit de Rohan Naidu (MIT) et al. prin JWST/NIRSpec. Universul: 280M ani — 2% din vârsta actuală. Compact (rază ~241 al), masă comparabilă cu SMC.",
-   de:"ABSOLUTE RECORD (arXiv May 2025 · published OJA Jan. 2026 · current May 2026). z=14.44. Discovered by Rohan Naidu (MIT) et al. via JWST/NIRSpec. Universe age: 280M years — 2% of current age. Compact (radius ~241 ly), mass comparable to SMC."},
+   desc:"Cea mai îndepărtată galaxie confirmată spectroscopic la data catalogului (mai 2026; arXiv mai 2025 · publicat OJA ian. 2026; poate fi depășită). z=14,44. Descoperit de Rohan Naidu (MIT) et al. prin JWST/NIRSpec. Universul: 280M ani — 2% din vârsta actuală. Compact (rază ~241 al), masă comparabilă cu SMC.",
+   de:"Farthest spectroscopically confirmed galaxy as of the catalog date (May 2026; arXiv May 2025 · published OJA Jan. 2026; may be surpassed). z=14.44. Discovered by Rohan Naidu (MIT) et al. via JWST/NIRSpec. Universe age: 280M years — 2% of current age. Compact (radius ~241 ly), mass comparable to SMC."},
   {n:"Maisie's Galaxy",ra:214.5,dec:52.8,d:32500.0,t:"EHZ",m:"🔴",z:11.4,lb:13450,
    desc:"Descoperită de JWST în primele imagini (2022), confirmată spectroscopic 2023. Numită după fiica astronomului Steven Finkelstein. Universul avea ~390 M ani.",
    de:"Discovered by JWST in first-light images (2022), spectroscopically confirmed 2023. Named after astronomer Steven Finkelstein's daughter. The Universe was ~390M years old."},
@@ -2413,7 +2413,7 @@ const GALAXIES = [
 
   // GALAXII ADĂUGATE v2.1 (incluse în totalul curent de 112)
   {n:"EGS-z11-R0",ra:214.82,dec:52.81,d:32100.0,t:"EHZ",m:"🔴",z:11.45,lb:13452,
-   desc:"❖ NOU (martie 2026, arXiv 2603.15841). Cea mai îndepărtată galaxie ROȘIE confirmată spectroscopic — pantă UV ~−1,0, extincție praf 1,2 mag. Matură și prăfuită la 400M ani după BB. Câmpul CEERS Extended Groth Strip."},
+   desc:"❖ Adăugată în catalog în martie 2026 (arXiv 2603.15841; neverificată independent). Cea mai îndepărtată galaxie ROȘIE confirmată spectroscopic la data catalogului — pantă UV ~−1,0, extincție praf 1,2 mag. Matură și prăfuită la 400M ani după BB. Câmpul CEERS Extended Groth Strip."},
   {n:"JADES-GS-z14-1",ra:53.4,dec:-27.78,d:33800.0,t:"EHZ",m:"🔴",z:13.9,lb:13590,
    desc:"Confirmată spectroscopic JWST/JADES 2024. z=13,90. Universul: ~290M ani. Dimensiune surprinzător de mare pentru vârsta sa — alături de JADES-GS-z14-0, redefinesc așteptările despre galaxiile timpurii."},
   {n:"MACS1149-JD1",ra:177.4,dec:22.39,d:31800.0,t:"EHZ",m:"🔴",z:9.11,lb:13340,
@@ -2482,7 +2482,7 @@ const EN_DESCS_EXTRA = {
   "Gz9p3":"One of the first massive galaxies confirmed at z~9. Too massive for its age — a challenge to hierarchical structure formation theory.",
   "JADES-GS-z9-0":"NIRSpec-confirmed at z=8.88, the reionization epoch. These galaxies provided UV photons that ionized the Universe's neutral hydrogen.",
   "JADES-GS-z13-0":"Spectroscopically confirmed at z=13.2 (Universe: ~320M years). Among the first luminous sources to pierce the cosmic Dark Ages.",
-  "EGS-z11-R0":"❖ NEW (March 2026). Farthest spectroscopically confirmed RED galaxy — surprisingly mature and dusty at 400M years after Big Bang. UV slope ~-1.0.",
+  "EGS-z11-R0":"❖ Added to the catalog in March 2026 (arXiv 2603.15841; not independently verified). Farthest spectroscopically confirmed RED galaxy as of the catalog date — surprisingly mature and dusty at 400M years after Big Bang. UV slope ~-1.0.",
   "JADES-GS-z14-1":"JWST/JADES confirmed at z=13.90, Universe: ~290M years. Surprisingly large — alongside z14-0, redefines early galaxy expectations.",
   "MACS1149-JD1":"First ALMA [OIII]88μm at z>9. Contains stars ~300M years old — likely formed at z~15! A window into the very first stellar generations.",
   "Câinele Mare Pitic":"Closest known galaxy (~25,000 ly) — a disrupted satellite absorbed by the Milky Way. Its stellar streams encircle our galaxy.",
@@ -3598,8 +3598,8 @@ const DYK_FACTS = [
   { en: 'The 12 rings on this map mark real cosmic milestones: from the LMC (160 kly) to the CMB horizon (45,600 Mly).',
     ro: 'Cele 12 inele de pe această hartă marchează repere cosmice reale: de la LMC (160 mii a.l.) până la orizontul CMB (45.600 Mly).' },
   // JWST
-  { en: 'MoM-z14 (arXiv May 2025, published OJA Jan. 2026) is the farthest spectroscopically confirmed galaxy: z=14.44. The Universe was ~280 million years old.',
-    ro: 'MoM-z14 (arXiv mai 2025, publicat OJA ian. 2026) este cea mai îndepărtată galaxie confirmată spectroscopic: z=14,44. Universul avea ~280 milioane ani.' },
+  { en: 'MoM-z14 (arXiv May 2025, published OJA Jan. 2026) was, as of the catalog date (May 2026), the farthest spectroscopically confirmed galaxy: z=14.44. The Universe was ~280 million years old.',
+    ro: 'MoM-z14 (arXiv mai 2025, publicat OJA ian. 2026) era, la data catalogului (mai 2026), cea mai îndepărtată galaxie confirmată spectroscopic: z=14,44. Universul avea ~280 milioane ani.' },
   { en: 'JWST can detect galaxies from the reionization epoch (z>6), less than one billion years after the Big Bang.',
     ro: 'JWST poate detecta galaxii din epoca reionizării (z>6), la mai puțin de un miliard de ani după Big Bang.' },
   { en: 'EGS-z11-R0 (March 2026) is the first EHZ galaxy confirmed with significant dust — unexpected maturity at 400M years.',
@@ -3699,6 +3699,7 @@ const GUIDE_TABS_RO = {
       <tr><td>Mai 2024</td><td>JADES-GS-z14-0</td><td>14,32</td><td>~33,8 Gly</td><td>JWST/JADES</td></tr>
       <tr><td><strong>Mai 2025</strong></td><td><strong>MoM-z14 ★</strong></td><td><strong>14,44</strong></td><td><strong>~33,9 Gly</strong></td><td>JWST/NIRSpec</td></tr>
     </table>
+    <div class="gwarn">⚠ Tabel la data catalogului (mai 2026); recordurile pot fi depășite. Sursă pentru MoM-z14: Naidu et al., arXiv:2505.11263. Valorile nu au fost verificate independent.</div>
     <div class="gfact">📌 JWST a extins limita de la z~11 la z~14 în 3 ani. Fiecare generație de telescoape a triplat sau cuadruplat distanța maximă observabilă.</div>
     <div class="gwarn">⚠ <strong>Impostori cosmici:</strong> CEERS-93316 (2022) părea la z~16 fotometric → spectroscopia JWST: z≈4,9 real (Fujimoto 2023). Confirmarea spectroscopică e obligatorie pentru orice record de distanță.</div>
     <h4>Coliziunea cu Andromeda — ~4,5 miliarde ani</h4>
@@ -3742,7 +3743,7 @@ const GUIDE_TABS_RO = {
     <h4>Există versiune 3D?</h4>
     <p>Da! <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)" rel="noopener noreferrer">alexio.tf/universul-observabil-3d</a> — Three.js WebGL, navigație sferică, tururi ghidate, mod lungime de undă.</p>
     <h4>Cum citez această lucrare?</h4>
-    <p>Chiuță, Alexandru Ionuț (2026). <em>Universul Observabil 2D v${VERSION}</em>. ARES — Centrul STRING × ASFAN. alexio.tf. DOI: 10.5281/zenodo.PLACEHOLDER</p>`,
+    <p>Chiuță, Alexandru Ionuț (2026). <em>Universul Observabil 2D v${VERSION}</em>. ARES — Centrul STRING × ASFAN. alexio.tf.</p>`,
   limits: `
     <h3>⚖️ Limitele simulării</h3>
     <p>O simulare bună e onestă cu privire la propriile aproximații. Această aplicație folosește date astronomice reale, dar le proiectează prin filtre care merită explicate. Urmează lista lor — toată ironie satirică pusă deoparte.</p>
@@ -3905,7 +3906,7 @@ const GUIDE_TABS_RO = {
       <tr><td>NASA/IPAC Extragalactic Database (NED)</td><td>Coordonate RA/Dec, distanțe</td></tr>
       <tr><td>SIMBAD Astronomical Database</td><td>Tipuri obiecte, redshifts</td></tr>
       <tr><td>JWST / JADES Survey</td><td>JADES-GS-z14-0/1, GN-z11, etc.</td></tr>
-      <tr><td>arXiv 2505.11263 (Naidu et al. 2025)</td><td>MoM-z14, z=14,44 — recordul curent</td></tr>
+      <tr><td>arXiv 2505.11263 (Naidu et al. 2025)</td><td>MoM-z14, z=14,44 — recordul la data catalogului (mai 2026)</td></tr>
       <tr><td>arXiv 2603.15841 (2026)</td><td>EGS-z11-R0 — cea mai îndepărtată galaxie roșie</td></tr>
       <tr><td>ALMA / VLT / Hubble</td><td>Diverse descrieri de galaxii</td></tr>
     </table>
@@ -3914,7 +3915,7 @@ const GUIDE_TABS_RO = {
     <h4>Disclaimer satiric</h4>
     <p>Această aplicație este <strong>satirică și educațională</strong>. Ediția Pământ Plat este ironică. Toate distanțele, pozițiile galaxiilor și datele fizice sunt corecte conform celei mai bune literaturi disponibile. Bolta Cerească, Zidul de Gheață, Conspirația NASA și Broaștele Spațiale sunt în întregime fictive.</p>
     <h4>Citare</h4>
-    <p>Chiuță, Alexandru Ionuț (2026). <em>Universul Observabil 2D v${VERSION} — Ediția Pământ Plat™</em>. ARES — Centrul STRING × ASFAN. <a href="https://ares.org.ro" style="color:var(--accent)">ares.org.ro</a> / <a href="https://alexio.tf" style="color:var(--accent)">alexio.tf</a>. DOI: 10.5281/zenodo.PLACEHOLDER</p>`
+    <p>Chiuță, Alexandru Ionuț (2026). <em>Universul Observabil 2D v${VERSION} — Ediția Pământ Plat™</em>. ARES — Centrul STRING × ASFAN. <a href="https://ares.org.ro" style="color:var(--accent)">ares.org.ro</a> / <a href="https://alexio.tf" style="color:var(--accent)">alexio.tf</a>.</p>`
 };
 
 const GUIDE_TABS = {
@@ -3973,6 +3974,7 @@ const GUIDE_TABS = {
       <tr><td>May 2024</td><td>JADES-GS-z14-0</td><td>14.32</td><td>~33.8 Gly</td><td>JWST/JADES</td></tr>
       <tr><td><strong>May 2025</strong></td><td><strong>MoM-z14 ★</strong></td><td><strong>14.44</strong></td><td><strong>~33.9 Gly</strong></td><td>JWST/NIRSpec</td></tr>
     </table>
+    <div class="gwarn">⚠ Table as of the catalog date (May 2026); records may be surpassed. Source for MoM-z14: Naidu et al., arXiv:2505.11263. Values not independently verified.</div>
     <div class="gfact">📌 JWST extended the limit from z~11 to z~14 in 3 years. Each telescope generation tripled or quadrupled the maximum observable distance.</div>
     <div class="gwarn">⚠ <strong>Cosmic impostors:</strong> CEERS-93316 (2022) appeared at z~16 photometrically → JWST spectroscopy: z≈4.9 real (Fujimoto 2023). Spectroscopic confirmation is mandatory for any distance record.</div>
     <h4>Andromeda Collision — ~4.5 billion years</h4>
@@ -4016,7 +4018,7 @@ const GUIDE_TABS = {
     <h4>Is there a 3D version?</h4>
     <p>Yes! <a href="https://alexio.tf/universul-observabil-3d" target="_blank" style="color:var(--accent)" rel="noopener noreferrer">alexio.tf/universul-observabil-3d</a> — Three.js WebGL, spherical navigation, guided tours, wavelength mode.</p>
     <h4>How do I cite this work?</h4>
-    <p>Chiuță, Alexandru Ionuț (2026). <em>Observable Universe 2D v${VERSION}</em>. ARES — Centrul STRING × ASFAN. alexio.tf. DOI: 10.5281/zenodo.PLACEHOLDER</p>`,
+    <p>Chiuță, Alexandru Ionuț (2026). <em>Observable Universe 2D v${VERSION}</em>. ARES — Centrul STRING × ASFAN. alexio.tf.</p>`,
   limits: `
     <h3>⚖️ Simulation Limits</h3>
     <p>A good simulation is honest about its own approximations. This application uses real astronomical data, but projects them through filters that deserve explanation. Here is the list — all satirical irony set aside.</p>
@@ -4201,7 +4203,7 @@ const GUIDE_TABS = {
       <tr><td>NASA/IPAC Extragalactic Database (NED)</td><td>RA/Dec coordinates, distances</td></tr>
       <tr><td>SIMBAD Astronomical Database</td><td>Object types, redshifts</td></tr>
       <tr><td>JWST / JADES Survey</td><td>JADES-GS-z14-0/1, GN-z11, etc.</td></tr>
-      <tr><td>arXiv 2505.11263 (Naidu et al. 2025)</td><td>MoM-z14, z=14.44 — current record</td></tr>
+      <tr><td>arXiv 2505.11263 (Naidu et al. 2025)</td><td>MoM-z14, z=14.44 — record as of the catalog date (May 2026)</td></tr>
       <tr><td>arXiv 2603.15841 (2026)</td><td>EGS-z11-R0 — farthest red galaxy</td></tr>
       <tr><td>ALMA / VLT / Hubble</td><td>Various galaxy descriptions</td></tr>
     </table>
@@ -4210,7 +4212,7 @@ const GUIDE_TABS = {
     <h4>Satirical disclaimer</h4>
     <p>This application is <strong>satirical and educational</strong>. The Flat Earth Edition is ironic. All distances, galaxy positions, and physical data are accurate to the best available literature. The Sky Dome, Ice Wall, NASA Conspiracy and Space Turtles are entirely fictional.</p>
     <h4>Citation</h4>
-    <p>Chiuță, Alexandru Ionuț (2026). <em>Observable Universe 2D v${VERSION} — Flat Earth Edition™</em>. ARES — Centrul STRING × ASFAN. <a href="https://ares.org.ro" style="color:var(--accent)">ares.org.ro</a> / <a href="https://alexio.tf" style="color:var(--accent)">alexio.tf</a>. DOI: 10.5281/zenodo.PLACEHOLDER</p>`
+    <p>Chiuță, Alexandru Ionuț (2026). <em>Observable Universe 2D v${VERSION} — Flat Earth Edition™</em>. ARES — Centrul STRING × ASFAN. <a href="https://ares.org.ro" style="color:var(--accent)">ares.org.ro</a> / <a href="https://alexio.tf" style="color:var(--accent)">alexio.tf</a>.</p>`
 };
 
 
@@ -4592,7 +4594,7 @@ const I18N_WARNING = {
     title: '🌍 Universul Observabil<br>Ediția Pământ Plat™',
     p1: 'Bine ai venit la <strong>vizualizarea 2D a Universului Observabil</strong> — reproiectat convenabil pe un disc plat pentru cei care resping geometria sferică.',
     p2: 'Aceeași bază de date: <strong>112 galaxii</strong>, date JWST până la z=14,44, 12 orizonturi cosmice. Toate aplatizate pe un singur plan.',
-    p3: '⚠ Această aplicație este <strong>satirică și educațională</strong>. Galaxiile și distanțele sunt reale. Pământul plat nu este.<br>Dacă preferi știința → <a href="https://alexio.tf/universul-observabil-3d" style="color:var(--accent)" target="_blank" rel="noopener noreferrer">versiunea 3D originală ↗</a>',
+    p3: '⚠ Această aplicație este <strong>satirică și educațională</strong>. Galaxiile sunt reale, iar distanțele sunt valori aproximative din catalog (nu au fost verificate independent). Pământul plat nu este.<br>Dacă preferi știința → <a href="https://alexio.tf/universul-observabil-3d" style="color:var(--accent)" target="_blank" rel="noopener noreferrer">versiunea 3D originală ↗</a>',
     footer: 'Date cosmologice: ΛCDM, H₀=67,4 km/s/Mpc, Ω_m=0,315. Catalog actualizat mai 2026. Bolta Cerească, Zidul de Gheață și Conspirația NASA sunt fictive. alexio.tf · Printre Inteligențe 2026',
     btn: '✓ AM ÎNȚELES — INTRU ÎN UNIVERS'
   },
@@ -4601,7 +4603,7 @@ const I18N_WARNING = {
     title: '🌍 Observable Universe<br>Flat Earth Edition™',
     p1: 'Welcome to the <strong>2D visualization of the Observable Universe</strong> — redesigned on a convenient disc for those who reject spherical geometry.',
     p2: 'Same database: <strong>112 galaxies</strong>, JWST data up to z=14.44, 12 cosmic horizons. All flattened onto a single plane.',
-    p3: '⚠ This application is <strong>satirical and educational</strong>. The galaxies and distances are real. The flat Earth is not.<br>If you prefer science → <a href="https://alexio.tf/universul-observabil-3d" style="color:var(--accent)" target="_blank" rel="noopener noreferrer">original 3D version ↗</a>',
+    p3: '⚠ This application is <strong>satirical and educational</strong>. The galaxies are real and the distances are approximate catalog values (not independently verified). The flat Earth is not.<br>If you prefer science → <a href="https://alexio.tf/universul-observabil-3d" style="color:var(--accent)" target="_blank" rel="noopener noreferrer">original 3D version ↗</a>',
     footer: 'Cosmological data: ΛCDM, H₀=67.4 km/s/Mpc, Ω_m=0.315. Catalog updated May 2026. The Sky Dome, Ice Wall and NASA Conspiracy are fictional. alexio.tf · Among Intelligences 2026',
     btn: '✓ UNDERSTOOD — ENTERING THE UNIVERSE'
   }
@@ -4716,8 +4718,8 @@ const TOUR_STOPS = [
     narr_en: '🌟 JADES-GS-z14-0 — the JWST record from May 2024 to Jan. 2026: z=14.32. Universe age: ~290 million years. Surprisingly large diameter (~1,700 ly). Already contained oxygen — unexpected complex chemistry at this age.',
     narr_ro: '🌟 JADES-GS-z14-0 — recordul JWST din mai 2024 până în ian. 2026: z=14,32. Vârstă univers: ~290 milioane ani. Diametru surprinzător de mare (~1.700 al). Conținea deja oxigen — chimie complexă neașteptată la această vârstă.' },
   { name: 'MoM-z14',            zoom: 3.5,
-    narr_en: '⭐ THE ABSOLUTE RECORD — arXiv May 2025, published OJA Jan. 2026. MoM-z14, z=14.44. Universe: 280 million years after the Big Bang — 2% of its current age. Discovered by Rohan Naidu (MIT) et al. via JWST/NIRSpec. Radius: ~241 light-years.',
-    narr_ro: '⭐ RECORDUL ABSOLUT — arXiv mai 2025, publicat OJA ian. 2026. MoM-z14, z=14,44. Universul: 280 milioane ani după Big Bang — 2% din vârsta actuală. Descoperit de Rohan Naidu (MIT) et al. prin JWST/NIRSpec. Rază: ~241 ani-lumină.' },
+    narr_en: '⭐ THE RECORD AS OF THE CATALOG DATE (May 2026) — arXiv May 2025, published OJA Jan. 2026. MoM-z14, z=14.44. Universe: 280 million years after the Big Bang — 2% of its current age. Discovered by Rohan Naidu (MIT) et al. via JWST/NIRSpec. Radius: ~241 light-years.',
+    narr_ro: '⭐ RECORDUL LA DATA CATALOGULUI (mai 2026) — arXiv mai 2025, publicat OJA ian. 2026. MoM-z14, z=14,44. Universul: 280 milioane ani după Big Bang — 2% din vârsta actuală. Descoperit de Rohan Naidu (MIT) et al. prin JWST/NIRSpec. Rază: ~241 ani-lumină.' },
 ];
 let tourActive = false, tourIdx = 0, tourTimer = null;
 // [v4.6] Auto-advance (kiosk mode) state
@@ -6153,12 +6155,12 @@ async function exportPosterA3() {
     `H₀ = ${userH0.toFixed(1)} km/s/Mpc (Planck 2018)`,
     `Ω_m = ${COSMO.OMEGA_M} · Ω_Λ = ${COSMO.OMEGA_LAMBDA}`,
     `Vârstă univers = ${COSMO.AGE_GYR} Gyr`,
-    `Recordul actual: MoM-z14 (z = 14,44)`
+    `Record la data catalogului (mai 2026): MoM-z14 (z = 14,44)`
   ] : [
     `H₀ = ${userH0.toFixed(1)} km/s/Mpc (Planck 2018)`,
     `Ω_m = ${COSMO.OMEGA_M} · Ω_Λ = ${COSMO.OMEGA_LAMBDA}`,
     `Universe age = ${COSMO.AGE_GYR} Gyr`,
-    `Current record: MoM-z14 (z = 14.44)`
+    `Record as of catalog date (May 2026): MoM-z14 (z = 14.44)`
   ];
   lines.forEach((ln, i) => pctx.fillText(ln, margin, H - footerH + 60 + i * 42));
 
@@ -7546,6 +7548,9 @@ function applyI18N() {
   const isRO = currentLang === 'ro';
   const btn = document.getElementById('btnLang');
   if (btn) btn.textContent = isRO ? 'EN' : 'RO';
+  { const _fm = document.getElementById('fMin'), _fx = document.getElementById('fMax');
+    if (_fm) _fm.setAttribute('aria-label', isRO ? 'Distanță minimă (Mly)' : 'Min distance (Mly)');
+    if (_fx) _fx.setAttribute('aria-label', isRO ? 'Distanță maximă (Mly)' : 'Max distance (Mly)'); }
   const srchInp = document.getElementById('srchInp');
   if (srchInp) srchInp.placeholder = L.searchPl;
   const stHdr = document.querySelector('.sHdrTtl');
