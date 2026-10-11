@@ -34,7 +34,7 @@ O aplicație single-file (`index.html`, canvas + JavaScript) care afișează uni
 ## Confidențialitate și rețea
 
 - **Stocare locală:** `localStorage` — `uv_lang` (limba), `uv2d_favs` (favorite), `uv2d_prefs_v1` (preferințe: daltonism, straturi, sunet, volum), plus scorurile quiz-ului; `sessionStorage` — `tut_done`, `uv_eventGreetingShown`. Aplicația afirmă că nimic nu este trimis unui server (nu are backend).
-- **Service worker:** aplicația înregistrează un service worker creat dintr-un blob, cu cache la rulare pentru răspunsuri GET reușite, pentru funcționare repetată fără rețea.
+- **Service worker:** codul pentru un service worker din blob există în fișier, dar browserele resping înregistrarea unui service worker din `blob:`; în practică este inactiv. Aplicația funcționează offline pentru că este un singur fișier local, nu datorită cache-ului.
 - **Rețea:** nu am găsit apeluri `fetch` de date către servicii terțe. Linkurile către alexio.tf, ares.org.ro, Patreon, Buy Me a Coffee, Wikipedia, ADS și ESA Sky se deschid doar la click. Meta-etichetele (Open Graph, imagine de previzualizare) indică alexio.tf, fără efect la rulare.
 
 ## Notă: ediție satirică
@@ -46,7 +46,7 @@ Afirmațiile „record” (MoM-z14, z = 14,44) sunt valabile **la data catalogul
 
 ## Rulare locală / offline
 
-Descarcă `index.html` și deschide-l în browser; funcționează fără internet. Service worker-ul poate fi indisponibil la deschiderea din `file://`, dar aplicația rămâne funcțională.
+Descarcă `index.html` și deschide-l în browser; funcționează fără internet. Aplicația rămâne funcțională fără internet (service worker-ul din blob este inactiv).
 
 ## Licență
 
