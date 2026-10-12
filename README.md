@@ -1,10 +1,10 @@
-# Observable Universe 2D · v5.9.3 · Flat Earth Edition™
+# Observable Universe 2D · v5.9.4 · Flat Earth Edition™
+
+**Versiune:** 5.9.4 · **Ultima actualizare:** 12 octombrie 2026
 
 Harta 2D interactivă a universului observabil, pe scară logaritmică, cu 112 intrări de catalog (111 galaxii + fundalul cosmic CMB) — în ediție satirică „Pământ Plat”.
 
 **Live:** https://chiuta.github.io/Universul-Observabil-2D/
-
-**Ultima actualizare:** 11 octombrie 2026
 
 ![Captura de ecran](screenshot.png)
 
@@ -53,6 +53,9 @@ Afirmațiile „record” (MoM-z14, z = 14,44) sunt valabile **la data catalogul
 Descarcă `index.html` și deschide-l în browser; funcționează fără internet. Aplicația rămâne funcțională fără internet (service worker-ul din blob este inactiv).
 
 ## Istoric / Changelog
+
+### 12 octombrie 2026 — versiunea 5.9.4
+- 5.9.4 — 2026-10-12: versiunea și data ultimei actualizări sunt afișate în aplicație
 
 ### 11 octombrie 2026 (a treia trecere) — versiunea 5.9.3
 - Rigla: potrivire parțială a numelui (la Enter/ieșire din câmp) cu mesaj clar când nu există sau sunt mai multe potriviri.
