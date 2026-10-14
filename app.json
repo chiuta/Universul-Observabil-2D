@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "slug": "universul-observabil-2d",
+  "name": "Observable Universe · 2D · v5.10.0 · Flat Earth Edition™",
+  "version": "5.10.0",
+  "updated": "2026-10-14",
+  "description": "2D map of the observable universe — 111 galaxies, 12 cosmic horizons, logarithmic scale. Quiz with leaderboard, LOD zoom, adaptive soundtrack, gravitational groups, permalink with full state. Satirical Flat Earth™ edition. JWST data up to z=14.44. v5.9.1 — UX & accessibility milestone: universal localStorage preferences (CVD, layers, sound, volume persist across sessions); prefers-reduced-motion respected in flyTo / Andromeda / autoRotate; new GUIDE tab 'Simulation Limits' (epistemic honesty); heatmap boost (logarithmic normalization + Gaussian kernel).",
+  "egress": [],
+  "permissions": [
+    "navigator.share",
+    "clipboard",
+    "serviceWorker",
+    "localStorage"
+  ],
+  "storageKeys": [
+    "uv2d_favs",
+    "uv_lang"
+  ],
+  "sizeBytes": 689517,
+  "sha256": "3242dc6b60972011085beb80232c9314d394b6e9d09fa14f67b3093d5cbdb7a9",
+  "csp": {
+    "present": true,
+    "directives": {
+      "default-src": "'self'",
+      "img-src": "'self' data: blob:",
+      "style-src": "'self' 'unsafe-inline'",
+      "font-src": "'self' data:",
+      "media-src": "'self' blob: data:",
+      "object-src": "'none'",
+      "base-uri": "'self'",
+      "form-action": "'self'",
+      "worker-src": "'self' blob:",
+      "script-src": "'self' blob: sha256×2",
+      "connect-src": "'self'"
+    },
+    "scriptInline": "hash",
+    "connect": "'self'"
+  },
+  "features": {
+    "export": true,
+    "import": true,
+    "i18n": [
+      "ro",
+      "en"
+    ],
+    "pwa": {
+      "manifest": false,
+      "serviceWorker": true
+    },
+    "modules": [
+      "core",
+      "label",
+      "bundle"
+    ]
+  },
+  "kit": {
+    "version": "1.0.0",
+    "modules": [
+      "core",
+      "label",
+      "bundle"
+    ]
+  },
+  "selfSerializing": false
+}
