@@ -1,102 +1,104 @@
 # Observable Universe 2D · v5.9.4 · Flat Earth Edition™
 
-**Versiune:** 5.11.0 · **Ultima actualizare:** 19 octombrie 2026
+**English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-Harta 2D interactivă a universului observabil, pe scară logaritmică, cu 112 intrări de catalog (111 galaxii + fundalul cosmic CMB) — în ediție satirică „Pământ Plat”.
+**Version:** 5.11.0 · **Last updated:** 2026-10-19
 
-**Live:** https://chiuta.github.io/Universul-Observabil-2D/
+An interactive 2D map of the observable universe, on a logarithmic scale, with 112 catalogue entries (111 galaxies + the cosmic background CMB) — in a satirical "Flat Earth" edition.
 
-![Captura de ecran](screenshot.png)
+**Live app:** https://chiuta.github.io/Universul-Observabil-2D/
 
-## Ce este
+![Screenshot](screenshot.png)
 
-O aplicație single-file (`index.html`, canvas + JavaScript) care afișează universul observabil ca disc plat, pe scară logaritmică, cu 111 galaxii (plus fundalul CMB = 112 intrări), orizonturi cosmice și date JWST (catalogul din aplicație este datat mai 2026; recordul afișat: MoM-z14, z=14.44, reverificat la 11 octombrie 2026). Ediția „Pământ Plat™” este umoristică/satirică, iar aplicația include și o secțiune care demontează teoria Pământului plat și una despre limitele simulării.
+## What it is
 
-## Funcții
+A single-file application (`index.html`, canvas + JavaScript) that displays the observable universe as a flat disc, on a logarithmic scale, with 111 galaxies (plus the CMB background = 112 entries), cosmic horizons and JWST data (the catalogue in the application is dated May 2026; the record shown: MoM-z14, z=14.44, rechecked on 11 October 2026). The "Flat Earth™" edition is humorous/satirical, and the application also includes a section that debunks the flat-Earth theory and one on the limits of the simulation.
 
-- Navigare: zoom (scroll, +/-), deplasare, reset vizualizare, anulare navigare (Z), meniu lateral.
-- Straturi vizuale (etichete, grilă, inele, filamente, heatmap, grupuri gravitaționale, mod spectru etc.), cu corecții pentru daltonism (deuteranopie, protanopie, tritanopie, acromatopsie).
-- Riglă (M): galaxiile A și B se aleg cu clic pe hartă sau după nume (câmpuri cu listă, utilizabile de la tastatură), cu buton „Copiază rezultatul”.
-- Căutare galaxie, galaxie aleatoare, favorite (cu export CSV), export CSV al celor 112 intrări (111 galaxii + CMB).
-- Tur ghidat, Quiz cosmic cu clasament local, „Puterile lui 10”, comparator de scară, ecran împărțit, simulare Andromeda, „Știai că…”, instrument de măsurare, statistici.
-- Coloană sonoră adaptivă (Web Audio) cu activare/dezactivare și volum.
-- Export PNG și imprimare; permalink cu starea completă (`#s=...`).
-- Ghid integrat: Intro, Navigare, Straturi vizuale, Cronologia recordurilor de distanță, Pământ plat, Glosar, Întrebări frecvente, Limitele simulării, Istoric versiuni, Credite și surse.
-- Interfață bilingvă română / engleză.
-- Etichetele care s-ar suprapune sunt omise automat (apar la zoom mai mare).
+## Features
 
-## Manual de utilizare
+- Navigation: zoom (scroll, +/-), pan, view reset, undo navigation (Z), side menu.
+- Visual layers (labels, grid, rings, filaments, heatmap, gravitational groups, spectrum mode, etc.), with colour-blindness corrections (deuteranopia, protanopia, tritanopia, achromatopsia).
+- Ruler (M): galaxies A and B are chosen by clicking on the map or by name (fields with a list, usable from the keyboard), with a "Copy the result" button.
+- Galaxy search, random galaxy, favourites (with CSV export), CSV export of the 112 entries (111 galaxies + CMB).
+- Guided tour, Cosmic quiz with a local leaderboard, "Powers of 10", scale comparator, split screen, Andromeda simulation, "Did you know…", measuring tool, statistics.
+- Adaptive soundtrack (Web Audio) with on/off switch and volume.
+- PNG export and printing; permalink with the complete state (`#s=...`).
+- Built-in guide: Intro, Navigation, Visual layers, Timeline of distance records, Flat Earth, Glossary, Frequently asked questions, Limits of the simulation, Version history, Credits and sources.
+- Bilingual Romanian / English interface.
+- Labels that would overlap are omitted automatically (they appear at higher zoom).
 
-1. La prima vizită apare un tutorial scurt; îl poți omite („Skip tutorial”).
-2. Navighează: scroll pentru zoom, trage pentru deplasare, **R** resetează, **Z** revine la poziția anterioară.
-3. Deschide meniul ☰ sau folosește bara de sus pentru Căutare, Tur, Quiz, Powers×10, Scale, Andromeda, Split Screen, Did you know, Measure, Favorites, Stats, Random, Export PNG.
-4. Taste: **/** căutare, **R** reset, **L** etichete, **S** sunet, **C** comparator de scară, **H** heatmap, **P** export PNG, **T** tur, **M** măsurare, **Q** quiz, **D** galaxie aleatoare, **F** favorite, **G** grupuri gravitaționale, **N** schimbă limba, **O** Powers of Ten, **X** ecran împărțit, **A** simulare Andromeda, **Z** anulează navigarea, **`** meniu lateral, **?** lista scurtăturilor, **Esc** închide panourile.
-5. Limba: tasta **N** sau butonul RO/EN.
-6. Daltonism: alege modul din panoul de straturi (Normal, Deuteranopia, Protanopia, Tritanopia, Achromatopsia).
-7. Salvare: stea ⭐ pentru favorite, „⬇ Export favorites CSV”, „⬇ Export CSV (112 entries)” sau „📸 Export PNG”.
+## User guide
 
-## Confidențialitate și rețea
+1. On the first visit a short tutorial appears; you can skip it ("Skip tutorial").
+2. Navigate: scroll to zoom, drag to pan, **R** resets, **Z** returns to the previous position.
+3. Open the ☰ menu or use the top bar for Search, Tour, Quiz, Powers×10, Scale, Andromeda, Split Screen, Did you know, Measure, Favorites, Stats, Random, Export PNG.
+4. Keys: **/** search, **R** reset, **L** labels, **S** sound, **C** scale comparator, **H** heatmap, **P** export PNG, **T** tour, **M** measure, **Q** quiz, **D** random galaxy, **F** favourites, **G** gravitational groups, **N** switch language, **O** Powers of Ten, **X** split screen, **A** Andromeda simulation, **Z** undo navigation, **`** side menu, **?** shortcut list, **Esc** closes panels.
+5. Language: the **N** key or the RO/EN button.
+6. Colour blindness: choose the mode from the layers panel (Normal, Deuteranopia, Protanopia, Tritanopia, Achromatopsia).
+7. Saving: star ⭐ for favourites, "⬇ Export favorites CSV", "⬇ Export CSV (112 entries)" or "📸 Export PNG".
 
-- **Stocare locală:** `localStorage` — `uv_lang` (limba), `uv2d_favs` (favorite), `uv2d_prefs_v1` (preferințe: daltonism, straturi, sunet, volum), plus scorurile quiz-ului; `sessionStorage` — `tut_done`, `uv_eventGreetingShown`. Aplicația afirmă că nimic nu este trimis unui server (nu are backend).
-- **Service worker:** codul pentru un service worker din blob există în fișier, dar browserele resping înregistrarea unui service worker din `blob:`; în practică este inactiv. Aplicația funcționează offline pentru că este un singur fișier local, nu datorită cache-ului.
-- **Rețea:** nu am găsit apeluri `fetch` de date către servicii terțe. Linkurile către alexio.tf, ares.org.ro, Buy Me a Coffee, Wikipedia, ADS și ESA Sky se deschid doar la click. Meta-etichetele (Open Graph, imagine de previzualizare) indică alexio.tf, fără efect la rulare.
+## Privacy and network
 
-## Notă: ediție satirică
+- **Local storage:** `localStorage` — `uv_lang` (language), `uv2d_favs` (favourites), `uv2d_prefs_v1` (preferences: colour blindness, layers, sound, volume), plus the quiz scores; `sessionStorage` — `tut_done`, `uv_eventGreetingShown`. The application states that nothing is sent to a server (it has no backend).
+- **Service worker:** code for a service worker from a blob exists in the file, but browsers reject registering a service worker from `blob:`; in practice it is inactive. The application works offline because it is a single local file, not thanks to a cache.
+- **Network:** I found no data `fetch` calls to third-party services. The links to alexio.tf, ares.org.ro, Buy Me a Coffee, Wikipedia, ADS and ESA Sky open only on click. The meta tags (Open Graph, preview image) point to alexio.tf, with no effect at runtime.
 
-Ediția „Pământ Plat™” este satirică. Elementele Bolta Cerească, Zidul de Gheață, „Conspirația NASA" și Broasca Țestoasă Spațială sunt fictive; galaxiile și distanțele sunt cele din catalog. Pe lângă avertismentul de la deschidere, pagina afișează acum permanent, în bara de sus (inclusiv pe mobil), eticheta „SATIRĂ · SATIRE".
+## Note: satirical edition
 
-## Date și surse
-Afirmațiile „record” (MoM-z14, z = 14,44) sunt valabile **la data catalogului (mai 2026), reverificate la 11 octombrie 2026**, și pot fi depășite. Sursă: Naidu et al., arXiv:2505.11263 (preprint mai 2025; publicat în Open Journal of Astrophysics, ianuarie 2026). Intrarea EGS-z11-R0 (martie 2026, arXiv:2603.15841; raportată și de phys.org, martie 2026) nu a fost verificată independent în detaliu. Distanțele sunt valori aproximative din catalogul aplicației (ΛCDM, Planck 2018), cu scop educațional. Referința de citare nu mai conține un DOI (aplicația nu are încă unul). Bibliografie per galaxie: în curs de completare.
+The "Flat Earth™" edition is satirical. The elements Celestial Dome, Ice Wall, "NASA Conspiracy" and the Space Turtle are fictional; the galaxies and distances are those from the catalogue. In addition to the warning at opening, the page now permanently displays, in the top bar (including on mobile), the label "SATIRĂ · SATIRE".
 
-## Rulare locală / offline
+## Data and sources
+The "record" claims (MoM-z14, z = 14.44) are valid **as of the catalogue date (May 2026), rechecked on 11 October 2026**, and may be surpassed. Source: Naidu et al., arXiv:2505.11263 (preprint May 2025; published in the Open Journal of Astrophysics, January 2026). The entry EGS-z11-R0 (March 2026, arXiv:2603.15841; also reported by phys.org, March 2026) was not independently verified in detail. Distances are approximate values from the application's catalogue (ΛCDM, Planck 2018), for educational purposes. The citation reference no longer contains a DOI (the application does not yet have one). Bibliography per galaxy: being completed.
 
-Descarcă `index.html` și deschide-l în browser; funcționează fără internet. Aplicația rămâne funcțională fără internet (service worker-ul din blob este inactiv).
+## Running locally / offline
 
-## Istoric / Changelog
+Download `index.html` and open it in a browser; it works without internet. The application stays functional without internet (the blob service worker is inactive).
+
+## History / Changelog
 
 ### 5.11.0 — 2026-10-19
-- Buton „📏 AXA 1D ↗” în panoul galaxiei (aceeași galaxie, limba curentă); permalink-ul `#g=` acceptă garda `gn`.
+- "📏 1D AXIS ↗" button in the galaxy panel (same galaxy, current language); the `#g=` permalink accepts the `gn` guard.
 
 ### 5.10.0 — 2026-10-14
-- Copie de rezervă și etichetare date (fff-kit).
+- Backup and data labelling (fff-kit).
 
-### 12 octombrie 2026 — versiunea 5.9.4
-- 5.9.4 — 2026-10-12: versiunea și data ultimei actualizări sunt afișate în aplicație
+### 12 October 2026 — version 5.9.4
+- 5.9.4 — 2026-10-12: the version and the last-updated date are shown in the app
 
-### 11 octombrie 2026 (a treia trecere) — versiunea 5.9.3
-- Rigla: potrivire parțială a numelui (la Enter/ieșire din câmp) cu mesaj clar când nu există sau sunt mai multe potriviri.
-- Widgetul de sprijin se ascunde cât timp e afișat avertismentul inițial (pe 360 px acoperea butonul RO/EN). CSP: hash recalculat.
+### 11 October 2026 (third pass) — version 5.9.3
+- Ruler: partial name matching (on Enter/leaving the field) with a clear message when there is no match or there are several.
+- The support widget hides while the initial warning is displayed (at 360 px it covered the RO/EN button). CSP: hash recalculated.
 
-### 11 octombrie 2026 (a doua trecere) — versiunea 5.9.2
-- Rigla: alegerea galaxiilor A/B după nume (fără clic pe hartă) și „Copiază rezultatul”; textele afirmă acum „111 galaxii” (+ CMB = 112 intrări) în loc de „112 galaxii”; istoric RO/EN în ghid; CSP: hash recalculat.
+### 11 October 2026 (second pass) — version 5.9.2
+- Ruler: choosing galaxies A/B by name (without clicking on the map) and "Copy the result"; texts now state "111 galaxies" (+ CMB = 112 entries) instead of "112 galaxies"; RO/EN history in the guide; CSP: hash recalculated.
 
-### 11 octombrie 2026
-- Versiune 5.9.1 (titlu, meta, JSON-LD, `VERSION`, cache SW, ghid integrat — istoric RO/EN).
-- Reparat un comentariu care conținea literal închiderea tagului de script: ~3 KB de cod (starea butoanelor din bara mobilă, focus trap pentru sertar) apăreau ca text în pagină și nu rulau; același defect producea defilare orizontală la 360 px.
-- Rigla și atingerea pe mobil găsesc galaxia din punctul apăsat; etichetele fără suprapunere; pastila Buy Me a Coffee nu mai acoperă bara mobilă.
-- Accesibilitate: `<main>`, dialog pentru avertisment, navigare pentru sertar, ticker ca regiune; axe-core 0 încălcări la 1280 și 360 px.
-- Securitate: cele 87 de atribute `on*` inline au fost înlocuite cu handler-e delegate (`data-onclick` etc., interpretate fără `eval`); CSP folosește hash SHA-256 pentru script, fără `'unsafe-inline'` în `script-src`.
-- Subsolul afișa „111 galaxies” față de „112” în rest: acum „112 entries (111 galaxies + CMB)”.
+### 11 October 2026
+- Version 5.9.1 (title, meta, JSON-LD, `VERSION`, SW cache, built-in guide — RO/EN history).
+- Fixed a comment that literally contained the closing of the script tag: ~3 KB of code (mobile-bar button state, focus trap for the drawer) appeared as text on the page and did not run; the same defect caused horizontal scrolling at 360 px.
+- The ruler and touch on mobile find the galaxy at the pressed point; labels without overlap; the Buy Me a Coffee pill no longer covers the mobile bar.
+- Accessibility: `<main>`, dialog for the warning, navigation for the drawer, ticker as a region; axe-core 0 violations at 1280 and 360 px.
+- Security: the 87 inline `on*` attributes were replaced with delegated handlers (`data-onclick` etc., interpreted without `eval`); the CSP uses a SHA-256 hash for the script, without `'unsafe-inline'` in `script-src`.
+- The footer showed "111 galaxies" versus "112" elsewhere: now "112 entries (111 galaxies + CMB)".
 
-**Surse verificate la 11.10.2026:** Wikipedia — List of the most distant astronomical objects (MoM-z14, z=14,44, recordul spectroscopic curent; candidații cu z fotometric mai mare rămân neconfirmați); phys.org, 2026-03 (EGS-z11-R0, z≈11,45).
+**Sources verified on 11.10.2026:** Wikipedia — List of the most distant astronomical objects (MoM-z14, z=14.44, the current spectroscopic record; candidates with a higher photometric z remain unconfirmed); phys.org, 2026-03 (EGS-z11-R0, z≈11.45).
 
-## Licență
+## License
 
-MIT — vezi fișierul LICENSE
+MIT — see the LICENSE file
 
 ## Audit
 
-Audit: 2026-10-10 — singurul `fetch` din fișier este în service worker-ul din blob (cache GET, same-origin; CSP `connect-src 'self'`); nu există apeluri de date către terți. Satira este semnalată explicit la prima deschidere („satirical and educational… The flat Earth is not"). Datele din catalog (inclusiv recordul JWST MoM-z14, z=14.44) provin din conținutul autorului și nu au fost verificate independent în acest audit. Corecturi de accesibilitate: viewport (zoom permis), etichete pentru sliderele de filtrare.
+Audit: 2026-10-10 — the only `fetch` in the file is in the blob service worker (GET cache, same-origin; CSP `connect-src 'self'`); there are no data calls to third parties. The satire is flagged explicitly at first opening ("satirical and educational… The flat Earth is not"). The data in the catalogue (including the JWST record MoM-z14, z=14.44) come from the author's content and were not independently verified in this audit. Accessibility fixes: viewport (zoom allowed), labels for the filter sliders.
 
-## Drepturi și atribuire
-Aplicația și codul aparțin autorului (licență MIT, vezi `LICENSE`). Datele astronomice provin din publicații și cataloage publice; drepturile asupra materialelor terțe aparțin titularilor, iar licența MIT nu le acoperă. Dacă ești titular de drepturi sau persoană menționată și dorești corectarea sau retragerea, scrie la alexio@trom.tf; răspundem în 7 zile.
+## Rights and attribution
+The application and the code belong to the author (MIT license, see `LICENSE`). The astronomical data come from public publications and catalogues; rights to third-party materials belong to their holders, and the MIT license does not cover them. If you are a rights holder or a person mentioned and wish to have something corrected or withdrawn, write to alexio@trom.tf; we reply within 7 days.
 
-## Autor
+## Author
 
-Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. Aplicația îl creditează pe autor împreună cu ARES (ares.org.ro) și Centrul StrING.
+Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. The application credits the author together with ARES (ares.org.ro) and Centrul StrING.
 
 ## English summary
 
 A single-file interactive 2D map of the observable universe on a logarithmic scale with 111 galaxies (plus the CMB background = 112 entries), JWST data (catalog dated May 2026), tour, quiz with local leaderboard, Powers of Ten, split screen, Andromeda simulation, colour-blind modes, CSV/PNG export and a satirical "Flat Earth Edition" with a built-in guide. Bilingual RO/EN. Preferences stored in localStorage; no data requests to third parties. MIT licence.
 
-Rundă 3: 2026-10-11 — formulări „la data catalogului”, DOI-ul placeholder eliminat din ghid, etichete bilingve pentru sliderele de filtrare.
+Round 3: 2026-10-11 — "as of the catalogue date" wording, the placeholder DOI removed from the guide, bilingual labels for the filter sliders.
