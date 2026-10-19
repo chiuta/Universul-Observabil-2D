@@ -99,8 +99,7 @@ L'applicazione e il codice appartengono all'autore (licenza MIT, vedi `LICENSE`)
 
 Alexio — Alexandru-Ionuț Chiuță, contatto: alexio@trom.tf. L'applicazione accredita l'autore insieme ad ARES (ares.org.ro) e al Centrul StrING.
 
-## Riepilogo in inglese
-
+## Riepilogo
 Una mappa 2D interattiva dell'universo osservabile a file singolo, in scala logaritmica, con 111 galassie (più il fondo CMB = 112 voci), dati JWST (catalogo datato maggio 2026), tour, quiz con classifica locale, Potenze di 10, schermo diviso, simulazione di Andromeda, modalità per daltonici, esportazione CSV/PNG e una «Flat Earth Edition» satirica con guida integrata. 8 lingue. Preferenze memorizzate in localStorage; nessuna richiesta di dati a terze parti. Licenza MIT.
 
 Turno 3: 2026-10-11 — formulazioni «alla data del catalogo», DOI fittizio rimosso dalla guida, etichette bilingui per i cursori di filtro.

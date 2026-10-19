@@ -99,8 +99,7 @@ Az alkalmazás és a kód a szerzőé (MIT licenc, lásd `LICENSE`). A csillagá
 
 Alexio — Alexandru-Ionuț Chiuță, kapcsolat: alexio@trom.tf. Az alkalmazás a szerzőt az ARES-szel (ares.org.ro) és a Centrul StrING-gel együtt tünteti fel.
 
-## Angol nyelvű összefoglaló
-
+## Összefoglaló
 A megfigyelhető univerzum egyfájlos interaktív 2D-s térképe logaritmikus skálán, 111 galaxissal (plusz a CMB-háttér = 112 bejegyzés), JWST-adatokkal (a katalógus 2026 májusi keltezésű), túrával, helyi ranglistás kvízzel, a 10 hatványaival, osztott képernyővel, Androméda-szimulációval, színtévesztő módokkal, CSV-/PNG-exporttal és egy szatirikus „Flat Earth Edition” kiadással beépített útmutatóval. 8 nyelv. A beállítások a localStorage-ban tárolódnak; harmadik felek felé nincs adatlekérés. MIT licenc.
 
 3. kör: 2026-10-11 — „a katalógus dátuma szerint” megfogalmazások, a fiktív DOI eltávolítva az útmutatóból, kétnyelvű címkék a szűrőcsúszkákhoz.
