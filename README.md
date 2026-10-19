@@ -1,4 +1,4 @@
-# Observable Universe 2D · v5.9.4 · Flat Earth Edition™
+# Observable Universe 2D · v5.11.0 · Flat Earth Edition™
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
