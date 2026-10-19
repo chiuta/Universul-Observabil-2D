@@ -1,6 +1,6 @@
 # Observable Universe 2D · v5.9.4 · Flat Earth Edition™
 
-**Versiune:** 5.10.0 · **Ultima actualizare:** 14 octombrie 2026
+**Versiune:** 5.11.0 · **Ultima actualizare:** 19 octombrie 2026
 
 Harta 2D interactivă a universului observabil, pe scară logaritmică, cu 112 intrări de catalog (111 galaxii + fundalul cosmic CMB) — în ediție satirică „Pământ Plat”.
 
@@ -53,6 +53,9 @@ Afirmațiile „record” (MoM-z14, z = 14,44) sunt valabile **la data catalogul
 Descarcă `index.html` și deschide-l în browser; funcționează fără internet. Aplicația rămâne funcțională fără internet (service worker-ul din blob este inactiv).
 
 ## Istoric / Changelog
+
+### 5.11.0 — 2026-10-19
+- Buton „📏 AXA 1D ↗” în panoul galaxiei (aceeași galaxie, limba curentă); permalink-ul `#g=` acceptă garda `gn`.
 
 ### 5.10.0 — 2026-10-14
 - Copie de rezervă și etichetare date (fff-kit).
