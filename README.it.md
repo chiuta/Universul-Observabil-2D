@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 5.11.0 · **Ultimo aggiornamento:** 2026-10-19
+**Versione:** 5.12.0 · **Ultimo aggiornamento:** 2026-10-19
+
+Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Mappa 2D interattiva dell'universo osservabile, in scala logaritmica, con 112 voci di catalogo (111 galassie + il fondo cosmico CMB) — in un'edizione satirica «Terra piatta».
 
@@ -24,7 +26,7 @@ Un'applicazione a file singolo (`index.html`, canvas + JavaScript) che mostra l'
 - Colonna sonora adattiva (Web Audio) con attivazione/disattivazione e volume.
 - Esportazione PNG e stampa; permalink con lo stato completo (`#s=...`).
 - Guida integrata: Intro, Navigazione, Livelli visivi, Cronologia dei record di distanza, Terra piatta, Glossario, Domande frequenti, Limiti della simulazione, Cronologia delle versioni, Crediti e fonti.
-- Interfaccia bilingue rumeno / inglese.
+- Interfaccia in 8 lingue (RO, EN, FR, IT, ES, PT, DE, HU).
 - Le etichette che si sovrapporrebbero vengono omesse automaticamente (compaiono con uno zoom maggiore).
 
 ## Guida all'uso
@@ -33,7 +35,7 @@ Un'applicazione a file singolo (`index.html`, canvas + JavaScript) che mostra l'
 2. Naviga: scroll per lo zoom, trascina per spostarti, **R** reimposta, **Z** torna alla posizione precedente.
 3. Apri il menu ☰ o usa la barra superiore per Search, Tour, Quiz, Powers×10, Scale, Andromeda, Split Screen, Did you know, Measure, Favorites, Stats, Random, Export PNG.
 4. Tasti: **/** ricerca, **R** reimpostazione, **L** etichette, **S** suono, **C** comparatore di scala, **H** mappa di calore, **P** esportazione PNG, **T** tour, **M** misura, **Q** quiz, **D** galassia casuale, **F** preferiti, **G** gruppi gravitazionali, **N** cambia lingua, **O** Powers of Ten, **X** schermo diviso, **A** simulazione di Andromeda, **Z** annulla la navigazione, **`** menu laterale, **?** elenco delle scorciatoie, **Esc** chiude i pannelli.
-5. Lingua: il tasto **N** o il pulsante RO/EN.
+5. Lingua: il tasto **N** (scorre le lingue) o il menu della lingua nella barra.
 6. Daltonismo: scegli la modalità dal pannello dei livelli (Normal, Deuteranopia, Protanopia, Tritanopia, Achromatopsia).
 7. Salvataggio: stella ⭐ per i preferiti, «⬇ Export favorites CSV», «⬇ Export CSV (112 entries)» o «📸 Export PNG».
 
@@ -99,6 +101,6 @@ Alexio — Alexandru-Ionuț Chiuță, contatto: alexio@trom.tf. L'applicazione a
 
 ## Riepilogo in inglese
 
-Una mappa 2D interattiva dell'universo osservabile a file singolo, in scala logaritmica, con 111 galassie (più il fondo CMB = 112 voci), dati JWST (catalogo datato maggio 2026), tour, quiz con classifica locale, Potenze di 10, schermo diviso, simulazione di Andromeda, modalità per daltonici, esportazione CSV/PNG e una «Flat Earth Edition» satirica con guida integrata. Bilingue RO/EN. Preferenze memorizzate in localStorage; nessuna richiesta di dati a terze parti. Licenza MIT.
+Una mappa 2D interattiva dell'universo osservabile a file singolo, in scala logaritmica, con 111 galassie (più il fondo CMB = 112 voci), dati JWST (catalogo datato maggio 2026), tour, quiz con classifica locale, Potenze di 10, schermo diviso, simulazione di Andromeda, modalità per daltonici, esportazione CSV/PNG e una «Flat Earth Edition» satirica con guida integrata. 8 lingue. Preferenze memorizzate in localStorage; nessuna richiesta di dati a terze parti. Licenza MIT.
 
 Turno 3: 2026-10-11 — formulazioni «alla data del catalogo», DOI fittizio rimosso dalla guida, etichette bilingui per i cursori di filtro.

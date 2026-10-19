@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 5.11.0 · **Zuletzt aktualisiert:** 2026-10-19
+**Version:** 5.12.0 · **Zuletzt aktualisiert:** 2026-10-19
+
+Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Interaktive 2D-Karte des beobachtbaren Universums in logarithmischem Maßstab, mit 112 Katalogeinträgen (111 Galaxien + der kosmische Hintergrund CMB) — in einer satirischen „Flache-Erde“-Edition.
 
@@ -24,7 +26,7 @@ Eine Ein-Datei-Anwendung (`index.html`, Canvas + JavaScript), die das beobachtba
 - Adaptiver Soundtrack (Web Audio) mit Ein-/Ausschalter und Lautstärke.
 - PNG-Export und Drucken; Permalink mit dem vollständigen Zustand (`#s=...`).
 - Integrierter Leitfaden: Intro, Navigation, Visuelle Ebenen, Zeitleiste der Entfernungsrekorde, Flache Erde, Glossar, Häufige Fragen, Grenzen der Simulation, Versionsverlauf, Credits und Quellen.
-- Zweisprachige Oberfläche Rumänisch / Englisch.
+- Oberfläche in 8 Sprachen (RO, EN, FR, IT, ES, PT, DE, HU).
 - Beschriftungen, die sich überlagern würden, werden automatisch weggelassen (sie erscheinen bei stärkerem Zoom).
 
 ## Bedienungsanleitung
@@ -33,7 +35,7 @@ Eine Ein-Datei-Anwendung (`index.html`, Canvas + JavaScript), die das beobachtba
 2. Navigation: Scrollen zum Zoomen, Ziehen zum Verschieben, **R** setzt zurück, **Z** kehrt zur vorherigen Position zurück.
 3. Öffne das Menü ☰ oder nutze die obere Leiste für Search, Tour, Quiz, Powers×10, Scale, Andromeda, Split Screen, Did you know, Measure, Favorites, Stats, Random, Export PNG.
 4. Tasten: **/** Suche, **R** Zurücksetzen, **L** Beschriftungen, **S** Ton, **C** Maßstabsvergleich, **H** Heatmap, **P** PNG-Export, **T** Tour, **M** Messen, **Q** Quiz, **D** zufällige Galaxie, **F** Favoriten, **G** Gravitationsgruppen, **N** Sprache wechseln, **O** Powers of Ten, **X** geteilter Bildschirm, **A** Andromeda-Simulation, **Z** Navigation rückgängig, **`** Seitenmenü, **?** Liste der Tastenkürzel, **Esc** schließt die Fenster.
-5. Sprache: die Taste **N** oder die Schaltfläche RO/EN.
+5. Sprache: die Taste **N** (wechselt durch die Sprachen) oder das Sprachmenü in der Leiste.
 6. Farbfehlsichtigkeit: Wähle den Modus im Ebenen-Fenster (Normal, Deuteranopia, Protanopia, Tritanopia, Achromatopsia).
 7. Speichern: Stern ⭐ für Favoriten, „⬇ Export favorites CSV“, „⬇ Export CSV (112 entries)“ oder „📸 Export PNG“.
 
@@ -99,6 +101,6 @@ Alexio — Alexandru-Ionuț Chiuță, Kontakt: alexio@trom.tf. Die Anwendung nen
 
 ## Englische Zusammenfassung
 
-Eine interaktive 2D-Karte des beobachtbaren Universums in einer einzigen Datei, in logarithmischem Maßstab, mit 111 Galaxien (plus CMB-Hintergrund = 112 Einträge), JWST-Daten (Katalog datiert auf Mai 2026), Tour, Quiz mit lokaler Bestenliste, Zehnerpotenzen, geteiltem Bildschirm, Andromeda-Simulation, Modi für Farbfehlsichtige, CSV-/PNG-Export und einer satirischen „Flat Earth Edition“ mit integriertem Leitfaden. Zweisprachig RO/EN. Einstellungen in localStorage gespeichert; keine Datenanfragen an Dritte. MIT-Lizenz.
+Eine interaktive 2D-Karte des beobachtbaren Universums in einer einzigen Datei, in logarithmischem Maßstab, mit 111 Galaxien (plus CMB-Hintergrund = 112 Einträge), JWST-Daten (Katalog datiert auf Mai 2026), Tour, Quiz mit lokaler Bestenliste, Zehnerpotenzen, geteiltem Bildschirm, Andromeda-Simulation, Modi für Farbfehlsichtige, CSV-/PNG-Export und einer satirischen „Flat Earth Edition“ mit integriertem Leitfaden. 8 Sprachen. Einstellungen in localStorage gespeichert; keine Datenanfragen an Dritte. MIT-Lizenz.
 
 Runde 3: 2026-10-11 — Formulierungen „zum Katalogdatum“, fiktiver DOI aus dem Leitfaden entfernt, zweisprachige Beschriftungen für die Filterregler.

@@ -2,7 +2,9 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 5.11.0 · **Last updated:** 2026-10-19
+**Version:** 5.12.0 · **Last updated:** 2026-10-19
+
+Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 An interactive 2D map of the observable universe, on a logarithmic scale, with 112 catalogue entries (111 galaxies + the cosmic background CMB) — in a satirical "Flat Earth" edition.
 
@@ -24,7 +26,7 @@ A single-file application (`index.html`, canvas + JavaScript) that displays the 
 - Adaptive soundtrack (Web Audio) with on/off switch and volume.
 - PNG export and printing; permalink with the complete state (`#s=...`).
 - Built-in guide: Intro, Navigation, Visual layers, Timeline of distance records, Flat Earth, Glossary, Frequently asked questions, Limits of the simulation, Version history, Credits and sources.
-- Bilingual Romanian / English interface.
+- Interface in 8 languages (RO, EN, FR, IT, ES, PT, DE, HU).
 - Labels that would overlap are omitted automatically (they appear at higher zoom).
 
 ## User guide
@@ -33,7 +35,7 @@ A single-file application (`index.html`, canvas + JavaScript) that displays the 
 2. Navigate: scroll to zoom, drag to pan, **R** resets, **Z** returns to the previous position.
 3. Open the ☰ menu or use the top bar for Search, Tour, Quiz, Powers×10, Scale, Andromeda, Split Screen, Did you know, Measure, Favorites, Stats, Random, Export PNG.
 4. Keys: **/** search, **R** reset, **L** labels, **S** sound, **C** scale comparator, **H** heatmap, **P** export PNG, **T** tour, **M** measure, **Q** quiz, **D** random galaxy, **F** favourites, **G** gravitational groups, **N** switch language, **O** Powers of Ten, **X** split screen, **A** Andromeda simulation, **Z** undo navigation, **`** side menu, **?** shortcut list, **Esc** closes panels.
-5. Language: the **N** key or the RO/EN button.
+5. Language: the **N** key (cycles through the languages) or the language menu in the bar.
 6. Colour blindness: choose the mode from the layers panel (Normal, Deuteranopia, Protanopia, Tritanopia, Achromatopsia).
 7. Saving: star ⭐ for favourites, "⬇ Export favorites CSV", "⬇ Export CSV (112 entries)" or "📸 Export PNG".
 
@@ -99,6 +101,6 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. The application c
 
 ## English summary
 
-A single-file interactive 2D map of the observable universe on a logarithmic scale with 111 galaxies (plus the CMB background = 112 entries), JWST data (catalog dated May 2026), tour, quiz with local leaderboard, Powers of Ten, split screen, Andromeda simulation, colour-blind modes, CSV/PNG export and a satirical "Flat Earth Edition" with a built-in guide. Bilingual RO/EN. Preferences stored in localStorage; no data requests to third parties. MIT licence.
+A single-file interactive 2D map of the observable universe on a logarithmic scale with 111 galaxies (plus the CMB background = 112 entries), JWST data (catalog dated May 2026), tour, quiz with local leaderboard, Powers of Ten, split screen, Andromeda simulation, colour-blind modes, CSV/PNG export and a satirical "Flat Earth Edition" with a built-in guide. 8 languages. Preferences stored in localStorage; no data requests to third parties. MIT licence.
 
 Round 3: 2026-10-11 — "as of the catalogue date" wording, the placeholder DOI removed from the guide, bilingual labels for the filter sliders.

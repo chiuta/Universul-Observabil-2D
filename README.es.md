@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 5.11.0 · **Última actualización:** 2026-10-19
+**Versión:** 5.12.0 · **Última actualización:** 2026-10-19
+
+Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Mapa 2D interactivo del universo observable, en escala logarítmica, con 112 entradas de catálogo (111 galaxias + el fondo cósmico CMB) — en una edición satírica «Tierra Plana».
 
@@ -24,7 +26,7 @@ Una aplicación de un solo archivo (`index.html`, canvas + JavaScript) que muest
 - Banda sonora adaptativa (Web Audio) con activación/desactivación y volumen.
 - Exportación PNG e impresión; permalink con el estado completo (`#s=...`).
 - Guía integrada: Intro, Navegación, Capas visuales, Cronología de los récords de distancia, Tierra plana, Glosario, Preguntas frecuentes, Límites de la simulación, Historial de versiones, Créditos y fuentes.
-- Interfaz bilingüe rumano / inglés.
+- Interfaz en 8 idiomas (RO, EN, FR, IT, ES, PT, DE, HU).
 - Las etiquetas que se solaparían se omiten automáticamente (aparecen con un zoom mayor).
 
 ## Guía de uso
@@ -33,7 +35,7 @@ Una aplicación de un solo archivo (`index.html`, canvas + JavaScript) que muest
 2. Navega: scroll para el zoom, arrastra para desplazarte, **R** restablece, **Z** vuelve a la posición anterior.
 3. Abre el menú ☰ o usa la barra superior para Search, Tour, Quiz, Powers×10, Scale, Andromeda, Split Screen, Did you know, Measure, Favorites, Stats, Random, Export PNG.
 4. Teclas: **/** búsqueda, **R** restablecer, **L** etiquetas, **S** sonido, **C** comparador de escala, **H** mapa de calor, **P** exportar PNG, **T** recorrido, **M** medición, **Q** cuestionario, **D** galaxia aleatoria, **F** favoritos, **G** grupos gravitacionales, **N** cambiar de idioma, **O** Powers of Ten, **X** pantalla dividida, **A** simulación de Andrómeda, **Z** deshacer la navegación, **`** menú lateral, **?** lista de atajos, **Esc** cierra los paneles.
-5. Idioma: la tecla **N** o el botón RO/EN.
+5. Idioma: la tecla **N** (recorre los idiomas) o el menú de idioma de la barra.
 6. Daltonismo: elige el modo en el panel de capas (Normal, Deuteranopia, Protanopia, Tritanopia, Achromatopsia).
 7. Guardado: estrella ⭐ para favoritos, «⬇ Export favorites CSV», «⬇ Export CSV (112 entries)» o «📸 Export PNG».
 
@@ -99,6 +101,6 @@ Alexio — Alexandru-Ionuț Chiuță, contacto: alexio@trom.tf. La aplicación a
 
 ## Resumen en inglés
 
-Un mapa 2D interactivo del universo observable en un solo archivo, en escala logarítmica, con 111 galaxias (más el fondo CMB = 112 entradas), datos del JWST (catálogo fechado en mayo de 2026), recorrido, cuestionario con clasificación local, Potencias de 10, pantalla dividida, simulación de Andrómeda, modos para daltónicos, exportación CSV/PNG y una «Flat Earth Edition» satírica con guía integrada. Bilingüe RO/EN. Preferencias guardadas en localStorage; sin solicitudes de datos a terceros. Licencia MIT.
+Un mapa 2D interactivo del universo observable en un solo archivo, en escala logarítmica, con 111 galaxias (más el fondo CMB = 112 entradas), datos del JWST (catálogo fechado en mayo de 2026), recorrido, cuestionario con clasificación local, Potencias de 10, pantalla dividida, simulación de Andrómeda, modos para daltónicos, exportación CSV/PNG y una «Flat Earth Edition» satírica con guía integrada. 8 idiomas. Preferencias guardadas en localStorage; sin solicitudes de datos a terceros. Licencia MIT.
 
 Ronda 3: 2026-10-11 — formulaciones «a la fecha del catálogo», DOI ficticio eliminado de la guía, etiquetas bilingües para los deslizadores de filtrado.

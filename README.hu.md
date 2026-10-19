@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 5.11.0 · **Utolsó frissítés:** 2026-10-19
+**Verzió:** 5.12.0 · **Utolsó frissítés:** 2026-10-19
+
+A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 A megfigyelhető univerzum interaktív 2D-s térképe logaritmikus skálán, 112 katalógusbejegyzéssel (111 galaxis + a CMB kozmikus háttér) — szatirikus „Lapos Föld” kiadásban.
 
@@ -24,7 +26,7 @@ Egyfájlos alkalmazás (`index.html`, canvas + JavaScript), amely a megfigyelhet
 - Adaptív hangsáv (Web Audio) be-/kikapcsolással és hangerővel.
 - PNG-export és nyomtatás; permalink a teljes állapottal (`#s=...`).
 - Beépített útmutató: Intro, Navigáció, Vizuális rétegek, A távolsági rekordok idővonala, Lapos Föld, Szószedet, Gyakori kérdések, A szimuláció korlátai, Verziótörténet, Köszönetnyilvánítás és források.
-- Kétnyelvű román / angol felület.
+- 8 nyelvű felület (RO, EN, FR, IT, ES, PT, DE, HU).
 - Az egymást fedő feliratok automatikusan kimaradnak (nagyobb nagyításnál megjelennek).
 
 ## Használati útmutató
@@ -33,7 +35,7 @@ Egyfájlos alkalmazás (`index.html`, canvas + JavaScript), amely a megfigyelhet
 2. Navigálás: görgetés a nagyításhoz, húzás a mozgatáshoz, az **R** visszaállít, a **Z** visszatér az előző pozícióra.
 3. Nyisd meg a ☰ menüt, vagy használd a felső sávot a Search, Tour, Quiz, Powers×10, Scale, Andromeda, Split Screen, Did you know, Measure, Favorites, Stats, Random, Export PNG funkciókhoz.
 4. Billentyűk: **/** keresés, **R** visszaállítás, **L** feliratok, **S** hang, **C** skálaösszehasonlító, **H** hőtérkép, **P** PNG-export, **T** túra, **M** mérés, **Q** kvíz, **D** véletlen galaxis, **F** kedvencek, **G** gravitációs csoportok, **N** nyelvváltás, **O** Powers of Ten, **X** osztott képernyő, **A** Androméda-szimuláció, **Z** navigáció visszavonása, **`** oldalmenü, **?** a gyorsbillentyűk listája, **Esc** bezárja a paneleket.
-5. Nyelv: az **N** billentyű vagy az RO/EN gomb.
+5. Nyelv: az **N** billentyű (végigléptet a nyelveken) vagy a sávban lévő nyelvi menü.
 6. Színtévesztés: válaszd ki a módot a rétegek panelen (Normal, Deuteranopia, Protanopia, Tritanopia, Achromatopsia).
 7. Mentés: csillag ⭐ a kedvencekhez, „⬇ Export favorites CSV”, „⬇ Export CSV (112 entries)” vagy „📸 Export PNG”.
 
@@ -99,6 +101,6 @@ Alexio — Alexandru-Ionuț Chiuță, kapcsolat: alexio@trom.tf. Az alkalmazás 
 
 ## Angol nyelvű összefoglaló
 
-A megfigyelhető univerzum egyfájlos interaktív 2D-s térképe logaritmikus skálán, 111 galaxissal (plusz a CMB-háttér = 112 bejegyzés), JWST-adatokkal (a katalógus 2026 májusi keltezésű), túrával, helyi ranglistás kvízzel, a 10 hatványaival, osztott képernyővel, Androméda-szimulációval, színtévesztő módokkal, CSV-/PNG-exporttal és egy szatirikus „Flat Earth Edition” kiadással beépített útmutatóval. Kétnyelvű RO/EN. A beállítások a localStorage-ban tárolódnak; harmadik felek felé nincs adatlekérés. MIT licenc.
+A megfigyelhető univerzum egyfájlos interaktív 2D-s térképe logaritmikus skálán, 111 galaxissal (plusz a CMB-háttér = 112 bejegyzés), JWST-adatokkal (a katalógus 2026 májusi keltezésű), túrával, helyi ranglistás kvízzel, a 10 hatványaival, osztott képernyővel, Androméda-szimulációval, színtévesztő módokkal, CSV-/PNG-exporttal és egy szatirikus „Flat Earth Edition” kiadással beépített útmutatóval. 8 nyelv. A beállítások a localStorage-ban tárolódnak; harmadik felek felé nincs adatlekérés. MIT licenc.
 
 3. kör: 2026-10-11 — „a katalógus dátuma szerint” megfogalmazások, a fiktív DOI eltávolítva az útmutatóból, kétnyelvű címkék a szűrőcsúszkákhoz.

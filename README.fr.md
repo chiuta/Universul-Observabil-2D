@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 5.11.0 · **Dernière mise à jour :** 2026-10-19
+**Version :** 5.12.0 · **Dernière mise à jour :** 2026-10-19
+
+Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Carte 2D interactive de l'univers observable, à l'échelle logarithmique, avec 112 entrées de catalogue (111 galaxies + le fond cosmique CMB) — dans une édition satirique « Terre plate ».
 
@@ -24,7 +26,7 @@ Une application en un seul fichier (`index.html`, canvas + JavaScript) qui affic
 - Bande-son adaptative (Web Audio) avec activation/désactivation et volume.
 - Export PNG et impression ; permalien avec l'état complet (`#s=...`).
 - Guide intégré : Intro, Navigation, Couches visuelles, Chronologie des records de distance, Terre plate, Glossaire, Questions fréquentes, Limites de la simulation, Historique des versions, Crédits et sources.
-- Interface bilingue roumain / anglais.
+- Interface en 8 langues (RO, EN, FR, IT, ES, PT, DE, HU).
 - Les étiquettes qui se chevaucheraient sont omises automatiquement (elles apparaissent à un zoom plus grand).
 
 ## Mode d'emploi
@@ -33,7 +35,7 @@ Une application en un seul fichier (`index.html`, canvas + JavaScript) qui affic
 2. Naviguez : molette pour zoomer, glisser pour déplacer, **R** réinitialise, **Z** revient à la position précédente.
 3. Ouvrez le menu ☰ ou utilisez la barre supérieure pour Search, Tour, Quiz, Powers×10, Scale, Andromeda, Split Screen, Did you know, Measure, Favorites, Stats, Random, Export PNG.
 4. Touches : **/** recherche, **R** réinitialisation, **L** étiquettes, **S** son, **C** comparateur d'échelle, **H** carte de chaleur, **P** export PNG, **T** visite, **M** mesure, **Q** quiz, **D** galaxie aléatoire, **F** favoris, **G** groupes gravitationnels, **N** changer de langue, **O** Powers of Ten, **X** écran partagé, **A** simulation d'Andromède, **Z** annuler la navigation, **`** menu latéral, **?** liste des raccourcis, **Échap** ferme les panneaux.
-5. Langue : la touche **N** ou le bouton RO/EN.
+5. Langue : la touche **N** (fait défiler les langues) ou le menu de langue de la barre.
 6. Daltonisme : choisissez le mode dans le panneau des couches (Normal, Deuteranopia, Protanopia, Tritanopia, Achromatopsia).
 7. Enregistrement : étoile ⭐ pour les favoris, « ⬇ Export favorites CSV », « ⬇ Export CSV (112 entries) » ou « 📸 Export PNG ».
 
@@ -99,6 +101,6 @@ Alexio — Alexandru-Ionuț Chiuță, contact : alexio@trom.tf. L'application cr
 
 ## Résumé en anglais
 
-Une carte 2D interactive de l'univers observable en un seul fichier, à l'échelle logarithmique, avec 111 galaxies (plus le fond CMB = 112 entrées), des données JWST (catalogue daté de mai 2026), visite guidée, quiz avec classement local, Puissances de 10, écran partagé, simulation d'Andromède, modes pour daltoniens, export CSV/PNG et une « Flat Earth Edition » satirique avec guide intégré. Bilingue RO/EN. Préférences stockées dans localStorage ; aucune requête de données vers des tiers. Licence MIT.
+Une carte 2D interactive de l'univers observable en un seul fichier, à l'échelle logarithmique, avec 111 galaxies (plus le fond CMB = 112 entrées), des données JWST (catalogue daté de mai 2026), visite guidée, quiz avec classement local, Puissances de 10, écran partagé, simulation d'Andromède, modes pour daltoniens, export CSV/PNG et une « Flat Earth Edition » satirique avec guide intégré. 8 langues. Préférences stockées dans localStorage ; aucune requête de données vers des tiers. Licence MIT.
 
 Tour 3 : 2026-10-11 — formulations « à la date du catalogue », DOI fictif supprimé du guide, étiquettes bilingues pour les curseurs de filtrage.
