@@ -99,8 +99,8 @@ Aplicația și codul aparțin autorului (licență MIT, vezi `LICENSE`). Datele 
 
 Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. Aplicația îl creditează pe autor împreună cu ARES (ares.org.ro) și Centrul StrING.
 
-## English summary
+## Rezumat
 
-A single-file interactive 2D map of the observable universe on a logarithmic scale with 111 galaxies (plus the CMB background = 112 entries), JWST data (catalog dated May 2026), tour, quiz with local leaderboard, Powers of Ten, split screen, Andromeda simulation, colour-blind modes, CSV/PNG export and a satirical "Flat Earth Edition" with a built-in guide. 8 languages. Preferences stored in localStorage; no data requests to third parties. MIT licence.
+O hartă 2D interactivă a universului observabil, într-un singur fișier, pe scară logaritmică, cu 111 galaxii (plus fundalul CMB = 112 intrări), date JWST (catalog din mai 2026), tur, test cu clasament local, Puteri ale lui Zece, ecran împărțit, simulare Andromeda, moduri pentru daltonism, export CSV/PNG și o „Ediție Pământ Plat” satirică, cu ghid integrat. 8 limbi. Preferințele se stochează în localStorage; fără cereri de date către terți. Licență MIT.
 
 Rundă 3: 2026-10-11 — formulări „la data catalogului”, DOI-ul placeholder eliminat din ghid, etichete bilingve pentru sliderele de filtrare.
