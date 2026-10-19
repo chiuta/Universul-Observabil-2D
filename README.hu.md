@@ -10,7 +10,7 @@ A megfigyelhető univerzum interaktív 2D-s térképe logaritmikus skálán, 112
 
 **Online alkalmazás:** https://chiuta.github.io/Universul-Observabil-2D/
 
-![Képernyőkép](screenshot.png)
+![Képernyőkép](screenshot.hu.png)
 
 ## Mi ez
 

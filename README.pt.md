@@ -10,7 +10,7 @@ Mapa 2D interativo do universo observável, em escala logarítmica, com 112 entr
 
 **Aplicação online:** https://chiuta.github.io/Universul-Observabil-2D/
 
-![Captura de ecrã](screenshot.png)
+![Captura de ecrã](screenshot.pt.png)
 
 ## O que é
 

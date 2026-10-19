@@ -10,7 +10,7 @@ An interactive 2D map of the observable universe, on a logarithmic scale, with 1
 
 **Live app:** https://chiuta.github.io/Universul-Observabil-2D/
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.en.png)
 
 ## What it is
 

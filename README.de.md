@@ -10,7 +10,7 @@ Interaktive 2D-Karte des beobachtbaren Universums in logarithmischem Maßstab, m
 
 **Online-App:** https://chiuta.github.io/Universul-Observabil-2D/
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.de.png)
 
 ## Was es ist
 

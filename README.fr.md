@@ -10,7 +10,7 @@ Carte 2D interactive de l'univers observable, à l'échelle logarithmique, avec 
 
 **Application en ligne :** https://chiuta.github.io/Universul-Observabil-2D/
 
-![Capture d'écran](screenshot.png)
+![Capture d'écran](screenshot.fr.png)
 
 ## Présentation
 

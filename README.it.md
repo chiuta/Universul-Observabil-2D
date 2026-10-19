@@ -10,7 +10,7 @@ Mappa 2D interattiva dell'universo osservabile, in scala logaritmica, con 112 vo
 
 **App online:** https://chiuta.github.io/Universul-Observabil-2D/
 
-![Schermata](screenshot.png)
+![Schermata](screenshot.it.png)
 
 ## Che cos'è
 

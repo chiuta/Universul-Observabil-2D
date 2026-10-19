@@ -10,7 +10,7 @@ Harta 2D interactivă a universului observabil, pe scară logaritmică, cu 112 i
 
 **Live:** https://chiuta.github.io/Universul-Observabil-2D/
 
-![Captura de ecran](screenshot.png)
+![Captura de ecran](screenshot.ro.png)
 
 ## Ce este
 
