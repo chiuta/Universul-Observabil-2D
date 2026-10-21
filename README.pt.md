@@ -1,4 +1,4 @@
-# Observable Universe 2D · v5.11.0 · Flat Earth Edition™
+# Observable Universe 2D · v5.12.1 · Flat Earth Edition™
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
@@ -27,6 +27,7 @@ Uma aplicação de ficheiro único (`index.html`, canvas + JavaScript) que apres
 - Exportação PNG e impressão; permalink com o estado completo (`#s=...`).
 - Guia integrado: Intro, Navegação, Camadas visuais, Cronologia dos recordes de distância, Terra plana, Glossário, Perguntas frequentes, Limites da simulação, Histórico de versões, Créditos e fontes.
 - Interface em 8 idiomas (RO, EN, FR, IT, ES, PT, DE, HU).
+- **Idiomas:** o guia (10 fichas), as 112 descrições de galáxias, os 25 «Sabias que?», as narrações da visita, as Potências de dez, os marcos da cronologia, o modo professor, a mensagem do evento de 8 de maio, as linhas do póster A3 e as descrições no questionário e no comparador estão disponíveis nos 8 idiomas. Permanecem inalterados: o histórico de versões v5.8 e anteriores (em inglês; uma nota no guia indica-o), o nome da aplicação no cabeçalho, os nomes próprios e as fontes. As traduções são automáticas; recomenda-se revisão nativa.
 - As etiquetas que se sobreporiam são omitidas automaticamente (aparecem com um zoom maior).
 
 ## Manual de utilização
@@ -57,6 +58,9 @@ As afirmações de «recorde» (MoM-z14, z = 14,44) são válidas **à data do c
 Transfira `index.html` e abra-o num navegador; funciona sem internet. A aplicação continua funcional sem internet (o service worker a partir de blob está inativo).
 
 ## Histórico / Changelog
+
+### 5.12.1 — 2026-10-19
+- O guia, as descrições de galáxias, os «Sabias que?», a visita, as Potências de dez, os marcos da cronologia, o modo professor e o póster A3 estão traduzidos para fr, it, es, pt, de, hu; foi corrigida a afirmação falsa de que «permanecem em ro/en».
 
 ### 5.11.0 — 2026-10-19
 - Botão «📏 EIXO 1D ↗» no painel da galáxia (a mesma galáxia, idioma atual); o permalink `#g=` aceita a guarda `gn`.

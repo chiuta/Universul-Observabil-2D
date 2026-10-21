@@ -1,4 +1,4 @@
-# Observable Universe 2D · v5.11.0 · Flat Earth Edition™
+# Observable Universe 2D · v5.12.1 · Flat Earth Edition™
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
@@ -27,6 +27,7 @@ Une application en un seul fichier (`index.html`, canvas + JavaScript) qui affic
 - Export PNG et impression ; permalien avec l'état complet (`#s=...`).
 - Guide intégré : Intro, Navigation, Couches visuelles, Chronologie des records de distance, Terre plate, Glossaire, Questions fréquentes, Limites de la simulation, Historique des versions, Crédits et sources.
 - Interface en 8 langues (RO, EN, FR, IT, ES, PT, DE, HU).
+- **Langues :** le guide (10 fiches), les 112 descriptions de galaxies, les 25 « Le saviez-vous ? », les narrations de la visite, les Puissances de dix, les repères de la chronologie, le mode enseignant, le message de l'événement du 8 mai, les lignes de l'affiche A3 et les descriptions du quiz et du comparateur sont disponibles dans les 8 langues. Restent tels quels : l'historique des versions v5.8 et antérieures (conservé en anglais ; une note du guide le précise), le nom de l'application dans l'en-tête, les noms propres et les sources. Les traductions sont automatiques ; une relecture native est recommandée.
 - Les étiquettes qui se chevaucheraient sont omises automatiquement (elles apparaissent à un zoom plus grand).
 
 ## Mode d'emploi
@@ -57,6 +58,9 @@ Les affirmations de « record » (MoM-z14, z = 14,44) sont valables **à la date
 Téléchargez `index.html` et ouvrez-le dans un navigateur ; il fonctionne sans internet. L'application reste fonctionnelle sans internet (le service worker issu d'un blob est inactif).
 
 ## Historique / Changelog
+
+### 5.12.1 — 2026-10-19
+- Le guide, les descriptions des galaxies, les « Le saviez-vous ? », la visite, les Puissances de dix, les repères de la chronologie, le mode enseignant et l'affiche A3 sont traduits en fr, it, es, pt, de, hu ; l'affirmation erronée selon laquelle ils « restent en ro/en » a été corrigée.
 
 ### 5.11.0 — 2026-10-19
 - Bouton « 📏 AXE 1D ↗ » dans le panneau de la galaxie (même galaxie, langue courante) ; le permalien `#g=` accepte la garde `gn`.

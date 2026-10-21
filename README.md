@@ -1,4 +1,4 @@
-# Observable Universe 2D · v5.11.0 · Flat Earth Edition™
+# Observable Universe 2D · v5.12.1 · Flat Earth Edition™
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
@@ -27,6 +27,7 @@ A single-file application (`index.html`, canvas + JavaScript) that displays the 
 - PNG export and printing; permalink with the complete state (`#s=...`).
 - Built-in guide: Intro, Navigation, Visual layers, Timeline of distance records, Flat Earth, Glossary, Frequently asked questions, Limits of the simulation, Version history, Credits and sources.
 - Interface in 8 languages (RO, EN, FR, IT, ES, PT, DE, HU).
+- **Languages:** the guide (10 files), the 112 galaxy descriptions, the 25 "Did you know?" facts, the tour narrations, Powers of Ten, the timeline markers, teacher mode, the 8 May event message, the A3 poster lines and the descriptions in the quiz and the comparator are available in the 8 languages. Left as they are: the version history for v5.8 and older (kept in English; a note in the guide says so), the app name in the header, proper names and sources. The translations are automatic; a native review is recommended.
 - Labels that would overlap are omitted automatically (they appear at higher zoom).
 
 ## User guide
@@ -57,6 +58,9 @@ The "record" claims (MoM-z14, z = 14.44) are valid **as of the catalogue date (M
 Download `index.html` and open it in a browser; it works without internet. The application stays functional without internet (the blob service worker is inactive).
 
 ## History / Changelog
+
+### 5.12.1 — 2026-10-19
+- The guide, the galaxy descriptions, the "Did you know?" facts, the tour, Powers of Ten, the timeline markers, teacher mode and the A3 poster are translated into fr, it, es, pt, de, hu; the false statement that these "remain in ro/en" was corrected.
 
 ### 5.11.0 — 2026-10-19
 - "📏 1D AXIS ↗" button in the galaxy panel (same galaxy, current language); the `#g=` permalink accepts the `gn` guard.

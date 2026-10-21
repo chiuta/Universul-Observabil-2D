@@ -1,4 +1,4 @@
-# Observable Universe 2D · v5.11.0 · Flat Earth Edition™
+# Observable Universe 2D · v5.12.1 · Flat Earth Edition™
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
@@ -27,6 +27,7 @@ O aplicație single-file (`index.html`, canvas + JavaScript) care afișează uni
 - Export PNG și imprimare; permalink cu starea completă (`#s=...`).
 - Ghid integrat: Intro, Navigare, Straturi vizuale, Cronologia recordurilor de distanță, Pământ plat, Glosar, Întrebări frecvente, Limitele simulării, Istoric versiuni, Credite și surse.
 - Interfață în 8 limbi (RO, EN, FR, IT, ES, PT, DE, HU).
+- **Limbi:** ghidul (10 file), cele 112 descrieri de galaxii, cele 25 de „Știai că?”, narațiunile turului, Puterile lui zece, reperele cronologiei, modul profesor, mesajul evenimentului din 8 mai, liniile posterului A3 și descrierile din quiz și comparator sunt disponibile în cele 8 limbi. Rămân neschimbate: istoricul versiunilor v5.8 și mai vechi (păstrat în engleză; o notă din ghid o spune), numele aplicației din antet, numele proprii și sursele. Traducerile sunt automate; se recomandă revizie nativă.
 - Etichetele care s-ar suprapune sunt omise automat (apar la zoom mai mare).
 
 ## Manual de utilizare
@@ -57,6 +58,9 @@ Afirmațiile „record” (MoM-z14, z = 14,44) sunt valabile **la data catalogul
 Descarcă `index.html` și deschide-l în browser; funcționează fără internet. Aplicația rămâne funcțională fără internet (service worker-ul din blob este inactiv).
 
 ## Istoric / Changelog
+
+### 5.12.1 — 2026-10-19
+- Ghidul, descrierile galaxiilor, „Știai că?”, turul, Puterile lui zece, reperele cronologiei, modul profesor și posterul A3 sunt traduse în fr, it, es, pt, de, hu; mențiunea falsă că acestea „rămân în ro/en” a fost corectată.
 
 ### 5.11.0 — 2026-10-19
 - Buton „📏 AXA 1D ↗” în panoul galaxiei (aceeași galaxie, limba curentă); permalink-ul `#g=` acceptă garda `gn`.

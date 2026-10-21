@@ -1,4 +1,4 @@
-# Observable Universe 2D · v5.11.0 · Flat Earth Edition™
+# Observable Universe 2D · v5.12.1 · Flat Earth Edition™
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
@@ -27,6 +27,7 @@ Eine Ein-Datei-Anwendung (`index.html`, Canvas + JavaScript), die das beobachtba
 - PNG-Export und Drucken; Permalink mit dem vollständigen Zustand (`#s=...`).
 - Integrierter Leitfaden: Intro, Navigation, Visuelle Ebenen, Zeitleiste der Entfernungsrekorde, Flache Erde, Glossar, Häufige Fragen, Grenzen der Simulation, Versionsverlauf, Credits und Quellen.
 - Oberfläche in 8 Sprachen (RO, EN, FR, IT, ES, PT, DE, HU).
+- **Sprachen:** die Anleitung (10 Seiten), die 112 Galaxienbeschreibungen, die 25 „Wusstest du schon?“, die Tourtexte, Zehnerpotenzen, die Zeitleistenmarken, der Lehrermodus, die Meldung zum Ereignis vom 8. Mai, die Zeilen des A3-Posters und die Beschreibungen in Quiz und Vergleicher liegen in den 8 Sprachen vor. Unverändert bleiben: der Versionsverlauf bis v5.8 (auf Englisch; ein Hinweis in der Anleitung sagt das), der App-Name in der Kopfzeile, Eigennamen und Quellen. Die Übersetzungen sind automatisch; eine muttersprachliche Prüfung wird empfohlen.
 - Beschriftungen, die sich überlagern würden, werden automatisch weggelassen (sie erscheinen bei stärkerem Zoom).
 
 ## Bedienungsanleitung
@@ -57,6 +58,9 @@ Die „Rekord“-Aussagen (MoM-z14, z = 14,44) gelten **zum Katalogdatum (Mai 20
 Lade `index.html` herunter und öffne sie in einem Browser; sie funktioniert ohne Internet. Die Anwendung bleibt ohne Internet funktionsfähig (der Blob-Service-Worker ist inaktiv).
 
 ## Verlauf / Changelog
+
+### 5.12.1 — 2026-10-19
+- Anleitung, Galaxienbeschreibungen, „Wusstest du schon?“, Tour, Zehnerpotenzen, Zeitleistenmarken, Lehrermodus und A3-Poster sind nach fr, it, es, pt, de, hu übersetzt; die falsche Aussage, sie „bleiben auf ro/en“, wurde korrigiert.
 
 ### 5.11.0 — 2026-10-19
 - Schaltfläche „📏 1D-ACHSE ↗“ im Galaxienfenster (dieselbe Galaxie, aktuelle Sprache); der Permalink `#g=` akzeptiert den Guard `gn`.

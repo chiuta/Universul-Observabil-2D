@@ -1,4 +1,4 @@
-# Observable Universe 2D · v5.11.0 · Flat Earth Edition™
+# Observable Universe 2D · v5.12.1 · Flat Earth Edition™
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
@@ -27,6 +27,7 @@ Un'applicazione a file singolo (`index.html`, canvas + JavaScript) che mostra l'
 - Esportazione PNG e stampa; permalink con lo stato completo (`#s=...`).
 - Guida integrata: Intro, Navigazione, Livelli visivi, Cronologia dei record di distanza, Terra piatta, Glossario, Domande frequenti, Limiti della simulazione, Cronologia delle versioni, Crediti e fonti.
 - Interfaccia in 8 lingue (RO, EN, FR, IT, ES, PT, DE, HU).
+- **Lingue:** la guida (10 schede), le 112 descrizioni di galassie, i 25 «Lo sapevi?», le narrazioni del tour, le Potenze di dieci, i riferimenti della cronologia, la modalità insegnante, il messaggio dell'evento dell'8 maggio, le righe del poster A3 e le descrizioni nel quiz e nel comparatore sono disponibili nelle 8 lingue. Restano invariati: la cronologia delle versioni v5.8 e precedenti (in inglese; una nota nella guida lo segnala), il nome dell'app nell'intestazione, i nomi propri e le fonti. Le traduzioni sono automatiche; si consiglia una revisione da madrelingua.
 - Le etichette che si sovrapporrebbero vengono omesse automaticamente (compaiono con uno zoom maggiore).
 
 ## Guida all'uso
@@ -57,6 +58,9 @@ Le affermazioni di «record» (MoM-z14, z = 14,44) sono valide **alla data del c
 Scarica `index.html` e aprilo in un browser; funziona senza internet. L'applicazione resta funzionale senza internet (il service worker da blob è inattivo).
 
 ## Cronologia / Changelog
+
+### 5.12.1 — 2026-10-19
+- La guida, le descrizioni delle galassie, i «Lo sapevi?», il tour, le Potenze di dieci, i riferimenti della cronologia, la modalità insegnante e il poster A3 sono tradotti in fr, it, es, pt, de, hu; l'affermazione falsa che «restano in ro/en» è stata corretta.
 
 ### 5.11.0 — 2026-10-19
 - Pulsante «📏 ASSE 1D ↗» nel pannello della galassia (stessa galassia, lingua corrente); il permalink `#g=` accetta la guardia `gn`.

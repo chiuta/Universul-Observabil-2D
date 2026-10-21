@@ -1,4 +1,4 @@
-# Observable Universe 2D · v5.11.0 · Flat Earth Edition™
+# Observable Universe 2D · v5.12.1 · Flat Earth Edition™
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
@@ -27,6 +27,7 @@ Una aplicación de un solo archivo (`index.html`, canvas + JavaScript) que muest
 - Exportación PNG e impresión; permalink con el estado completo (`#s=...`).
 - Guía integrada: Intro, Navegación, Capas visuales, Cronología de los récords de distancia, Tierra plana, Glosario, Preguntas frecuentes, Límites de la simulación, Historial de versiones, Créditos y fuentes.
 - Interfaz en 8 idiomas (RO, EN, FR, IT, ES, PT, DE, HU).
+- **Idiomas:** la guía (10 fichas), las 112 descripciones de galaxias, los 25 «¿Sabías que?», las narraciones de la visita, las Potencias de diez, los hitos de la cronología, el modo profesor, el mensaje del evento del 8 de mayo, las líneas del póster A3 y las descripciones del cuestionario y del comparador están disponibles en los 8 idiomas. Permanecen sin cambios: el historial de versiones v5.8 y anteriores (en inglés; una nota de la guía lo indica), el nombre de la aplicación en la cabecera, los nombres propios y las fuentes. Las traducciones son automáticas; se recomienda revisión nativa.
 - Las etiquetas que se solaparían se omiten automáticamente (aparecen con un zoom mayor).
 
 ## Guía de uso
@@ -57,6 +58,9 @@ Las afirmaciones de «récord» (MoM-z14, z = 14,44) son válidas **a la fecha d
 Descarga `index.html` y ábrelo en un navegador; funciona sin internet. La aplicación sigue siendo funcional sin internet (el service worker desde blob está inactivo).
 
 ## Historial / Changelog
+
+### 5.12.1 — 2026-10-19
+- La guía, las descripciones de galaxias, los «¿Sabías que?», la visita, las Potencias de diez, los hitos de la cronología, el modo profesor y el póster A3 están traducidos a fr, it, es, pt, de, hu; se corrigió la afirmación falsa de que «permanecen en ro/en».
 
 ### 5.11.0 — 2026-10-19
 - Botón «📏 EJE 1D ↗» en el panel de la galaxia (la misma galaxia, idioma actual); el permalink `#g=` acepta la guarda `gn`.

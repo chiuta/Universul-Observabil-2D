@@ -1,4 +1,4 @@
-# Observable Universe 2D · v5.11.0 · Flat Earth Edition™
+# Observable Universe 2D · v5.12.1 · Flat Earth Edition™
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
@@ -27,6 +27,7 @@ Egyfájlos alkalmazás (`index.html`, canvas + JavaScript), amely a megfigyelhet
 - PNG-export és nyomtatás; permalink a teljes állapottal (`#s=...`).
 - Beépített útmutató: Intro, Navigáció, Vizuális rétegek, A távolsági rekordok idővonala, Lapos Föld, Szószedet, Gyakori kérdések, A szimuláció korlátai, Verziótörténet, Köszönetnyilvánítás és források.
 - 8 nyelvű felület (RO, EN, FR, IT, ES, PT, DE, HU).
+- **Nyelvek:** az útmutató (10 oldal), a 112 galaxisleírás, a 25 „Tudtad?” tény, a túra elbeszélései, a Tíz hatványai, az idővonal jelölései, a tanári mód, a május 8-i esemény üzenete, az A3-as poszter sorai, valamint a kvíz és az összehasonlító leírásai mind a 8 nyelven elérhetők. Változatlanul maradnak: a v5.8 és régebbi verziók előzményei (angolul; az útmutatóban erről megjegyzés szól), az alkalmazás neve a fejlécben, a tulajdonnevek és a források. A fordítások automatikusak; anyanyelvi lektorálás ajánlott.
 - Az egymást fedő feliratok automatikusan kimaradnak (nagyobb nagyításnál megjelennek).
 
 ## Használati útmutató
@@ -57,6 +58,9 @@ A „rekord” állítások (MoM-z14, z = 14,44) **a katalógus dátuma (2026. m
 Töltsd le az `index.html` fájlt, és nyisd meg böngészőben; internet nélkül is működik. Az alkalmazás internet nélkül is működőképes marad (a blobból származó service worker inaktív).
 
 ## Előzmények / Changelog
+
+### 5.12.1 — 2026-10-19
+- Az útmutató, a galaxisleírások, a „Tudtad?” tények, a túra, a Tíz hatványai, az idővonal jelölései, a tanári mód és az A3-as poszter le van fordítva fr, it, es, pt, de, hu nyelvre; kijavítottuk azt a téves állítást, hogy ezek „ro/en nyelven maradnak”.
 
 ### 5.11.0 — 2026-10-19
 - „📏 1D TENGELY ↗” gomb a galaxis paneljén (ugyanaz a galaxis, az aktuális nyelven); a `#g=` permalink elfogadja a `gn` őrt.
