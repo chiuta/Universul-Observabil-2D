@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 5.12.1 · **Ultimo aggiornamento:** 2026-10-19
+**Versione:** 5.12.2 · **Ultimo aggiornamento:** 2026-10-22
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,8 @@ Le affermazioni di «record» (MoM-z14, z = 14,44) sono valide **alla data del c
 Scarica `index.html` e aprilo in un browser; funziona senza internet. L'applicazione resta funzionale senza internet (il service worker da blob è inattivo).
 
 ## Cronologia / Changelog
+
+- 5.12.2 — 2026-10-22: l'interfaccia è ora completa anche in rumeno e inglese (barra laterale, scorciatoie, ticker, tooltip e aria-label non mescolano più le due lingue); titolo della pagina e meta-descrizioni seguono la lingua dell'interfaccia.
 
 ### 5.12.1 — 2026-10-19
 - La guida, le descrizioni delle galassie, i «Lo sapevi?», il tour, le Potenze di dieci, i riferimenti della cronologia, la modalità insegnante e il poster A3 sono tradotti in fr, it, es, pt, de, hu; l'affermazione falsa che «restano in ro/en» è stata corretta.

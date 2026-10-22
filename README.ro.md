@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 5.12.1 · **Ultima actualizare:** 2026-10-19
+**Versiune:** 5.12.2 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,8 @@ Afirmațiile „record” (MoM-z14, z = 14,44) sunt valabile **la data catalogul
 Descarcă `index.html` și deschide-l în browser; funcționează fără internet. Aplicația rămâne funcțională fără internet (service worker-ul din blob este inactiv).
 
 ## Istoric / Changelog
+
+- 5.12.2 — 2026-10-22: interfața este acum completă și în română și în engleză (bara laterală, scurtăturile, tickerul, tooltip-urile și aria-label-urile nu mai amestecă cele două limbi); titlul paginii și meta-descrierile urmează limba interfeței.
 
 ### 5.12.1 — 2026-10-19
 - Ghidul, descrierile galaxiilor, „Știai că?”, turul, Puterile lui zece, reperele cronologiei, modul profesor și posterul A3 sunt traduse în fr, it, es, pt, de, hu; mențiunea falsă că acestea „rămân în ro/en” a fost corectată.

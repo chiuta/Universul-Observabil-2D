@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 5.12.1 · **Zuletzt aktualisiert:** 2026-10-19
+**Version:** 5.12.2 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,8 @@ Die „Rekord“-Aussagen (MoM-z14, z = 14,44) gelten **zum Katalogdatum (Mai 20
 Lade `index.html` herunter und öffne sie in einem Browser; sie funktioniert ohne Internet. Die Anwendung bleibt ohne Internet funktionsfähig (der Blob-Service-Worker ist inaktiv).
 
 ## Verlauf / Changelog
+
+- 5.12.2 — 2026-10-22: Die Oberfläche ist jetzt auch auf Rumänisch und Englisch vollständig (Seitenleiste, Tastenkürzel, Ticker, Tooltips und aria-label mischen die beiden Sprachen nicht mehr); Seitentitel und Meta-Beschreibungen folgen der Oberflächensprache.
 
 ### 5.12.1 — 2026-10-19
 - Anleitung, Galaxienbeschreibungen, „Wusstest du schon?“, Tour, Zehnerpotenzen, Zeitleistenmarken, Lehrermodus und A3-Poster sind nach fr, it, es, pt, de, hu übersetzt; die falsche Aussage, sie „bleiben auf ro/en“, wurde korrigiert.

@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 5.12.1 · **Dernière mise à jour :** 2026-10-19
+**Version :** 5.12.2 · **Dernière mise à jour :** 2026-10-22
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,8 @@ Les affirmations de « record » (MoM-z14, z = 14,44) sont valables **à la date
 Téléchargez `index.html` et ouvrez-le dans un navigateur ; il fonctionne sans internet. L'application reste fonctionnelle sans internet (le service worker issu d'un blob est inactif).
 
 ## Historique / Changelog
+
+- 5.12.2 — 2026-10-22: l'interface est désormais complète aussi en roumain et en anglais (barre latérale, raccourcis, bandeau défilant, infobulles et aria-label ne mélangent plus les deux langues) ; le titre de la page et les méta-descriptions suivent la langue de l'interface.
 
 ### 5.12.1 — 2026-10-19
 - Le guide, les descriptions des galaxies, les « Le saviez-vous ? », la visite, les Puissances de dix, les repères de la chronologie, le mode enseignant et l'affiche A3 sont traduits en fr, it, es, pt, de, hu ; l'affirmation erronée selon laquelle ils « restent en ro/en » a été corrigée.

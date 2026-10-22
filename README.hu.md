@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 5.12.1 · **Utolsó frissítés:** 2026-10-19
+**Verzió:** 5.12.2 · **Utolsó frissítés:** 2026-10-22
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,8 @@ A „rekord” állítások (MoM-z14, z = 14,44) **a katalógus dátuma (2026. m
 Töltsd le az `index.html` fájlt, és nyisd meg böngészőben; internet nélkül is működik. Az alkalmazás internet nélkül is működőképes marad (a blobból származó service worker inaktív).
 
 ## Előzmények / Changelog
+
+- 5.12.2 — 2026-10-22: a felület mostantól román és angol nyelven is teljes (az oldalsáv, a billentyűparancsok, a futószöveg, a buboréksúgók és az aria-label címkék már nem keverik a két nyelvet); az oldal címe és a meta-leírások követik a felület nyelvét.
 
 ### 5.12.1 — 2026-10-19
 - Az útmutató, a galaxisleírások, a „Tudtad?” tények, a túra, a Tíz hatványai, az idővonal jelölései, a tanári mód és az A3-as poszter le van fordítva fr, it, es, pt, de, hu nyelvre; kijavítottuk azt a téves állítást, hogy ezek „ro/en nyelven maradnak”.

@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "slug": "universul-observabil-2d",
-  "name": "Observable Universe · 2D · v5.12.1 · Flat Earth Edition™",
-  "version": "5.12.1",
-  "updated": "2026-10-19",
-  "description": "2D map of the observable universe — 111 galaxies, 12 cosmic horizons, logarithmic scale. Quiz with leaderboard, LOD zoom, adaptive soundtrack, gravitational groups, permalink with full state. Satirical Flat Earth™ edition. JWST data up to z=14.44. v5.9.1 — UX & accessibility milestone: universal localStorage preferences (CVD, layers, sound, volume persist across sessions); prefers-reduced-motion respected in flyTo / Andromeda / autoRotate; new GUIDE tab 'Simulation Limits' (epistemic honesty); heatmap boost (logarithmic normalization + Gaussian kernel). v5.12.1 — interface in 8 languages (ro, en, fr, it, es, pt, de, hu) with a discreet language selector.",
+  "name": "Observable Universe · 2D · v5.12.2 · Flat Earth Edition™",
+  "version": "5.12.2",
+  "updated": "2026-10-22",
+  "description": "2D map of the observable universe — 111 galaxies, 12 cosmic horizons, logarithmic scale. Quiz with leaderboard, LOD zoom, adaptive soundtrack, gravitational groups, permalink with full state. Satirical Flat Earth™ edition. JWST data up to z=14.44. v5.9.1 — UX & accessibility milestone: universal localStorage preferences (CVD, layers, sound, volume persist across sessions); prefers-reduced-motion respected in flyTo / Andromeda / autoRotate; new GUIDE tab 'Simulation Limits' (epistemic honesty); heatmap boost (logarithmic normalization + Gaussian kernel). v5.12.2 — interface in 8 languages (ro, en, fr, it, es, pt, de, hu) with a discreet language selector.",
   "egress": [],
   "permissions": [
     "navigator.share",
@@ -16,8 +16,8 @@
     "uv2d_favs",
     "uv_lang"
   ],
-  "sizeBytes": 1175284,
-  "sha256": "134d8925c3330845363cbcab4ecf2809873ad61a06da8e2f6c40fa974ad2c631",
+  "sizeBytes": 1214007,
+  "sha256": "06049194592d4150b85bb38ec0d22274dcabe0ecdbded98b5ef9a9082f60e125",
   "csp": {
     "present": true,
     "directives": {
