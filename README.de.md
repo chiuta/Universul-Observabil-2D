@@ -1,8 +1,8 @@
-# Observable Universe 2D · v5.12.3 · Flat Earth Edition™
+# Observable Universe 2D · v5.12.4 · Flat Earth Edition™
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 5.12.3 · **Zuletzt aktualisiert:** 2026-10-22
+**Version:** 5.12.4 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -59,6 +59,7 @@ Lade `index.html` herunter und öffne sie in einem Browser; sie funktioniert ohn
 
 ## Verlauf / Changelog
 
+- 5.12.4 — 2026-10-22: die übrigen rumänischen Galaxiennamen (Milchstraße, Dreiecksnebel, Zigarre, Feuerrad, Strudel, Nadel, Schwarzes Auge, Sonnenblume, Antennen, Feuerwerk, Geschoss, Phönix, Linse, Zwerggalaxie im Großen Hund, CMB-Horizont u. a.) und die Beschriftungen der Gravitationsgruppen auf der Karte sind in allen 8 Sprachen übersetzt; die internen Schlüssel bleiben unverändert.
 - 5.12.3 — 2026-10-22: die Bezeichnungen der beiden Magellanschen Wolken (LMC/SMC) sind in allen 8 Sprachen übersetzt (Abkürzungen bleiben); der Titel der oberen Leiste (BEOBACHTBARES UNIVERSUM · 2D) und der PNG-Exporttitel folgen der Oberflächensprache; das Satire-Etikett wiederholt das Wort in fr/it/es/pt/de/hu nicht mehr.
 - 5.12.2 — 2026-10-22: Die Oberfläche ist jetzt auch auf Rumänisch und Englisch vollständig (Seitenleiste, Tastenkürzel, Ticker, Tooltips und aria-label mischen die beiden Sprachen nicht mehr); Seitentitel und Meta-Beschreibungen folgen der Oberflächensprache.
 

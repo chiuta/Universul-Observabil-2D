@@ -1,8 +1,8 @@
-# Observable Universe 2D · v5.12.3 · Flat Earth Edition™
+# Observable Universe 2D · v5.12.4 · Flat Earth Edition™
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 5.12.3 · **Última actualización:** 2026-10-22
+**Versión:** 5.12.4 · **Última actualización:** 2026-10-22
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -59,6 +59,7 @@ Descarga `index.html` y ábrelo en un navegador; funciona sin internet. La aplic
 
 ## Historial / Changelog
 
+- 5.12.4 — 2026-10-22: los nombres rumanos de galaxias que quedaban (Vía Láctea, Triángulo, Cigarro, Molinete, Remolino, Aguja, Ojo negro, Girasol, Antenas, Fuegos artificiales, Bala, Fénix, Lente, Enana del Can Mayor, Horizonte CMB, etc.) y las etiquetas de los grupos gravitacionales del mapa se traducen a los 8 idiomas; las claves internas no cambian.
 - 5.12.3 — 2026-10-22: las etiquetas de las dos Nubes de Magallanes (LMC/SMC) se traducen a los 8 idiomas (siglas conservadas); el título de la barra superior (UNIVERSO OBSERVABLE · 2D) y el de la exportación PNG siguen el idioma de la interfaz; la etiqueta de sátira ya no repite la palabra en fr/it/es/pt/de/hu.
 - 5.12.2 — 2026-10-22: la interfaz es ahora completa también en rumano e inglés (barra lateral, atajos, cinta de noticias, descripciones emergentes y aria-label ya no mezclan los dos idiomas); el título de la página y las metadescripciones siguen el idioma de la interfaz.
 

@@ -1,8 +1,8 @@
-# Observable Universe 2D · v5.12.3 · Flat Earth Edition™
+# Observable Universe 2D · v5.12.4 · Flat Earth Edition™
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 5.12.3 · **Utolsó frissítés:** 2026-10-22
+**Verzió:** 5.12.4 · **Utolsó frissítés:** 2026-10-22
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -59,6 +59,7 @@ Töltsd le az `index.html` fájlt, és nyisd meg böngészőben; internet nélk�
 
 ## Előzmények / Changelog
 
+- 5.12.4 — 2026-10-22: a megmaradt román galaxisnevek (Tejút, Háromszög-galaxis, Szivar, Szélkerék, Örvény, Tű, Fekete szem, Napraforgó, Csápok, Tűzijáték, Golyó, Főnix, Lencse, Nagy Kutya törpegalaxis, CMB-horizont stb.) és a gravitációs csoportok térképi feliratai mind a 8 nyelven le vannak fordítva; a belső kulcsok változatlanok.
 - 5.12.3 — 2026-10-22: a két Magellán-felhő (LMC/SMC) címkéi mind a 8 nyelven le vannak fordítva (a rövidítések maradnak); a felső sáv címe (MEGFIGYELHETŐ UNIVERZUM · 2D) és a PNG-export címe követi a felület nyelvét; a szatíra-címke már nem ismétli a szót fr/it/es/pt/de/hu nyelven.
 - 5.12.2 — 2026-10-22: a felület mostantól román és angol nyelven is teljes (az oldalsáv, a billentyűparancsok, a futószöveg, a buboréksúgók és az aria-label címkék már nem keverik a két nyelvet); az oldal címe és a meta-leírások követik a felület nyelvét.
 

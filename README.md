@@ -1,8 +1,8 @@
-# Observable Universe 2D · v5.12.3 · Flat Earth Edition™
+# Observable Universe 2D · v5.12.4 · Flat Earth Edition™
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 5.12.3 · **Last updated:** 2026-10-22
+**Version:** 5.12.4 · **Last updated:** 2026-10-22
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -59,6 +59,7 @@ Download `index.html` and open it in a browser; it works without internet. The a
 
 ## History / Changelog
 
+- 5.12.4 — 2026-10-22: the remaining Romanian galaxy names (Milky Way, Triangulum, Cigar, Pinwheel, Whirlpool, Needle, Black Eye, Sunflower, Antennae, Fireworks, Bullet, Phoenix, Lens, Canis Major Dwarf, CMB Horizon and more) and the gravitational-group labels on the map are now translated in all 8 languages; internal keys are unchanged.
 - 5.12.3 — 2026-10-22: the two Magellanic Cloud labels (LMC/SMC) are now translated in all 8 languages (acronyms kept); the top-bar title (OBSERVABLE UNIVERSE · 2D) and the PNG export title follow the interface language; the satire tag no longer repeats the word in fr/it/es/pt/de/hu.
 - 5.12.2 — 2026-10-22: the interface is now complete in Romanian and English too (sidebar, shortcuts, ticker, tooltips and aria-labels no longer mix the two languages); page title and meta descriptions follow the interface language.
 
