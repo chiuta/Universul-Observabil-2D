@@ -1,4 +1,4 @@
-// UO-1D 1.2.0 <-> UO-2D 5.12.7 — punți reciproce. Rulare: node uo-bridge.test.mjs <dir1D> <dir2D>   (rețea blocată, file://)
+// UO-1D 1.2.0 <-> UO-2D 5.12.8 — punți reciproce. Rulare: node uo-bridge.test.mjs <dir1D> <dir2D>   (rețea blocată, file://)
 import {createRequire} from "module"; const require = createRequire("/opt/node-tools/package.json"); const {chromium} = require("playwright");
 let fails = 0, passes = 0; const check = (n, c, x) => { c ? (passes++, console.log("  ok  " + n)) : (fails++, console.log("FAIL  " + n + (x !== undefined ? "  -> " + JSON.stringify(x) : ""))); };
 const [d1, d2] = [process.argv[2], process.argv[3]];
