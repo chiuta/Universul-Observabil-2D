@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 5.12.5 · **Zuletzt aktualisiert:** 2026-10-22
+**Version:** 5.12.6 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,9 @@ Die „Rekord“-Aussagen (MoM-z14, z = 14,44) gelten **zum Katalogdatum (Mai 20
 Lade `index.html` herunter und öffne sie in einem Browser; sie funktioniert ohne Internet. Die Anwendung bleibt ohne Internet funktionsfähig (der Blob-Service-Worker ist inaktiv).
 
 ## Verlauf / Changelog
+
+### 5.12.6 — 2026-10-22
+- fff-kit 1.1.2: PBKDF2 mit 600.000 Iterationen, Schutz vor Clickjacking.
 
 ### 5.12.5 — 2026-10-22
 - Wirklich offline: Der defekte eingebettete Service Worker (blob:-URL, die die Seite nie zwischenspeichern kann) wurde durch einen echten sw.js (Cache zuerst mit Hintergrund-Revalidierung), ein Web-Manifest und Symbole ersetzt; die App öffnet sich nun nach dem ersten Besuch ohne Netz und kann installiert werden. Auch der QR-Generator wird vorab zwischengespeichert.

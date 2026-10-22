@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "slug": "universul-observabil-2d",
-  "name": "Observable Universe · 2D · v5.12.5 · Flat Earth Edition™",
-  "version": "5.12.5",
+  "name": "Observable Universe · 2D · v5.12.6 · Flat Earth Edition™",
+  "version": "5.12.6",
   "updated": "2026-10-22",
-  "description": "2D map of the observable universe — 111 galaxies, 12 cosmic horizons, logarithmic scale. Quiz with leaderboard, LOD zoom, adaptive soundtrack, gravitational groups, permalink with full state. Satirical Flat Earth™ edition. JWST data up to z=14.44. v5.9.1 — UX & accessibility milestone: universal localStorage preferences (CVD, layers, sound, volume persist across sessions); prefers-reduced-motion respected in flyTo / Andromeda / autoRotate; new GUIDE tab 'Simulation Limits' (epistemic honesty); heatmap boost (logarithmic normalization + Gaussian kernel). v5.12.5 — interface in 8 languages (ro, en, fr, it, es, pt, de, hu) with a discreet language selector.",
+  "description": "2D map of the observable universe — 111 galaxies, 12 cosmic horizons, logarithmic scale. Quiz with leaderboard, LOD zoom, adaptive soundtrack, gravitational groups, permalink with full state. Satirical Flat Earth™ edition. JWST data up to z=14.44. v5.9.1 — UX & accessibility milestone: universal localStorage preferences (CVD, layers, sound, volume persist across sessions); prefers-reduced-motion respected in flyTo / Andromeda / autoRotate; new GUIDE tab 'Simulation Limits' (epistemic honesty); heatmap boost (logarithmic normalization + Gaussian kernel). v5.12.6 — interface in 8 languages (ro, en, fr, it, es, pt, de, hu) with a discreet language selector.",
   "egress": [],
   "permissions": [
     "navigator.share",
@@ -16,8 +16,8 @@
     "uv2d_favs",
     "uv_lang"
   ],
-  "sizeBytes": 1226191,
-  "sha256": "c2bd371c274ab2825f3abf7ec001c8b358f70e590828143c25bd91ad6aad6cec",
+  "sizeBytes": 1226659,
+  "sha256": "df56cb76d400ae0fc4b7767ad55c019fce01dcedcda930637a31e537ba747ac6",
   "csp": {
     "present": true,
     "directives": {
@@ -61,7 +61,7 @@
     ]
   },
   "kit": {
-    "version": "1.1.1",
+    "version": "1.1.2",
     "modules": [
       "core",
       "label",

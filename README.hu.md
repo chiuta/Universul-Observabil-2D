@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 5.12.5 · **Utolsó frissítés:** 2026-10-22
+**Verzió:** 5.12.6 · **Utolsó frissítés:** 2026-10-22
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,9 @@ A „rekord” állítások (MoM-z14, z = 14,44) **a katalógus dátuma (2026. m
 Töltsd le az `index.html` fájlt, és nyisd meg böngészőben; internet nélkül is működik. Az alkalmazás internet nélkül is működőképes marad (a blobból származó service worker inaktív).
 
 ## Előzmények / Changelog
+
+### 5.12.6 — 2026-10-22
+- fff-kit 1.1.2: PBKDF2 600 000 iterációval, clickjacking elleni védelem.
 
 ### 5.12.5 — 2026-10-22
 - Valóban offline: a hibás beágyazott service workert (blob: URL, amely soha nem tudja gyorsítótárazni az oldalt) valódi sw.js váltotta fel (előbb gyorsítótár, háttér-újraellenőrzéssel), webes manifesttel és ikonokkal; az alkalmazás az első látogatás után hálózat nélkül is megnyílik, és telepíthető. A QR-generátor is előre gyorsítótárba kerül.
