@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 5.12.4 · **Dernière mise à jour :** 2026-10-22
+**Version :** 5.12.5 · **Dernière mise à jour :** 2026-10-22
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,12 @@ Les affirmations de « record » (MoM-z14, z = 14,44) sont valables **à la date
 Téléchargez `index.html` et ouvrez-le dans un navigateur ; il fonctionne sans internet. L'application reste fonctionnelle sans internet (le service worker issu d'un blob est inactif).
 
 ## Historique / Changelog
+
+### 5.12.5 — 2026-10-22
+- Hors ligne pour de bon : le service worker intégré défectueux (URL blob:, qui ne peut jamais mettre la page en cache) a été remplacé par un vrai sw.js (cache d'abord avec revalidation en arrière-plan), un manifeste web et des icônes ; l'application s'ouvre désormais sans réseau après la première visite et peut être installée. Le générateur de QR est lui aussi pré-mis en cache.
+- Accessibilité : la page comporte désormais exactement un H1 (la barre de titre) ; le champ de recherche de comparaison, le curseur de vitesse de la chronologie et les deux curseurs de la vue partagée ont un nom annoncé par les lecteurs d'écran (8 langues) ; les curseurs ont des cibles tactiles de 24 px.
+- Les captures PNG exportées portent désormais la mention « PARODIE · Édition Terre plate™ — la Terre n'est pas plate » (dans la langue de l'interface), afin qu'une capture ne puisse pas être citée hors contexte.
+- Mobile : tout le texte de l'interface fait au moins 12 px.
 
 - 5.12.4 — 2026-10-22: les derniers noms roumains de galaxies (Voie lactée, Triangle, Cigare, Moulinet, Tourbillon, Aiguille, Œil noir, Tournesol, Antennes, Feux d'artifice, Boulet, Phénix, Lentille, Naine du Grand Chien, Horizon CMB, etc.) et les étiquettes des groupes gravitationnels sur la carte sont traduits dans les 8 langues ; les clés internes sont inchangées.
 - 5.12.3 — 2026-10-22: les libellés des deux Nuages de Magellan (LMC/SMC) sont traduits dans les 8 langues (acronymes conservés) ; le titre de la barre supérieure (UNIVERS OBSERVABLE · 2D) et celui de l'export PNG suivent la langue de l'interface ; l'étiquette de satire ne répète plus le mot en fr/it/es/pt/de/hu.

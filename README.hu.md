@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 5.12.4 · **Utolsó frissítés:** 2026-10-22
+**Verzió:** 5.12.5 · **Utolsó frissítés:** 2026-10-22
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,12 @@ A „rekord” állítások (MoM-z14, z = 14,44) **a katalógus dátuma (2026. m
 Töltsd le az `index.html` fájlt, és nyisd meg böngészőben; internet nélkül is működik. Az alkalmazás internet nélkül is működőképes marad (a blobból származó service worker inaktív).
 
 ## Előzmények / Changelog
+
+### 5.12.5 — 2026-10-22
+- Valóban offline: a hibás beágyazott service workert (blob: URL, amely soha nem tudja gyorsítótárazni az oldalt) valódi sw.js váltotta fel (előbb gyorsítótár, háttér-újraellenőrzéssel), webes manifesttel és ikonokkal; az alkalmazás az első látogatás után hálózat nélkül is megnyílik, és telepíthető. A QR-generátor is előre gyorsítótárba kerül.
+- Akadálymentesség: az oldalon mostantól pontosan egy H1 van (a címsor); az összehasonlító keresőmező, az idővonal sebességének csúszkája és az osztott nézet két csúszkája a képernyőolvasók által felolvasott névvel rendelkezik (8 nyelv); a csúszkák érintési felülete 24 px.
+- A exportált PNG-felvételek mostantól a „PARÓDIA · Lapos Föld kiadás™ — a Föld nem lapos” jelölést viselik (a felület nyelvén), hogy a felvétel ne legyen kontextusból kiragadva idézhető.
+- Mobil: a felület összes szövege legalább 12 px.
 
 - 5.12.4 — 2026-10-22: a megmaradt román galaxisnevek (Tejút, Háromszög-galaxis, Szivar, Szélkerék, Örvény, Tű, Fekete szem, Napraforgó, Csápok, Tűzijáték, Golyó, Főnix, Lencse, Nagy Kutya törpegalaxis, CMB-horizont stb.) és a gravitációs csoportok térképi feliratai mind a 8 nyelven le vannak fordítva; a belső kulcsok változatlanok.
 - 5.12.3 — 2026-10-22: a két Magellán-felhő (LMC/SMC) címkéi mind a 8 nyelven le vannak fordítva (a rövidítések maradnak); a felső sáv címe (MEGFIGYELHETŐ UNIVERZUM · 2D) és a PNG-export címe követi a felület nyelvét; a szatíra-címke már nem ismétli a szót fr/it/es/pt/de/hu nyelven.

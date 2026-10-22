@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 5.12.4 · **Ultima actualizare:** 2026-10-22
+**Versiune:** 5.12.5 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,12 @@ Afirmațiile „record” (MoM-z14, z = 14,44) sunt valabile **la data catalogul
 Descarcă `index.html` și deschide-l în browser; funcționează fără internet. Aplicația rămâne funcțională fără internet (service worker-ul din blob este inactiv).
 
 ## Istoric / Changelog
+
+### 5.12.5 — 2026-10-22
+- Offline pe bune: service worker-ul inline defect (URL blob:, care nu poate memora niciodată pagina) a fost înlocuit cu un sw.js real (cache-first cu revalidare în fundal), plus manifest web și pictograme; aplicația se deschide acum fără rețea după prima vizită și poate fi instalată. Generatorul de QR este și el pre-memorat.
+- Accesibilitate: pagina are acum exact un H1 (bara de titlu); câmpul de căutare pentru comparație, glisorul vitezei cronologiei și cele două glisoare ale vederii împărțite au nume anunțate de cititoarele de ecran (8 limbi); glisoarele au ținte tactile de 24 px.
+- Capturile PNG exportate poartă acum marcajul „PARODIE · Ediția Pământ Plat™ — Pământul nu e plat” (în limba interfeței), astfel încât o captură să nu poată fi citată scoasă din context.
+- Mobil: tot textul interfeței are cel puțin 12 px.
 
 - 5.12.4 — 2026-10-22: restul numelor românești de galaxii (Calea Lactee, Triunghiul, Trabucul, Morișca, Vârtejul, Spirala-Ac, Ochiul Negru, Floarea-Soarelui, Antenele, Artificii, Glonț, Fenicul, Lentilă, Câinele Mare Pitic, Orizont CMB și altele) și etichetele grupurilor gravitaționale de pe hartă sunt traduse în toate cele 8 limbi; cheile interne rămân neschimbate.
 - 5.12.3 — 2026-10-22: etichetele celor doi Nori Magellanic (LMC/SMC) sunt traduse în toate cele 8 limbi (acronimele rămân); titlul din bara de sus (UNIVERSUL OBSERVABIL · 2D) și titlul exportului PNG urmează limba interfeței; eticheta de satiră nu se mai repetă în fr/it/es/pt/de/hu.

@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 5.12.4 · **Zuletzt aktualisiert:** 2026-10-22
+**Version:** 5.12.5 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,12 @@ Die „Rekord“-Aussagen (MoM-z14, z = 14,44) gelten **zum Katalogdatum (Mai 20
 Lade `index.html` herunter und öffne sie in einem Browser; sie funktioniert ohne Internet. Die Anwendung bleibt ohne Internet funktionsfähig (der Blob-Service-Worker ist inaktiv).
 
 ## Verlauf / Changelog
+
+### 5.12.5 — 2026-10-22
+- Wirklich offline: Der defekte eingebettete Service Worker (blob:-URL, die die Seite nie zwischenspeichern kann) wurde durch einen echten sw.js (Cache zuerst mit Hintergrund-Revalidierung), ein Web-Manifest und Symbole ersetzt; die App öffnet sich nun nach dem ersten Besuch ohne Netz und kann installiert werden. Auch der QR-Generator wird vorab zwischengespeichert.
+- Barrierefreiheit: Die Seite hat jetzt genau eine H1 (die Titelleiste); das Vergleichssuchfeld, der Zeitachsen-Geschwindigkeitsregler und die beiden Regler der geteilten Ansicht haben Namen, die Screenreader ansagen (8 Sprachen); Schieberegler haben 24-px-Touch-Flächen.
+- Exportierte PNG-Aufnahmen tragen nun den Vermerk „PARODIE · Flache-Erde-Edition™ — die Erde ist nicht flach“ (in der Oberflächensprache), damit eine Aufnahme nicht aus dem Zusammenhang gerissen zitiert werden kann.
+- Mobil: Der gesamte Oberflächentext ist mindestens 12 px groß.
 
 - 5.12.4 — 2026-10-22: die übrigen rumänischen Galaxiennamen (Milchstraße, Dreiecksnebel, Zigarre, Feuerrad, Strudel, Nadel, Schwarzes Auge, Sonnenblume, Antennen, Feuerwerk, Geschoss, Phönix, Linse, Zwerggalaxie im Großen Hund, CMB-Horizont u. a.) und die Beschriftungen der Gravitationsgruppen auf der Karte sind in allen 8 Sprachen übersetzt; die internen Schlüssel bleiben unverändert.
 - 5.12.3 — 2026-10-22: die Bezeichnungen der beiden Magellanschen Wolken (LMC/SMC) sind in allen 8 Sprachen übersetzt (Abkürzungen bleiben); der Titel der oberen Leiste (BEOBACHTBARES UNIVERSUM · 2D) und der PNG-Exporttitel folgen der Oberflächensprache; das Satire-Etikett wiederholt das Wort in fr/it/es/pt/de/hu nicht mehr.

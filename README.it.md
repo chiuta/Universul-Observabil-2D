@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 5.12.4 · **Ultimo aggiornamento:** 2026-10-22
+**Versione:** 5.12.5 · **Ultimo aggiornamento:** 2026-10-22
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,12 @@ Le affermazioni di «record» (MoM-z14, z = 14,44) sono valide **alla data del c
 Scarica `index.html` e aprilo in un browser; funziona senza internet. L'applicazione resta funzionale senza internet (il service worker da blob è inattivo).
 
 ## Cronologia / Changelog
+
+### 5.12.5 — 2026-10-22
+- Offline davvero: il service worker inline difettoso (URL blob:, che non può mai mettere in cache la pagina) è stato sostituito da un vero sw.js (cache first con rivalidazione in background), da un manifest web e da icone; l'app ora si apre senza rete dopo la prima visita e può essere installata. Anche il generatore di QR è precaricato in cache.
+- Accessibilità: la pagina ha ora esattamente un H1 (la barra del titolo); il campo di ricerca per il confronto, il cursore della velocità della cronologia e i due cursori della vista divisa hanno un nome annunciato dagli screen reader (8 lingue); i cursori hanno aree tattili di 24 px.
+- Le immagini PNG esportate riportano ora il marchio «PARODIA · Edizione Terra piatta™ — la Terra non è piatta» (nella lingua dell'interfaccia), così che un'immagine non possa essere citata fuori contesto.
+- Mobile: tutto il testo dell'interfaccia è di almeno 12 px.
 
 - 5.12.4 — 2026-10-22: i restanti nomi rumeni di galassie (Via Lattea, Triangolo, Sigaro, Girandola, Vortice, Ago, Occhio nero, Girasole, Antenne, Fuochi d'artificio, Proiettile, Fenice, Lente, Nana del Cane Maggiore, Orizzonte CMB, ecc.) e le etichette dei gruppi gravitazionali sulla mappa sono tradotti in tutte e 8 le lingue; le chiavi interne restano invariate.
 - 5.12.3 — 2026-10-22: le etichette delle due Nubi di Magellano (LMC/SMC) sono tradotte in tutte e 8 le lingue (acronimi mantenuti); il titolo della barra superiore (UNIVERSO OSSERVABILE · 2D) e quello dell'esportazione PNG seguono la lingua dell'interfaccia; l'etichetta di satira non ripete più la parola in fr/it/es/pt/de/hu.

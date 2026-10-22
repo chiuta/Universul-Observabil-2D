@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 5.12.4 · **Última atualização:** 2026-10-22
+**Versão:** 5.12.5 · **Última atualização:** 2026-10-22
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,12 @@ As afirmações de «recorde» (MoM-z14, z = 14,44) são válidas **à data do c
 Transfira `index.html` e abra-o num navegador; funciona sem internet. A aplicação continua funcional sem internet (o service worker a partir de blob está inativo).
 
 ## Histórico / Changelog
+
+### 5.12.5 — 2026-10-22
+- Offline a sério: o service worker embutido defeituoso (URL blob:, que nunca consegue guardar a página em cache) foi substituído por um sw.js real (cache primeiro com revalidação em segundo plano), um manifesto web e ícones; a aplicação abre agora sem rede após a primeira visita e pode ser instalada. O gerador de QR também fica pré-carregado em cache.
+- Acessibilidade: a página tem agora exatamente um H1 (a barra de título); o campo de pesquisa de comparação, o controlo da velocidade da cronologia e os dois controlos da vista dividida têm um nome anunciado pelos leitores de ecrã (8 idiomas); os controlos deslizantes têm áreas táteis de 24 px.
+- As capturas PNG exportadas trazem agora a marca «PARÓDIA · Edição Terra plana™ — a Terra não é plana» (no idioma da interface), para que uma captura não possa ser citada fora de contexto.
+- Móvel: todo o texto da interface tem pelo menos 12 px.
 
 - 5.12.4 — 2026-10-22: os restantes nomes romenos de galáxias (Via Láctea, Triângulo, Charuto, Cata-vento, Redemoinho, Agulha, Olho Negro, Girassol, Antenas, Fogo de artifício, Bala, Fénix, Lente, Anã do Cão Maior, Horizonte CMB, etc.) e os rótulos dos grupos gravitacionais no mapa estão traduzidos nas 8 línguas; as chaves internas não mudam.
 - 5.12.3 — 2026-10-22: os rótulos das duas Nuvens de Magalhães (LMC/SMC) estão traduzidos nas 8 línguas (siglas mantidas); o título da barra superior (UNIVERSO OBSERVÁVEL · 2D) e o da exportação PNG seguem a língua da interface; a etiqueta de sátira já não repete a palavra em fr/it/es/pt/de/hu.

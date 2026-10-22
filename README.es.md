@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 5.12.4 · **Última actualización:** 2026-10-22
+**Versión:** 5.12.5 · **Última actualización:** 2026-10-22
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,12 @@ Las afirmaciones de «récord» (MoM-z14, z = 14,44) son válidas **a la fecha d
 Descarga `index.html` y ábrelo en un navegador; funciona sin internet. La aplicación sigue siendo funcional sin internet (el service worker desde blob está inactivo).
 
 ## Historial / Changelog
+
+### 5.12.5 — 2026-10-22
+- Sin conexión de verdad: el service worker integrado defectuoso (URL blob:, que nunca puede almacenar la página en caché) se sustituyó por un sw.js real (caché primero con revalidación en segundo plano), un manifiesto web e iconos; la aplicación se abre ahora sin red tras la primera visita y se puede instalar. El generador de QR también queda precargado en caché.
+- Accesibilidad: la página tiene ahora exactamente un H1 (la barra de título); el campo de búsqueda de comparación, el control de velocidad de la cronología y los dos controles de la vista dividida tienen un nombre que anuncian los lectores de pantalla (8 idiomas); los controles deslizantes tienen áreas táctiles de 24 px.
+- Las capturas PNG exportadas llevan ahora la marca «PARODIA · Edición Tierra plana™ — la Tierra no es plana» (en el idioma de la interfaz), para que una captura no pueda citarse fuera de contexto.
+- Móvil: todo el texto de la interfaz mide al menos 12 px.
 
 - 5.12.4 — 2026-10-22: los nombres rumanos de galaxias que quedaban (Vía Láctea, Triángulo, Cigarro, Molinete, Remolino, Aguja, Ojo negro, Girasol, Antenas, Fuegos artificiales, Bala, Fénix, Lente, Enana del Can Mayor, Horizonte CMB, etc.) y las etiquetas de los grupos gravitacionales del mapa se traducen a los 8 idiomas; las claves internas no cambian.
 - 5.12.3 — 2026-10-22: las etiquetas de las dos Nubes de Magallanes (LMC/SMC) se traducen a los 8 idiomas (siglas conservadas); el título de la barra superior (UNIVERSO OBSERVABLE · 2D) y el de la exportación PNG siguen el idioma de la interfaz; la etiqueta de sátira ya no repite la palabra en fr/it/es/pt/de/hu.

@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 5.12.4 · **Last updated:** 2026-10-22
+**Version:** 5.12.5 · **Last updated:** 2026-10-22
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,12 @@ The "record" claims (MoM-z14, z = 14.44) are valid **as of the catalogue date (M
 Download `index.html` and open it in a browser; it works without internet. The application stays functional without internet (the blob service worker is inactive).
 
 ## History / Changelog
+
+### 5.12.5 — 2026-10-22
+- Offline for real: the broken inline service worker (blob: URL, which can never cache the page) was replaced by a real sw.js (cache-first with background revalidation) plus a web manifest and icons; the app now opens without network after the first visit and can be installed. The QR generator is also pre-cached.
+- Accessibility: the page now has exactly one H1 (the title bar); the comparison search field, the timeline-speed slider and the two split-view sliders have names announced by screen readers (8 languages); range sliders have 24 px touch targets.
+- Exported PNG captures now carry a “PARODY · Flat Earth Edition™ — the Earth is not flat” mark (in the interface language), so a capture cannot be quoted out of context.
+- Mobile: all interface text is at least 12 px.
 
 - 5.12.4 — 2026-10-22: the remaining Romanian galaxy names (Milky Way, Triangulum, Cigar, Pinwheel, Whirlpool, Needle, Black Eye, Sunflower, Antennae, Fireworks, Bullet, Phoenix, Lens, Canis Major Dwarf, CMB Horizon and more) and the gravitational-group labels on the map are now translated in all 8 languages; internal keys are unchanged.
 - 5.12.3 — 2026-10-22: the two Magellanic Cloud labels (LMC/SMC) are now translated in all 8 languages (acronyms kept); the top-bar title (OBSERVABLE UNIVERSE · 2D) and the PNG export title follow the interface language; the satire tag no longer repeats the word in fr/it/es/pt/de/hu.
