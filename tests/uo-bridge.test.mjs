@@ -1,4 +1,4 @@
-// UO-1D 1.2.0 <-> UO-2D 5.11.0 — punți reciproce. Rulare: node uo-bridge.test.mjs <dir1D> <dir2D>   (rețea blocată, file://)
+// UO-1D 1.2.0 <-> UO-2D 5.12.3 — punți reciproce. Rulare: node uo-bridge.test.mjs <dir1D> <dir2D>   (rețea blocată, file://)
 import {createRequire} from "module"; const require = createRequire("/opt/node-tools/package.json"); const {chromium} = require("playwright");
 let fails = 0, passes = 0; const check = (n, c, x) => { c ? (passes++, console.log("  ok  " + n)) : (fails++, console.log("FAIL  " + n + (x !== undefined ? "  -> " + JSON.stringify(x) : ""))); };
 const [d1, d2] = [process.argv[2], process.argv[3]];
@@ -18,7 +18,7 @@ let q = await mk(); await q.goto("file://" + d2 + "/index.html" + hash2); await 
 check("2D: panoul arată aceeași galaxie", (await q.textContent("#pn")).includes(gname.split(" (")[0]) || (await q.textContent("#pn")).includes(gname), await q.textContent("#pn"));
 check("2D: limba din `s` respectată", await q.evaluate(() => currentLang) === "ro" || true);
 // garda de nume: indice greșit + nume corect -> numele câștigă; nume necunoscut -> ignorat
-let q2 = await mk(); await q2.goto("file://" + d2 + "/index.html#g=5&z=3&gn=" + encodeURIComponent(gname)); await q2.waitForTimeout(6000);
+let q2 = await mk(); await q2.goto("file://" + d2 + "/index.html#g=5&z=3&gn=" + encodeURIComponent(gname)); await q2.waitForTimeout(12000);
 check("2D: garda `gn` corectează indicele greșit", (await q2.textContent("#pn")).includes(gname.split(" (")[0]), await q2.textContent("#pn"));
 let q3 = await mk(); await q3.goto("file://" + d2 + "/index.html#g=5&z=3&gn=Inexistent"); await q3.waitForTimeout(5000);
 check("2D: `gn` necunoscut -> link ignorat (panou închis)", await q3.evaluate(() => getComputedStyle(document.getElementById("pnl")).display) === "none" || (await q3.textContent("#pn")) === "", await q3.textContent("#pn"));

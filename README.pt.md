@@ -1,8 +1,8 @@
-# Observable Universe 2D · v5.12.1 · Flat Earth Edition™
+# Observable Universe 2D · v5.12.3 · Flat Earth Edition™
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 5.12.2 · **Última atualização:** 2026-10-22
+**Versão:** 5.12.3 · **Última atualização:** 2026-10-22
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -59,6 +59,7 @@ Transfira `index.html` e abra-o num navegador; funciona sem internet. A aplicaç
 
 ## Histórico / Changelog
 
+- 5.12.3 — 2026-10-22: os rótulos das duas Nuvens de Magalhães (LMC/SMC) estão traduzidos nas 8 línguas (siglas mantidas); o título da barra superior (UNIVERSO OBSERVÁVEL · 2D) e o da exportação PNG seguem a língua da interface; a etiqueta de sátira já não repete a palavra em fr/it/es/pt/de/hu.
 - 5.12.2 — 2026-10-22: a interface está agora completa também em romeno e inglês (barra lateral, atalhos, faixa de notícias, dicas e aria-label já não misturam as duas línguas); o título da página e as metadescrições acompanham o idioma da interface.
 
 ### 5.12.1 — 2026-10-19
