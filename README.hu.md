@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 5.12.8 · **Utolsó frissítés:** 2026-10-23
+**Verzió:** 5.12.9 · **Utolsó frissítés:** 2026-10-23
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -42,7 +42,7 @@ Egyfájlos alkalmazás (`index.html`, canvas + JavaScript), amely a megfigyelhet
 
 ## Adatvédelem és hálózat
 
-- **Helyi tárolás:** `localStorage` — `uv_lang` (nyelv), `uv2d_favs` (kedvencek), `uv2d_prefs_v1` (beállítások: színtévesztés, rétegek, hang, hangerő), valamint a kvíz pontszámai; `sessionStorage` — `tut_done`, `uv_eventGreetingShown`. Az alkalmazás kijelenti, hogy semmi sem kerül elküldésre szervernek (nincs háttérrendszere).
+- **Helyi tárolás:** `localStorage` — `universul-observabil-2d.lang` (nyelv), `universul-observabil-2d.favs` (kedvencek), `universul-observabil-2d.prefs` (beállítások: színtévesztés, rétegek, hang, hangerő), valamint a kvíz pontszámai; `sessionStorage` — `tut_done`, `uv_eventGreetingShown`. Az alkalmazás kijelenti, hogy semmi sem kerül elküldésre szervernek (nincs háttérrendszere).
 - **Service worker:** a fájlban megtalálható egy blobból származó service worker kódja, de a böngészők elutasítják a service worker regisztrálását `blob:` forrásból; a gyakorlatban inaktív. Az alkalmazás offline működik, mert egyetlen helyi fájl, nem a gyorsítótárnak köszönhetően.
 - **Hálózat:** nem találtam adatlekérő `fetch` hívást harmadik fél szolgáltatásaihoz. Az alexio.tf, ares.org.ro, Buy Me a Coffee, Wikipedia, ADS és ESA Sky hivatkozások csak kattintásra nyílnak meg. A meta címkék (Open Graph, előnézeti kép) az alexio.tf-re mutatnak, futásidőben hatástalanok.
 
@@ -58,6 +58,9 @@ A „rekord” állítások (MoM-z14, z = 14,44) **a katalógus dátuma (2026. m
 Töltsd le az `index.html` fájlt, és nyisd meg böngészőben; internet nélkül is működik. Az alkalmazás internet nélkül is működőképes marad (a blobból származó service worker inaktív).
 
 ## Előzmények / Changelog
+
+### 5.12.9 — 2026-10-23
+- fff-kit 1.2.0: a böngészőkulcsok mostantól az alkalmazás előtagját viselik (`universul-observabil-2d.lang`, `.favs`, `.prefs`); a régieket (`uv_lang`, `uv2d_favs`, `uv2d_prefs_v1`) az alkalmazás induláskor automatikusan átköltözteti, régi .fff.json mentés importálása után is. A „hivatkozás másolása” tartalék már nem a böngésző natív ablakát, hanem egy akadálymentes, a felület nyelvén megjelenő párbeszédablakot használ.
 
 ### 5.12.7 — 2026-10-22
 - fff-kit 1.1.4: érintési célpontok és minimális szövegméret; érintési célpontok/szöveg javítva

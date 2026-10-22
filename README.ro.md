@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 5.12.8 · **Ultima actualizare:** 2026-10-23
+**Versiune:** 5.12.9 · **Ultima actualizare:** 2026-10-23
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -42,7 +42,7 @@ O aplicație single-file (`index.html`, canvas + JavaScript) care afișează uni
 
 ## Confidențialitate și rețea
 
-- **Stocare locală:** `localStorage` — `uv_lang` (limba), `uv2d_favs` (favorite), `uv2d_prefs_v1` (preferințe: daltonism, straturi, sunet, volum), plus scorurile quiz-ului; `sessionStorage` — `tut_done`, `uv_eventGreetingShown`. Aplicația afirmă că nimic nu este trimis unui server (nu are backend).
+- **Stocare locală:** `localStorage` — `universul-observabil-2d.lang` (limba), `universul-observabil-2d.favs` (favorite), `universul-observabil-2d.prefs` (preferințe: daltonism, straturi, sunet, volum), plus scorurile quiz-ului; `sessionStorage` — `tut_done`, `uv_eventGreetingShown`. Aplicația afirmă că nimic nu este trimis unui server (nu are backend).
 - **Service worker:** codul pentru un service worker din blob există în fișier, dar browserele resping înregistrarea unui service worker din `blob:`; în practică este inactiv. Aplicația funcționează offline pentru că este un singur fișier local, nu datorită cache-ului.
 - **Rețea:** nu am găsit apeluri `fetch` de date către servicii terțe. Linkurile către alexio.tf, ares.org.ro, Buy Me a Coffee, Wikipedia, ADS și ESA Sky se deschid doar la click. Meta-etichetele (Open Graph, imagine de previzualizare) indică alexio.tf, fără efect la rulare.
 
@@ -58,6 +58,9 @@ Afirmațiile „record” (MoM-z14, z = 14,44) sunt valabile **la data catalogul
 Descarcă `index.html` și deschide-l în browser; funcționează fără internet. Aplicația rămâne funcțională fără internet (service worker-ul din blob este inactiv).
 
 ## Istoric / Changelog
+
+### 5.12.9 — 2026-10-23
+- fff-kit 1.2.0: cheile din browser poartă acum prefixul aplicației (`universul-observabil-2d.lang`, `.favs`, `.prefs`); cele vechi (`uv_lang`, `uv2d_favs`, `uv2d_prefs_v1`) sunt migrate automat la pornire, inclusiv după importul unei copii .fff.json vechi. Alternativa „copiază linkul” nu mai folosește fereastra nativă a browserului, ci un dialog accesibil, în limba interfeței.
 
 ### 5.12.7 — 2026-10-22
 - fff-kit 1.1.4: ținte tactile și text minim; ținte tactile/text corectate

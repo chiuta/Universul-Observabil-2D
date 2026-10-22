@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 5.12.8 · **Dernière mise à jour :** 2026-10-23
+**Version :** 5.12.9 · **Dernière mise à jour :** 2026-10-23
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -42,7 +42,7 @@ Une application en un seul fichier (`index.html`, canvas + JavaScript) qui affic
 
 ## Confidentialité et réseau
 
-- **Stockage local :** `localStorage` — `uv_lang` (langue), `uv2d_favs` (favoris), `uv2d_prefs_v1` (préférences : daltonisme, couches, son, volume), plus les scores du quiz ; `sessionStorage` — `tut_done`, `uv_eventGreetingShown`. L'application affirme que rien n'est envoyé à un serveur (elle n'a pas de backend).
+- **Stockage local :** `localStorage` — `universul-observabil-2d.lang` (langue), `universul-observabil-2d.favs` (favoris), `universul-observabil-2d.prefs` (préférences : daltonisme, couches, son, volume), plus les scores du quiz ; `sessionStorage` — `tut_done`, `uv_eventGreetingShown`. L'application affirme que rien n'est envoyé à un serveur (elle n'a pas de backend).
 - **Service worker :** le code d'un service worker issu d'un blob existe dans le fichier, mais les navigateurs refusent l'enregistrement d'un service worker depuis `blob:` ; en pratique il est inactif. L'application fonctionne hors ligne parce qu'elle est un seul fichier local, et non grâce à un cache.
 - **Réseau :** je n'ai trouvé aucun appel `fetch` de données vers des services tiers. Les liens vers alexio.tf, ares.org.ro, Buy Me a Coffee, Wikipedia, ADS et ESA Sky ne s'ouvrent qu'au clic. Les balises meta (Open Graph, image d'aperçu) pointent vers alexio.tf, sans effet à l'exécution.
 
@@ -58,6 +58,9 @@ Les affirmations de « record » (MoM-z14, z = 14,44) sont valables **à la date
 Téléchargez `index.html` et ouvrez-le dans un navigateur ; il fonctionne sans internet. L'application reste fonctionnelle sans internet (le service worker issu d'un blob est inactif).
 
 ## Historique / Changelog
+
+### 5.12.9 — 2026-10-23
+- fff-kit 1.2.0 : les clés du navigateur portent désormais le préfixe de l'application (`universul-observabil-2d.lang`, `.favs`, `.prefs`) ; les anciennes (`uv_lang`, `uv2d_favs`, `uv2d_prefs_v1`) sont migrées automatiquement au démarrage, y compris après l'import d'une ancienne sauvegarde .fff.json. Le repli « copier le lien » n'utilise plus la boîte native du navigateur, mais un dialogue accessible dans la langue de l'interface.
 
 ### 5.12.7 — 2026-10-22
 - fff-kit 1.1.4 : cibles tactiles et taille de texte minimale; cibles tactiles/texte corrigés

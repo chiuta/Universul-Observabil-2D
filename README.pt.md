@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 5.12.8 · **Última atualização:** 2026-10-23
+**Versão:** 5.12.9 · **Última atualização:** 2026-10-23
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -42,7 +42,7 @@ Uma aplicação de ficheiro único (`index.html`, canvas + JavaScript) que apres
 
 ## Privacidade e rede
 
-- **Armazenamento local:** `localStorage` — `uv_lang` (língua), `uv2d_favs` (favoritos), `uv2d_prefs_v1` (preferências: daltonismo, camadas, som, volume), além das pontuações do questionário; `sessionStorage` — `tut_done`, `uv_eventGreetingShown`. A aplicação afirma que nada é enviado a um servidor (não tem backend).
+- **Armazenamento local:** `localStorage` — `universul-observabil-2d.lang` (língua), `universul-observabil-2d.favs` (favoritos), `universul-observabil-2d.prefs` (preferências: daltonismo, camadas, som, volume), além das pontuações do questionário; `sessionStorage` — `tut_done`, `uv_eventGreetingShown`. A aplicação afirma que nada é enviado a um servidor (não tem backend).
 - **Service worker:** no ficheiro existe o código de um service worker a partir de um blob, mas os navegadores rejeitam o registo de um service worker a partir de `blob:`; na prática está inativo. A aplicação funciona offline porque é um único ficheiro local, não graças a uma cache.
 - **Rede:** não encontrei chamadas `fetch` de dados a serviços de terceiros. As ligações para alexio.tf, ares.org.ro, Buy Me a Coffee, Wikipédia, ADS e ESA Sky só se abrem ao clicar. As metaetiquetas (Open Graph, imagem de pré-visualização) apontam para alexio.tf, sem efeito na execução.
 
@@ -58,6 +58,9 @@ As afirmações de «recorde» (MoM-z14, z = 14,44) são válidas **à data do c
 Transfira `index.html` e abra-o num navegador; funciona sem internet. A aplicação continua funcional sem internet (o service worker a partir de blob está inativo).
 
 ## Histórico / Changelog
+
+### 5.12.9 — 2026-10-23
+- fff-kit 1.2.0: as chaves do navegador têm agora o prefixo da aplicação (`universul-observabil-2d.lang`, `.favs`, `.prefs`); as antigas (`uv_lang`, `uv2d_favs`, `uv2d_prefs_v1`) são migradas automaticamente no arranque, também após a importação de uma cópia .fff.json antiga. A alternativa «copiar a ligação» já não usa a caixa nativa do navegador, mas um diálogo acessível no idioma da interface.
 
 ### 5.12.7 — 2026-10-22
 - fff-kit 1.1.4: alvos táteis e texto mínimo; alvos táteis/texto corrigidos

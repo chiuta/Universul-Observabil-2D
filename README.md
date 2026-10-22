@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 5.12.8 · **Last updated:** 2026-10-23
+**Version:** 5.12.9 · **Last updated:** 2026-10-23
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -42,7 +42,7 @@ A single-file application (`index.html`, canvas + JavaScript) that displays the 
 
 ## Privacy and network
 
-- **Local storage:** `localStorage` — `uv_lang` (language), `uv2d_favs` (favourites), `uv2d_prefs_v1` (preferences: colour blindness, layers, sound, volume), plus the quiz scores; `sessionStorage` — `tut_done`, `uv_eventGreetingShown`. The application states that nothing is sent to a server (it has no backend).
+- **Local storage:** `localStorage` — `universul-observabil-2d.lang` (language), `universul-observabil-2d.favs` (favourites), `universul-observabil-2d.prefs` (preferences: colour blindness, layers, sound, volume), plus the quiz scores; `sessionStorage` — `tut_done`, `uv_eventGreetingShown`. The application states that nothing is sent to a server (it has no backend).
 - **Service worker:** code for a service worker from a blob exists in the file, but browsers reject registering a service worker from `blob:`; in practice it is inactive. The application works offline because it is a single local file, not thanks to a cache.
 - **Network:** I found no data `fetch` calls to third-party services. The links to alexio.tf, ares.org.ro, Buy Me a Coffee, Wikipedia, ADS and ESA Sky open only on click. The meta tags (Open Graph, preview image) point to alexio.tf, with no effect at runtime.
 
@@ -58,6 +58,9 @@ The "record" claims (MoM-z14, z = 14.44) are valid **as of the catalogue date (M
 Download `index.html` and open it in a browser; it works without internet. The application stays functional without internet (the blob service worker is inactive).
 
 ## History / Changelog
+
+### 5.12.9 — 2026-10-23
+- fff-kit 1.2.0: the browser keys now carry the app prefix (`universul-observabil-2d.lang`, `.favs`, `.prefs`); the old ones (`uv_lang`, `uv2d_favs`, `uv2d_prefs_v1`) are migrated automatically at start-up, also after importing an old .fff.json backup. The “copy link” fallback no longer uses the native browser prompt but an accessible dialog in the interface language.
 
 ### 5.12.7 — 2026-10-22
 - fff-kit 1.1.4: touch targets and minimum text size; touch targets/text fixed
