@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 5.12.9 · **Zuletzt aktualisiert:** 2026-10-23
+**Version:** 5.12.10 · **Zuletzt aktualisiert:** 2026-10-23
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,9 @@ Die „Rekord“-Aussagen (MoM-z14, z = 14,44) gelten **zum Katalogdatum (Mai 20
 Lade `index.html` herunter und öffne sie in einem Browser; sie funktioniert ohne Internet. Die Anwendung bleibt ohne Internet funktionsfähig (der Blob-Service-Worker ist inaktiv).
 
 ## Verlauf / Changelog
+
+### 5.12.10 — 2026-10-23
+- Robustheit: beschädigte Einstellungen, Favoriten und Quiz-Rangliste in `localStorage` werden ignoriert, statt die App zu blockieren; #g=…-Links mit Extremwerten oder ungültigem `%` stören die Darstellung nicht mehr (Zoom/Pan begrenzt); die im Titel und im Leitfaden angezeigte Version ist wieder die echte.
 
 ### 5.12.9 — 2026-10-23
 - fff-kit 1.2.0: Die Browser-Schlüssel tragen jetzt das App-Präfix (`universul-observabil-2d.lang`, `.favs`, `.prefs`); die alten (`uv_lang`, `uv2d_favs`, `uv2d_prefs_v1`) werden beim Start automatisch migriert, auch nach dem Import einer alten .fff.json-Sicherung. Die Ausweichlösung „Link kopieren“ nutzt nicht mehr das native Browser-Fenster, sondern einen barrierefreien Dialog in der Oberflächensprache.

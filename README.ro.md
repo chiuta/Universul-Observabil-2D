@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 5.12.9 · **Ultima actualizare:** 2026-10-23
+**Versiune:** 5.12.10 · **Ultima actualizare:** 2026-10-23
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,9 @@ Afirmațiile „record” (MoM-z14, z = 14,44) sunt valabile **la data catalogul
 Descarcă `index.html` și deschide-l în browser; funcționează fără internet. Aplicația rămâne funcțională fără internet (service worker-ul din blob este inactiv).
 
 ## Istoric / Changelog
+
+### 5.12.10 — 2026-10-23
+- Robustețe: preferințele, favoritele și clasamentul quiz-ului corupte din `localStorage` sunt ignorate în loc să blocheze aplicația; linkurile #g=… cu valori extreme sau `%` invalid nu mai strică randarea (zoom/pan limitate); versiunea afișată în titlu și în Ghid este din nou cea reală.
 
 ### 5.12.9 — 2026-10-23
 - fff-kit 1.2.0: cheile din browser poartă acum prefixul aplicației (`universul-observabil-2d.lang`, `.favs`, `.prefs`); cele vechi (`uv_lang`, `uv2d_favs`, `uv2d_prefs_v1`) sunt migrate automat la pornire, inclusiv după importul unei copii .fff.json vechi. Alternativa „copiază linkul” nu mai folosește fereastra nativă a browserului, ci un dialog accesibil, în limba interfeței.
