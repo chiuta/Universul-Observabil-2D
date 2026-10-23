@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 5.12.9 · **Utolsó frissítés:** 2026-10-23
+**Verzió:** 5.12.10 · **Utolsó frissítés:** 2026-10-23
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,9 @@ A „rekord” állítások (MoM-z14, z = 14,44) **a katalógus dátuma (2026. m
 Töltsd le az `index.html` fájlt, és nyisd meg böngészőben; internet nélkül is működik. Az alkalmazás internet nélkül is működőképes marad (a blobból származó service worker inaktív).
 
 ## Előzmények / Changelog
+
+### 5.12.10 — 2026-10-23
+- Robusztusság: a sérült `localStorage` beállítások, kedvencek és kvíz-ranglista figyelmen kívül marad ahelyett, hogy megakasztaná az alkalmazást; a szélsőséges értékű vagy érvénytelen `%`-os #g=… hivatkozások már nem törik meg a megjelenítést (zoom/pan korlátozva); a címben és az Útmutatóban látható verzió újra a valós.
 
 ### 5.12.9 — 2026-10-23
 - fff-kit 1.2.0: a böngészőkulcsok mostantól az alkalmazás előtagját viselik (`universul-observabil-2d.lang`, `.favs`, `.prefs`); a régieket (`uv_lang`, `uv2d_favs`, `uv2d_prefs_v1`) az alkalmazás induláskor automatikusan átköltözteti, régi .fff.json mentés importálása után is. A „hivatkozás másolása” tartalék már nem a böngésző natív ablakát, hanem egy akadálymentes, a felület nyelvén megjelenő párbeszédablakot használ.

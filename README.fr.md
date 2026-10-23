@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 5.12.9 · **Dernière mise à jour :** 2026-10-23
+**Version :** 5.12.10 · **Dernière mise à jour :** 2026-10-23
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -58,6 +58,9 @@ Les affirmations de « record » (MoM-z14, z = 14,44) sont valables **à la date
 Téléchargez `index.html` et ouvrez-le dans un navigateur ; il fonctionne sans internet. L'application reste fonctionnelle sans internet (le service worker issu d'un blob est inactif).
 
 ## Historique / Changelog
+
+### 5.12.10 — 2026-10-23
+- Robustesse : préférences, favoris et classement du quiz corrompus dans `localStorage` sont ignorés au lieu de bloquer l'application ; les liens #g=… aux valeurs extrêmes ou au `%` invalide ne cassent plus le rendu (zoom/pan bornés) ; la version affichée dans le titre et le Guide est de nouveau la vraie.
 
 ### 5.12.9 — 2026-10-23
 - fff-kit 1.2.0 : les clés du navigateur portent désormais le préfixe de l'application (`universul-observabil-2d.lang`, `.favs`, `.prefs`) ; les anciennes (`uv_lang`, `uv2d_favs`, `uv2d_prefs_v1`) sont migrées automatiquement au démarrage, y compris après l'import d'une ancienne sauvegarde .fff.json. Le repli « copier le lien » n'utilise plus la boîte native du navigateur, mais un dialogue accessible dans la langue de l'interface.
