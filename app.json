@@ -2,8 +2,8 @@
   "schema": 1,
   "slug": "universul-observabil-2d",
   "name": "Observable Universe · 2D · v5.12.10 · Flat Earth Edition™",
-  "version": "5.12.10",
-  "updated": "2026-10-23",
+  "version": "5.12.11",
+  "updated": "2026-10-26",
   "description": "2D map of the observable universe — 111 galaxies, 12 cosmic horizons, logarithmic scale. Quiz with leaderboard, LOD zoom, adaptive soundtrack, gravitational groups, permalink with full state. Satirical Flat Earth™ edition. JWST data up to z=14.44. v5.9.1 — UX & accessibility milestone: universal localStorage preferences (CVD, layers, sound, volume persist across sessions); prefers-reduced-motion respected in flyTo / Andromeda / autoRotate; new GUIDE tab 'Simulation Limits' (epistemic honesty); heatmap boost (logarithmic normalization + Gaussian kernel). v5.12.7 — interface in 8 languages (ro, en, fr, it, es, pt, de, hu) with a discreet language selector.",
   "egress": [],
   "permissions": [
@@ -17,7 +17,7 @@
     "universul-observabil-2d.lang"
   ],
   "sizeBytes": 1280421,
-  "sha256": "e1f366d3fc2664f3c91139a9b5ef260865a99dacc72fdaf6da4dd64ae5f50d34",
+  "sha256": "60fec77c223a009868a879a9f18f5ff733150b722d786a41e1ec8f568d050307",
   "csp": {
     "present": true,
     "directives": {
