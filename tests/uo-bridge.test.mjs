@@ -1,8 +1,10 @@
 // UO-1D 1.2.0 <-> UO-2D 5.12.8 — punți reciproce. Rulare: node uo-bridge.test.mjs <dir1D> <dir2D>   (rețea blocată, file://)
-import {createRequire} from "module"; const require = createRequire("/opt/node-tools/package.json"); const {chromium} = require("playwright");
+import {createRequire} from "module"; const require = createRequire(process.env.PW_ROOT || import.meta.url); const {chromium} = require("playwright");
+import {existsSync as __ex} from "node:fs"; import __pa from "node:path";
+const __dirs = (args, defs) => { const out = defs.map((d, i) => { const c = args[i] ? [args[i]] : (Array.isArray(d) ? d : [d]); return c.map((x) => __pa.resolve(process.cwd(), x)).find((x) => __ex(__pa.join(x, "index.html"))); }); if (out.some((x) => !x)) { console.log("SKIP: testul cere și aplicațiile învecinate (" + defs.map((d) => [].concat(d)[0]).join(", ") + ") lângă depozit; în CI singur se omite"); process.exit(0); } return out; }; // [fff-ci]
 let fails = 0, passes = 0; const check = (n, c, x) => { c ? (passes++, console.log("  ok  " + n)) : (fails++, console.log("FAIL  " + n + (x !== undefined ? "  -> " + JSON.stringify(x) : ""))); };
-const [d1, d2] = [process.argv[2], process.argv[3]];
-const b = await chromium.launch({executablePath: "/opt/pw-browsers/chromium"});
+const [d1, d2] = __dirs(process.argv.slice(2), ["../Universul-Observabil-1D", "."]);
+const b = await chromium.launch({executablePath: process.env.CHROMIUM_PATH || undefined});
 const mk = async () => { const ctx = await b.newContext({viewport: {width: 1280, height: 800}}); await ctx.route(/^https?:/, r => r.abort()); const p = await ctx.newPage(); p.errs = []; p.on("pageerror", e => p.errs.push(String(e))); return p; };
 // 1D -> 2D
 let p = await mk(); await p.goto("file://" + d1 + "/index.html"); await p.waitForTimeout(1500);

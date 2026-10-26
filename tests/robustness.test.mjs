@@ -1,8 +1,8 @@
 // UO-2D 5.12.11 — date corupte în localStorage și permalink extrem. Rulare: node robustness.test.mjs <dir2D>   (rețea blocată, file://)
-import {createRequire} from "module"; const require = createRequire("/opt/node-tools/package.json"); const {chromium} = require("playwright");
+import {createRequire} from "module"; const require = createRequire(process.env.PW_ROOT || import.meta.url); const {chromium} = require("playwright");
 let fails = 0; const check = (n, c, x) => { c ? console.log("  ok  " + n) : (fails++, console.log("FAIL  " + n + (x !== undefined ? "  -> " + JSON.stringify(x) : ""))); };
-const d2 = process.argv[2];
-const b = await chromium.launch({executablePath: "/opt/pw-browsers/chromium"});
+const d2 = process.argv[2] || process.cwd();
+const b = await chromium.launch({executablePath: process.env.CHROMIUM_PATH || undefined});
 async function run(ls, hash, wait = 2500) {
   const ctx = await b.newContext({viewport: {width: 1280, height: 800}}); await ctx.route(/^https?:/, r => r.abort());
   await ctx.addInitScript(o => { for (const k in o) localStorage.setItem(k, o[k]); }, ls);
