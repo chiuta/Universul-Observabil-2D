@@ -1,4 +1,4 @@
-// UO-2D 5.12.11 — date corupte în localStorage și permalink extrem. Rulare: node robustness.test.mjs <dir2D>   (rețea blocată, file://)
+// UO-2D 6.0.0 — date corupte în localStorage și permalink extrem. Rulare: node robustness.test.mjs <dir2D>   (rețea blocată, file://)
 import {createRequire} from "module"; const require = createRequire(process.env.PW_ROOT || import.meta.url); const {chromium} = require("playwright");
 let fails = 0; const check = (n, c, x) => { c ? console.log("  ok  " + n) : (fails++, console.log("FAIL  " + n + (x !== undefined ? "  -> " + JSON.stringify(x) : ""))); };
 const d2 = process.argv[2] || process.cwd();

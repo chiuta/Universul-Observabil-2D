@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 5.12.11 · **Ultima actualizare:** 2026-10-26
+**Versiune:** 6.0.0 · **Ultima actualizare:** 2026-10-26
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -48,6 +48,8 @@ O aplicație single-file (`index.html`, canvas + JavaScript) care afișează uni
 
 ## Notă: ediție satirică
 
+**Comutator de ediție (v6.0):** butonul 🔬 din bara de sus comută între ediția satirică „Pământ Plat™” și o **ediție științifică**, în care dispar Bolta Cerească, Zidul de Gheață, NASA Secret HQ, Țestoasa Spațială, Indicele de Planeitate, ticker-ul, glumele și marcajul de parodie de pe exporturi. Fereastra de comutare explică fiecare corecție (7 puncte; textul întreg în română și engleză, titlurile și corecțiile pe scurt în toate cele 8 limbi). Alegerea se păstrează; `?ed=sci` / `?ed=sat` în adresă o impun. Datele astronomice sunt aceleași în ambele ediții.
+
 Ediția „Pământ Plat™” este satirică. Elementele Bolta Cerească, Zidul de Gheață, „Conspirația NASA" și Broasca Țestoasă Spațială sunt fictive; galaxiile și distanțele sunt cele din catalog. Pe lângă avertismentul de la deschidere, pagina afișează acum permanent, în bara de sus (inclusiv pe mobil), eticheta „SATIRĂ · SATIRE".
 
 ## Date și surse
@@ -58,6 +60,9 @@ Afirmațiile „record” (MoM-z14, z = 14,44) sunt valabile **la data catalogul
 Descarcă `index.html` și deschide-l în browser; funcționează fără internet. Aplicația rămâne funcțională fără internet (service worker-ul din blob este inactiv).
 
 ## Istoric / Changelog
+
+### 6.0.0 — 2026-10-26
+- Comutator de ediție satirică ⇄ științifică, cu fiecare corecție explicată; exporturile (PNG, poster A3) poartă marcajul ediției active.
 
 ### 5.12.10 — 2026-10-23
 - Robustețe: preferințele, favoritele și clasamentul quiz-ului corupte din `localStorage` sunt ignorate în loc să blocheze aplicația; linkurile #g=… cu valori extreme sau `%` invalid nu mai strică randarea (zoom/pan limitate); versiunea afișată în titlu și în Ghid este din nou cea reală.

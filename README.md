@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 5.12.11 · **Last updated:** 2026-10-26
+**Version:** 6.0.0 · **Last updated:** 2026-10-26
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -48,6 +48,8 @@ A single-file application (`index.html`, canvas + JavaScript) that displays the 
 
 ## Note: satirical edition
 
+**Edition switch (v6.0):** the 🔬 button in the top bar toggles between the satirical “Flat Earth™” edition and a **scientific edition** that removes the Sky Dome, Ice Wall, NASA Secret HQ, Space Turtle, the Flatness Index, the ticker, the jokes and the parody watermark on exports. The switch window explains every correction (7 items; full text in Romanian and English, titles and one-line corrections in all 8 languages). The choice is remembered; `?ed=sci` / `?ed=sat` in the address forces it. The astronomical data are the same in both editions.
+
 The "Flat Earth™" edition is satirical. The elements Celestial Dome, Ice Wall, "NASA Conspiracy" and the Space Turtle are fictional; the galaxies and distances are those from the catalogue. In addition to the warning at opening, the page now permanently displays, in the top bar (including on mobile), the label "SATIRĂ · SATIRE".
 
 ## Data and sources
@@ -58,6 +60,9 @@ The "record" claims (MoM-z14, z = 14.44) are valid **as of the catalogue date (M
 Download `index.html` and open it in a browser; it works without internet. The application stays functional without internet (the blob service worker is inactive).
 
 ## History / Changelog
+
+### 6.0.0 — 2026-10-26
+- Satire ⇄ scientific edition switch with every correction explained; exports (PNG, A3 poster) carry the active edition's mark.
 
 ### 5.12.10 — 2026-10-23
 - Robustness: corrupted preferences, favourites and quiz leaderboard in `localStorage` are ignored instead of breaking the app; #g=… links with extreme values or invalid `%` no longer break rendering (zoom/pan clamped); the version shown in the title and the Guide is the real one again.
