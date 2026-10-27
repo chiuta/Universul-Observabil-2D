@@ -2,6 +2,19 @@
 
 Format: SemVer (MAJOR.MINOR.PATCH). Intrările mai vechi sunt copiate din README (secțiunea „History / Changelog”), neschimbate.
 
+## 6.2.0 — 2026-10-27 (anterior: 6.1.0)
+
+Stare: stabil
+Offline: complet
+
+Tura 2 a recenziei:
+- Notele JWST noi (JADES-GS-z14-0: ALMA [OIII] 88 µm z = 14,1793; MoM-z14: PAN-z14-1) în fr/it/es/pt/de/hu, în `GAL_TR2`, ca **traduceri automate marcate** în text; cheile existente neschimbate. Test nou `tests/jwst-notes.test.mjs` (20/20).
+- `docs/DISCREPANTE.md` (generat de `tools/compare-catalogs.mjs` din depozitul hub): cele 8 distanțe diferite față de 1D și semnul z al Andromedei. **Nicio valoare aleasă** (NED/SIMBAD/arXiv inaccesibile în sesiune). Observație aritmetică, nu sursă: valorile 2D nu coincid cu lookback-ul calculat din z-ul din propriul catalog (cele 1D da).
+- NU s-a făcut: unificarea cataloagelor într-un fișier comun; adăugarea PAN-z14-1 ca intrare (coordonate neverificate).
+- Versiune 6.2.0 în `index.html`, `sw.js`, `app.json`, test.
+
+---
+
 ## 6.1.0 — 2026-10-27 (anterior: 6.0.0)
 
 Stare: stabil

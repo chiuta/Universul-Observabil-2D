@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 6.1.0 · **Ultima actualizare:** 2026-10-27
+**Versiune:** 6.2.0 · **Ultima actualizare:** 2026-10-27
 
 **Stare:** stabil · **Offline:** complet
 
@@ -75,7 +75,17 @@ Descarcă `index.html` și deschide-l în browser; funcționează fără interne
 - **JADES-GS-z14-0:** NIRSpec z = 14,32 (+0,08/−0,20) (Carniani et al. 2024, Nature); ALMA [OIII] 88 µm z = 14,1793 ± 0,0007 (Schouws et al. 2025, arXiv:2409.20549), compatibil. Catalogul păstrează valoarea NIRSpec; valoarea ALMA este menționată în descriere.
 - **PAN-z14-1:** z = 13,53 (+0,05/−0,06), JWST/NIRSpec (Donnan et al., arXiv:2601.11515, ian. 2026): a patra ca distanță, nu un record. Nu a fost adăugată în catalog (coordonatele nu au fost verificate), doar menționată în nota MoM-z14.
 
+## Note JWST în 8 limbi și discrepanțe (6.2.0)
+
+- Notele JWST reverificate la 27.10.2026 (ALMA [OIII] 88 µm pentru JADES-GS-z14-0, z = 14,1793; PAN-z14-1 în nota MoM-z14) există acum și în fr/it/es/pt/de/hu, ca **traduceri automate marcate** în text; cheile de traducere nu au fost modificate (`tests/jwst-notes.test.mjs`).
+- Discrepanțele față de 1D (8 distanțe, semnul z al Andromedei) sunt într-un tabel generat: [`docs/DISCREPANTE.md`](docs/DISCREPANTE.md). **Nicio valoare nu a fost aleasă** (NED/SIMBAD inaccesibile în sesiune); valorile 2D nu coincid cu lookback-ul calculat din z-ul din propriul catalog (cele 1D da) — observație aritmetică, **nu o sursă**.
+- Unificarea cataloagelor într-un fișier comun: nu s-a făcut.
+
 ## Istoric / Changelog
+
+### 6.2.0 — 2026-10-27
+- Note JWST traduse automat în 6 limbi; `docs/DISCREPANTE.md`.
+
 
 ### 6.0.0 — 2026-10-26
 - Comutator de ediție satirică ⇄ științifică, cu fiecare corecție explicată; exporturile (PNG, poster A3) poartă marcajul ediției active.

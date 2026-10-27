@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 6.1.0 · **Dernière mise à jour :** 2026-10-27
+**Version :** 6.2.0 · **Dernière mise à jour :** 2026-10-27
 
 **État :** stable · **Hors ligne :** complet
 
@@ -73,7 +73,19 @@ Téléchargez `index.html` et ouvrez-le dans un navigateur ; il fonctionne sans 
 - **JADES-GS-z14-0 :** NIRSpec z = 14,32 (+0,08/−0,20) (Carniani et al. 2024, Nature) ; ALMA [OIII] 88 µm z = 14,1793 ± 0,0007 (Schouws et al. 2025, arXiv:2409.20549), compatible. Le catalogue garde la valeur NIRSpec ; la valeur ALMA est signalée dans la description.
 - **PAN-z14-1 :** z = 13,53 (+0,05/−0,06), JWST/NIRSpec (Donnan et al., arXiv:2601.11515, janv. 2026) : quatrième par la distance, pas un record. Non ajoutée au catalogue (coordonnées non vérifiées), seulement mentionnée dans la note de MoM-z14.
 
+## JWST notes in 8 languages and discrepancies (6.2.0)
+
+_(English only; not yet translated into this language. Machine translation intentionally not added to avoid errors in technical statements.)_
+
+- The JWST notes re-checked on 27 Oct 2026 (ALMA [OIII] 88 µm for JADES-GS-z14-0, z = 14.1793; PAN-z14-1 in the MoM-z14 note) now also exist in fr/it/es/pt/de/hu as **machine translations marked in the text**; translation keys were not modified (`tests/jwst-notes.test.mjs`).
+- The discrepancies against 1D (8 distances, the sign of Andromeda's z) are in a generated table: [`docs/DISCREPANTE.md`](docs/DISCREPANTE.md). **No value was chosen** (NED/SIMBAD unreachable in the session); the 2D values do not match the lookback computed from the catalogue's own z (the 1D ones do) — an arithmetic observation, **not a source**.
+- Merging the catalogues into one shared file: not done.
+
 ## Historique / Changelog
+
+### 6.2.0 — 2026-10-27
+- JWST notes machine-translated into 6 languages; `docs/DISCREPANTE.md`.
+
 
 ### 5.12.10 — 2026-10-23
 - Robustesse : préférences, favoris et classement du quiz corrompus dans `localStorage` sont ignorés au lieu de bloquer l'application ; les liens #g=… aux valeurs extrêmes ou au `%` invalide ne cassent plus le rendu (zoom/pan bornés) ; la version affichée dans le titre et le Guide est de nouveau la vraie.

@@ -1,4 +1,4 @@
-// UO-2D 6.1.0 — comutator de ediție satirică ⇄ științifică. Rulare: node tests/edition.test.mjs   (rețea blocată, file://)
+// UO-2D 6.2.0 — comutator de ediție satirică ⇄ științifică. Rulare: node tests/edition.test.mjs   (rețea blocată, file://)
 import {createRequire} from "module"; const require = createRequire(process.env.PW_ROOT || import.meta.url); const {chromium} = require("playwright");
 import path from "node:path"; import {fileURLToPath} from "node:url";
 const HERE = path.dirname(fileURLToPath(import.meta.url)), APP = "file://" + path.join(HERE, "..", "index.html");
