@@ -2,7 +2,9 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 6.0.0 · **Last updated:** 2026-10-26
+**Version:** 6.1.0 · **Last updated:** 2026-10-27
+
+**Status:** stable · **Offline:** fully offline
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -52,12 +54,26 @@ A single-file application (`index.html`, canvas + JavaScript) that displays the 
 
 The "Flat Earth™" edition is satirical. The elements Celestial Dome, Ice Wall, "NASA Conspiracy" and the Space Turtle are fictional; the galaxies and distances are those from the catalogue. In addition to the warning at opening, the page now permanently displays, in the top bar (including on mobile), the label "SATIRĂ · SATIRE".
 
+**Permanent banner (6.1.0).** A fixed strip "PĂMÂNT PLAT™ = SATIRĂ · FLAT EARTH™ = SATIRE" is now always visible in the satirical edition (it cannot be dismissed); the Earth is round, only the map is flat. It is hidden in the Scientific Edition, where no satirical element exists.
+
 ## Data and sources
 The "record" claims (MoM-z14, z = 14.44) are valid **as of the catalogue date (May 2026), rechecked on 11 October 2026**, and may be surpassed. Source: Naidu et al., arXiv:2505.11263 (preprint May 2025; published in the Open Journal of Astrophysics, January 2026). The entry EGS-z11-R0 (March 2026, arXiv:2603.15841; also reported by phys.org, March 2026) was not independently verified in detail. Distances are approximate values from the application's catalogue (ΛCDM, Planck 2018), for educational purposes. The citation reference no longer contains a DOI (the application does not yet have one). Bibliography per galaxy: being completed.
 
 ## Running locally / offline
 
 Download `index.html` and open it in a browser; it works without internet. The application stays functional without internet (the blob service worker is inactive).
+
+## Catalogue sizes across the series (2.0.1)
+
+- **Counts.** Hub: 112 entries (a copy of the 1D catalogue, identical). 1D: 112. 2D: 112 (111 galaxies + the CMB horizon; some texts say 111). 3D: 118 ("over 115" in the descriptions). The numbers differ because the catalogues are separate, not because of a counting error.
+- **Not unified.** 3D has its own catalogue in a different structure (RA in hours, other names and spellings), so its names only partly match 1D/2D. Merging into one shared file was not done: each app is a single offline file with no shared build step, and merging would change data in three apps without a way to validate it here. Flagged for the author.
+- **Known 1D ↔ 2D conflict (not corrected, to verify with sources).** The two catalogues have the same 112 names, but 8 entries have a different distance (d = lookback, in Mly, 1D→2D): NGC 1132 330→1020, Perseus (BCG IC 310) 270→780, 3C 48 4150→5200, Abell 370 4200→5900, CL 0024+1654 4400→5500, SDSS J1004+4112 10050→7000, IC 4296 180→130, Abell 1689 2330→7200; and the sign of the redshift of Andromeda (M31) is −0.001 in 1D and +0.001 in 2D.
+
+## JWST records re-verified (27.10.2026)
+
+- **MoM-z14:** z = 14.44, still the most distant spectroscopically confirmed galaxy (Naidu et al., arXiv:2505.11263; published in the Open Journal of Astrophysics, Jan. 2026).
+- **JADES-GS-z14-0:** NIRSpec z = 14.32 (+0.08/−0.20) (Carniani et al. 2024, Nature); ALMA [OIII] 88 µm z = 14.1793 ± 0.0007 (Schouws et al. 2025, arXiv:2409.20549), consistent with it. The catalogue keeps the NIRSpec value; the ALMA value is noted in the description.
+- **PAN-z14-1:** z = 13.53 (+0.05/−0.06), JWST/NIRSpec (Donnan et al., arXiv:2601.11515, Jan. 2026): fourth in distance, not a record. Not added to the catalogue (its coordinates were not verified), only mentioned in the MoM-z14 note.
 
 ## History / Changelog
 

@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 6.0.0 · **Dernière mise à jour :** 2026-10-26
+**Version :** 6.1.0 · **Dernière mise à jour :** 2026-10-27
+
+**État :** stable · **Hors ligne :** complet
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -50,12 +52,26 @@ Une application en un seul fichier (`index.html`, canvas + JavaScript) qui affic
 
 L'édition « Terre plate™ » est satirique. Les éléments Voûte céleste, Mur de glace, « Conspiration de la NASA » et Tortue spatiale sont fictifs ; les galaxies et les distances sont celles du catalogue. En plus de l'avertissement à l'ouverture, la page affiche désormais en permanence, dans la barre supérieure (y compris sur mobile), l'étiquette « SATIRĂ · SATIRE ».
 
+**Bandeau permanent (6.1.0).** Un bandeau fixe « PĂMÂNT PLAT™ = SATIRĂ · FLAT EARTH™ = SATIRE » est désormais toujours visible dans l'édition satirique (il ne peut pas être fermé) ; la Terre est ronde, seule la carte est plate. Il est masqué dans l'édition scientifique, qui ne contient aucun élément satirique.
+
 ## Données et sources
 Les affirmations de « record » (MoM-z14, z = 14,44) sont valables **à la date du catalogue (mai 2026), revérifiées le 11 octobre 2026**, et peuvent être dépassées. Source : Naidu et al., arXiv:2505.11263 (préprint de mai 2025 ; publié dans l'Open Journal of Astrophysics, janvier 2026). L'entrée EGS-z11-R0 (mars 2026, arXiv:2603.15841 ; également rapportée par phys.org, mars 2026) n'a pas été vérifiée de façon indépendante en détail. Les distances sont des valeurs approximatives issues du catalogue de l'application (ΛCDM, Planck 2018), à visée éducative. La référence de citation ne contient plus de DOI (l'application n'en possède pas encore). Bibliographie par galaxie : en cours de complétion.
 
 ## Exécution locale / hors ligne
 
 Téléchargez `index.html` et ouvrez-le dans un navigateur ; il fonctionne sans internet. L'application reste fonctionnelle sans internet (le service worker issu d'un blob est inactif).
+
+## Taille des catalogues dans la série (2.0.1)
+
+- **Chiffres.** Hub : 112 entrées (copie identique du catalogue 1D). 1D : 112. 2D : 112 (111 galaxies + l'horizon du CMB ; certains textes disent 111). 3D : 118 (« plus de 115 » dans les descriptions). Les chiffres diffèrent parce que les catalogues sont séparés, non par erreur de comptage.
+- **Non unifiés.** La 3D a son propre catalogue, de structure différente (AD en heures, autres noms et graphies), ses noms ne correspondent donc que partiellement à ceux de 1D/2D. La fusion en un fichier commun n'a pas été faite : chaque application est un fichier unique hors ligne sans étape de build commune, et fusionner changerait les données de trois applications sans moyen de les valider ici. Signalé à l'auteur.
+- **Conflit connu 1D ↔ 2D (non corrigé, à vérifier avec des sources).** Les deux catalogues ont les mêmes 112 noms, mais 8 entrées ont une distance différente (d = temps de regard en arrière, en Mal, 1D→2D) : NGC 1132 330→1020, Perseus (BCG IC 310) 270→780, 3C 48 4150→5200, Abell 370 4200→5900, CL 0024+1654 4400→5500, SDSS J1004+4112 10050→7000, IC 4296 180→130, Abell 1689 2330→7200 ; et le signe du décalage vers le rouge d'Andromède (M31) est −0,001 en 1D et +0,001 en 2D.
+
+## Records JWST revérifiés (27.10.2026)
+
+- **MoM-z14 :** z = 14,44, toujours la galaxie la plus lointaine confirmée par spectroscopie (Naidu et al., arXiv:2505.11263 ; publié dans l'Open Journal of Astrophysics, janv. 2026).
+- **JADES-GS-z14-0 :** NIRSpec z = 14,32 (+0,08/−0,20) (Carniani et al. 2024, Nature) ; ALMA [OIII] 88 µm z = 14,1793 ± 0,0007 (Schouws et al. 2025, arXiv:2409.20549), compatible. Le catalogue garde la valeur NIRSpec ; la valeur ALMA est signalée dans la description.
+- **PAN-z14-1 :** z = 13,53 (+0,05/−0,06), JWST/NIRSpec (Donnan et al., arXiv:2601.11515, janv. 2026) : quatrième par la distance, pas un record. Non ajoutée au catalogue (coordonnées non vérifiées), seulement mentionnée dans la note de MoM-z14.
 
 ## Historique / Changelog
 

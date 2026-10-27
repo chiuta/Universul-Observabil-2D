@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 6.0.0 · **Ultimo aggiornamento:** 2026-10-26
+**Versione:** 6.1.0 · **Ultimo aggiornamento:** 2026-10-27
+
+**Stato:** stabile · **Offline:** completo
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -50,12 +52,26 @@ Un'applicazione a file singolo (`index.html`, canvas + JavaScript) che mostra l'
 
 L'edizione «Terra piatta™» è satirica. Gli elementi Volta Celeste, Muro di Ghiaccio, «Cospirazione NASA» e Tartaruga Spaziale sono fittizi; le galassie e le distanze sono quelle del catalogo. Oltre all'avviso all'apertura, la pagina mostra ora in modo permanente, nella barra superiore (anche su mobile), l'etichetta «SATIRĂ · SATIRE».
 
+**Banner permanente (6.1.0).** Una barra fissa «PĂMÂNT PLAT™ = SATIRĂ · FLAT EARTH™ = SATIRE» è ora sempre visibile nell'edizione satirica (non può essere chiusa); la Terra è rotonda, solo la mappa è piatta. È nascosta nell'edizione scientifica, dove non c'è alcun elemento satirico.
+
 ## Dati e fonti
 Le affermazioni di «record» (MoM-z14, z = 14,44) sono valide **alla data del catalogo (maggio 2026), ricontrollate l'11 ottobre 2026**, e possono essere superate. Fonte: Naidu et al., arXiv:2505.11263 (preprint di maggio 2025; pubblicato sull'Open Journal of Astrophysics, gennaio 2026). La voce EGS-z11-R0 (marzo 2026, arXiv:2603.15841; riportata anche da phys.org, marzo 2026) non è stata verificata in modo indipendente nel dettaglio. Le distanze sono valori approssimativi dal catalogo dell'applicazione (ΛCDM, Planck 2018), a scopo educativo. Il riferimento di citazione non contiene più un DOI (l'applicazione non ne ha ancora uno). Bibliografia per galassia: in corso di completamento.
 
 ## Esecuzione locale / offline
 
 Scarica `index.html` e aprilo in un browser; funziona senza internet. L'applicazione resta funzionale senza internet (il service worker da blob è inattivo).
+
+## Dimensione dei cataloghi nella serie (2.0.1)
+
+- **Numeri.** Hub: 112 voci (copia identica del catalogo 1D). 1D: 112. 2D: 112 (111 galassie + l'orizzonte CMB; alcuni testi dicono 111). 3D: 118 («oltre 115» nelle descrizioni). I numeri differiscono perché i cataloghi sono separati, non per un errore di conteggio.
+- **Non unificati.** La 3D ha un catalogo proprio, con struttura diversa (AR in ore, altri nomi e grafie), quindi i suoi nomi coincidono solo in parte con 1D/2D. L'unione in un unico file comune non è stata fatta: ogni app è un singolo file offline senza passaggio di build comune, e unire cambierebbe i dati in tre app senza modo di validarli qui. Segnalato all'autore.
+- **Conflitto noto 1D ↔ 2D (non corretto, da verificare con fonti).** I due cataloghi hanno gli stessi 112 nomi, ma 8 voci hanno una distanza diversa (d = tempo di sguardo all'indietro, in Mal, 1D→2D): NGC 1132 330→1020, Perseus (BCG IC 310) 270→780, 3C 48 4150→5200, Abell 370 4200→5900, CL 0024+1654 4400→5500, SDSS J1004+4112 10050→7000, IC 4296 180→130, Abell 1689 2330→7200; e il segno del redshift di Andromeda (M31) è −0,001 in 1D e +0,001 in 2D.
+
+## Record JWST riverificati (27.10.2026)
+
+- **MoM-z14:** z = 14,44, ancora la galassia più lontana confermata spettroscopicamente (Naidu et al., arXiv:2505.11263; pubblicato su Open Journal of Astrophysics, gen. 2026).
+- **JADES-GS-z14-0:** NIRSpec z = 14,32 (+0,08/−0,20) (Carniani et al. 2024, Nature); ALMA [OIII] 88 µm z = 14,1793 ± 0,0007 (Schouws et al. 2025, arXiv:2409.20549), compatibile. Il catalogo mantiene il valore NIRSpec; il valore ALMA è indicato nella descrizione.
+- **PAN-z14-1:** z = 13,53 (+0,05/−0,06), JWST/NIRSpec (Donnan et al., arXiv:2601.11515, gen. 2026): quarta per distanza, non un record. Non aggiunta al catalogo (coordinate non verificate), solo citata nella nota di MoM-z14.
 
 ## Cronologia / Changelog
 
