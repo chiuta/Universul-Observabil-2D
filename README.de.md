@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 6.2.0 · **Zuletzt aktualisiert:** 2026-10-27
+**Version:** 6.2.1 · **Zuletzt aktualisiert:** 2026-10-28
 
 **Status:** stabil · **Offline:** vollständig
 
@@ -65,7 +65,7 @@ Lade `index.html` herunter und öffne sie in einem Browser; sie funktioniert ohn
 
 - **Zahlen.** Hub: 112 Einträge (identische Kopie des 1D-Katalogs). 1D: 112. 2D: 112 (111 Galaxien + der CMB-Horizont; manche Texte sagen 111). 3D: 118 („über 115“ in den Beschreibungen). Die Zahlen unterscheiden sich, weil die Kataloge getrennt sind, nicht wegen eines Zählfehlers.
 - **Nicht vereinheitlicht.** 3D hat einen eigenen Katalog mit anderer Struktur (RA in Stunden, andere Namen und Schreibweisen), seine Namen stimmen daher nur teilweise mit 1D/2D überein. Eine Zusammenführung in eine gemeinsame Datei erfolgte nicht: Jede App ist eine einzelne Offline-Datei ohne gemeinsamen Build-Schritt, und ein Zusammenführen würde Daten in drei Apps ändern, ohne sie hier validieren zu können. Dem Autor gemeldet.
-- **Bekannter Konflikt 1D ↔ 2D (nicht korrigiert, mit Quellen zu prüfen).** Beide Kataloge haben dieselben 112 Namen, aber 8 Einträge haben eine andere Entfernung (d = Rückblickzeit, in Mio. Lj, 1D→2D): NGC 1132 330→1020, Perseus (BCG IC 310) 270→780, 3C 48 4150→5200, Abell 370 4200→5900, CL 0024+1654 4400→5500, SDSS J1004+4112 10050→7000, IC 4296 180→130, Abell 1689 2330→7200; und das Vorzeichen der Rotverschiebung von Andromeda (M31) ist in 1D −0,001, in 2D +0,001.
+- **Konflikt 1D ↔ 2D (gelöst am 2026-10-28; Quellen und Formeln in `docs/DISCREPANTE.md` des Hubs).** Die 8 Entfernungen (NGC 1132, IC 310, 3C 48, Abell 370, CL 0024+1654, SDSS J1004+4112, IC 4296, Abell 1689) folgen jetzt in beiden Apps einer Konvention: d = lb = lookback(z), in Mio. Lj, flaches ΛCDM Planck 2018 (H₀ = 67,4, Ωm = 0,315), mit von mindestens 2 Quellen bestätigtem z; 2D übernahm die 1D-Werte (330, 270, 4150, 4200, 4400, 10050, 180, 2330). Die Rotverschiebung von Andromeda (M31) ist in beiden −0,001 (M31 ist blauverschoben, −301 km/s). Die Bezeichnung „Perseus (BCG IC 310)“ wurde zu „IC 310 (Perseus)“: IC 310 ist nicht die hellste Galaxie des Haufens (das ist NGC 1275, ein eigener Eintrag).
 
 ## JWST-Rekorde erneut geprüft (27.10.2026)
 
@@ -82,6 +82,10 @@ _(English only; not yet translated into this language. Machine translation inten
 - Merging the catalogues into one shared file: not done.
 
 ## Verlauf / Changelog
+
+### 6.2.1 — 2026-10-28
+- Katalog an z und Quellen angeglichen: NGC 1132 1020→330, IC 310 780→270, 3C 48 5200→4150, Abell 370 5900→4200, CL 0024+1654 5500→4400, SDSS J1004+4112 7000→10050, IC 4296 130→180, Abell 1689 7200→2330 Mio. Lj; Andromedas z ist jetzt −0,001 (Blauverschiebung); Bezeichnung „IC 310 (Perseus)“; Tests `tests/catalog.test.mjs` und `tests/blueshift.test.mjs`.
+
 
 ### 6.2.0 — 2026-10-27
 - JWST notes machine-translated into 6 languages; `docs/DISCREPANTE.md`.

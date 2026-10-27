@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 6.2.0 · **Utolsó frissítés:** 2026-10-27
+**Verzió:** 6.2.1 · **Utolsó frissítés:** 2026-10-28
 
 **Állapot:** stabil · **Offline:** teljes
 
@@ -65,7 +65,7 @@ Töltsd le az `index.html` fájlt, és nyisd meg böngészőben; internet nélk�
 
 - **Számok.** Hub: 112 bejegyzés (az 1D katalógus azonos másolata). 1D: 112. 2D: 112 (111 galaxis + a CMB-horizont; egyes szövegek 111-et írnak). 3D: 118 (a leírásokban „több mint 115”). A számok azért térnek el, mert a katalógusok különállóak, nem számolási hiba miatt.
 - **Nincs egységesítve.** A 3D saját, eltérő felépítésű katalógust használ (RA órában, más nevek és írásmódok), ezért a nevei csak részben egyeznek az 1D/2D-vel. Egyetlen közös fájlba nem vontuk össze: minden alkalmazás egyetlen offline fájl közös build-lépés nélkül, az összevonás három alkalmazás adatait módosítaná, itt nem validálható módon. Jelezve a szerzőnek.
-- **Ismert 1D ↔ 2D ellentmondás (nem javítva, forrásokkal ellenőrizendő).** A két katalógusban ugyanaz a 112 név szerepel, de 8 bejegyzés távolsága eltér (d = visszatekintési idő, millió fényévben, 1D→2D): NGC 1132 330→1020, Perseus (BCG IC 310) 270→780, 3C 48 4150→5200, Abell 370 4200→5900, CL 0024+1654 4400→5500, SDSS J1004+4112 10050→7000, IC 4296 180→130, Abell 1689 2330→7200; az Androméda (M31) vöröseltolódásának előjele az 1D-ben −0,001, a 2D-ben +0,001.
+- **1D ↔ 2D ütközés (feloldva 2026-10-28-án; források és képletek a hub `docs/DISCREPANTE.md` fájljában).** A 8 távolság (NGC 1132, IC 310, 3C 48, Abell 370, CL 0024+1654, SDSS J1004+4112, IC 4296, Abell 1689) mostantól egyetlen megállapodást követ mindkét alkalmazásban: d = lb = lookback(z), millió fényévben, lapos ΛCDM Planck 2018 (H₀ = 67,4, Ωm = 0,315), legalább 2 forrás által megerősített z-vel; a 2D átvette az 1D értékeit (330, 270, 4150, 4200, 4400, 10050, 180, 2330). Az Androméda (M31) vöröseltolódása mindkettőben −0,001 (az M31 kékeltolódású, −301 km/s). A „Perseus (BCG IC 310)” címke „IC 310 (Perseus)” lett: az IC 310 nem a halmaz legfényesebb galaxisa (az az NGC 1275, külön bejegyzés).
 
 ## JWST-rekordok újraellenőrizve (2026.10.27.)
 
@@ -82,6 +82,10 @@ _(English only; not yet translated into this language. Machine translation inten
 - Merging the catalogues into one shared file: not done.
 
 ## Előzmények / Changelog
+
+### 6.2.1 — 2026-10-28
+- A katalógus a z-hez és a forrásokhoz igazítva: NGC 1132 1020→330, IC 310 780→270, 3C 48 5200→4150, Abell 370 5900→4200, CL 0024+1654 5500→4400, SDSS J1004+4112 7000→10050, IC 4296 130→180, Abell 1689 7200→2330 millió fényév; az Androméda z-je most −0,001 (kékeltolódás); „IC 310 (Perseus)” címke; tesztek: `tests/catalog.test.mjs` és `tests/blueshift.test.mjs`.
+
 
 ### 6.2.0 — 2026-10-27
 - JWST notes machine-translated into 6 languages; `docs/DISCREPANTE.md`.
