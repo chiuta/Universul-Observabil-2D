@@ -1,4 +1,4 @@
-// UO-2D 6.0.0 — comutator de ediție satirică ⇄ științifică. Rulare: node tests/edition.test.mjs   (rețea blocată, file://)
+// UO-2D 6.1.0 — comutator de ediție satirică ⇄ științifică. Rulare: node tests/edition.test.mjs   (rețea blocată, file://)
 import {createRequire} from "module"; const require = createRequire(process.env.PW_ROOT || import.meta.url); const {chromium} = require("playwright");
 import path from "node:path"; import {fileURLToPath} from "node:url";
 const HERE = path.dirname(fileURLToPath(import.meta.url)), APP = "file://" + path.join(HERE, "..", "index.html");
@@ -15,6 +15,9 @@ async function open(query = "", ctx = null, w = 1280, h = 800, accept = true) {
 console.log("UO-2D — comutator de ediție");
 let p = await open();
 check("implicit: ediția satirică (butonul 🔬 există, straturile satirice active)", await p.evaluate(() => !!document.getElementById("btnEdition") && !document.body.classList.contains("sci-edition") && state.showDome && state.showIceWall && state.showNASA && !SCI));
+{ const vis = async () => p.evaluate(() => { const e = document.getElementById("satBanner"); if (!e) return null; const r = e.getBoundingClientRect(), cs = getComputedStyle(e); return {shown: cs.display !== "none" && r.width > 0 && r.height > 0, txt: e.textContent, pe: cs.pointerEvents}; });
+  const v = await vis(); check("banner permanent „PĂMÂNT PLAT™ = SATIRĂ · FLAT EARTH™ = SATIRE” vizibil, nu poate fi închis", v && v.shown && /PLAT.*SATIR.*FLAT EARTH.*SATIRE/.test(v.txt) && v.pe === "none");
+  await p.evaluate(() => { const b = document.getElementById("warningOvl"); if (b) b.style.display = "none"; }); check("banner rămâne după închiderea avertismentului", (await vis()).shown); }
 check("etichetă SATIRĂ în bara de sus", /SATIR/.test(await p.textContent("#satireTag")));
 const labels = async () => p.evaluate(() => { const seen = []; const o = CanvasRenderingContext2D.prototype.fillText; CanvasRenderingContext2D.prototype.fillText = function (t) { seen.push(String(t)); return o.apply(this, arguments); }; state.showLabels = true; needsRedraw = true; drawFlatEarth(); CanvasRenderingContext2D.prototype.fillText = o; return seen; });
 check("ediția satirică desenează „FLAT EARTH™” în centru", (await labels()).some(t => /FLAT EARTH|PĂMÂNT PLAT|PAMANT PLAT/i.test(t)));

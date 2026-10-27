@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 6.0.0 · **Utolsó frissítés:** 2026-10-26
+**Verzió:** 6.1.0 · **Utolsó frissítés:** 2026-10-27
+
+**Állapot:** stabil · **Offline:** teljes
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -50,12 +52,26 @@ Egyfájlos alkalmazás (`index.html`, canvas + JavaScript), amely a megfigyelhet
 
 A „Lapos Föld™” kiadás szatirikus. Az Égbolt-kupola, a Jégfal, a „NASA-összeesküvés” és az Űrteknős elemek kitaláltak; a galaxisok és a távolságok a katalógusból valók. A megnyitáskori figyelmeztetésen túl az oldal mostantól állandóan megjeleníti a felső sávban (mobilon is) a „SATIRĂ · SATIRE” feliratot.
 
+**Állandó sáv (6.1.0).** A „PĂMÂNT PLAT™ = SATIRĂ · FLAT EARTH™ = SATIRE” rögzített sáv a szatirikus kiadásban mostantól mindig látható (nem zárható be); a Föld gömb alakú, csak a térkép lapos. A tudományos kiadásban, ahol nincs szatirikus elem, rejtve van.
+
 ## Adatok és források
 A „rekord” állítások (MoM-z14, z = 14,44) **a katalógus dátuma (2026. május) szerint érvényesek, 2026. október 11-én újraellenőrizve**, és túlszárnyalhatók. Forrás: Naidu és mtsai, arXiv:2505.11263 (preprint 2025. május; megjelent az Open Journal of Astrophysicsben, 2026. január). Az EGS-z11-R0 bejegyzést (2026. március, arXiv:2603.15841; a phys.org is beszámolt róla, 2026. március) részleteiben nem ellenőriztük függetlenül. A távolságok az alkalmazás katalógusának hozzávetőleges értékei (ΛCDM, Planck 2018), oktatási céllal. A hivatkozási adat már nem tartalmaz DOI-t (az alkalmazásnak még nincs). Galaxisonkénti bibliográfia: kidolgozás alatt.
 
 ## Helyi futtatás / offline
 
 Töltsd le az `index.html` fájlt, és nyisd meg böngészőben; internet nélkül is működik. Az alkalmazás internet nélkül is működőképes marad (a blobból származó service worker inaktív).
+
+## A katalógusok mérete a sorozatban (2.0.1)
+
+- **Számok.** Hub: 112 bejegyzés (az 1D katalógus azonos másolata). 1D: 112. 2D: 112 (111 galaxis + a CMB-horizont; egyes szövegek 111-et írnak). 3D: 118 (a leírásokban „több mint 115”). A számok azért térnek el, mert a katalógusok különállóak, nem számolási hiba miatt.
+- **Nincs egységesítve.** A 3D saját, eltérő felépítésű katalógust használ (RA órában, más nevek és írásmódok), ezért a nevei csak részben egyeznek az 1D/2D-vel. Egyetlen közös fájlba nem vontuk össze: minden alkalmazás egyetlen offline fájl közös build-lépés nélkül, az összevonás három alkalmazás adatait módosítaná, itt nem validálható módon. Jelezve a szerzőnek.
+- **Ismert 1D ↔ 2D ellentmondás (nem javítva, forrásokkal ellenőrizendő).** A két katalógusban ugyanaz a 112 név szerepel, de 8 bejegyzés távolsága eltér (d = visszatekintési idő, millió fényévben, 1D→2D): NGC 1132 330→1020, Perseus (BCG IC 310) 270→780, 3C 48 4150→5200, Abell 370 4200→5900, CL 0024+1654 4400→5500, SDSS J1004+4112 10050→7000, IC 4296 180→130, Abell 1689 2330→7200; az Androméda (M31) vöröseltolódásának előjele az 1D-ben −0,001, a 2D-ben +0,001.
+
+## JWST-rekordok újraellenőrizve (2026.10.27.)
+
+- **MoM-z14:** z = 14,44, továbbra is a legtávolabbi spektroszkópiailag megerősített galaxis (Naidu et al., arXiv:2505.11263; megjelent az Open Journal of Astrophysicsben, 2026 jan.).
+- **JADES-GS-z14-0:** NIRSpec z = 14,32 (+0,08/−0,20) (Carniani et al. 2024, Nature); ALMA [OIII] 88 µm z = 14,1793 ± 0,0007 (Schouws et al. 2025, arXiv:2409.20549), összeegyeztethető. A katalógus a NIRSpec-értéket tartja meg; az ALMA-érték a leírásban szerepel.
+- **PAN-z14-1:** z = 13,53 (+0,05/−0,06), JWST/NIRSpec (Donnan et al., arXiv:2601.11515, 2026 jan.): távolságban a negyedik, nem rekord. A katalógusba nem került be (koordinátái nem ellenőrzöttek), csak a MoM-z14 megjegyzésben szerepel.
 
 ## Előzmények / Changelog
 

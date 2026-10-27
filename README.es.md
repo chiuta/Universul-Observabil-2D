@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 6.0.0 · **Última actualización:** 2026-10-26
+**Versión:** 6.1.0 · **Última actualización:** 2026-10-27
+
+**Estado:** estable · **Sin conexión:** completo
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -50,12 +52,26 @@ Una aplicación de un solo archivo (`index.html`, canvas + JavaScript) que muest
 
 La edición «Tierra Plana™» es satírica. Los elementos Bóveda Celeste, Muro de Hielo, «Conspiración de la NASA» y Tortuga Espacial son ficticios; las galaxias y las distancias son las del catálogo. Además de la advertencia de apertura, la página muestra ahora de forma permanente, en la barra superior (también en móvil), la etiqueta «SATIRĂ · SATIRE».
 
+**Banner permanente (6.1.0).** Una franja fija «PĂMÂNT PLAT™ = SATIRĂ · FLAT EARTH™ = SATIRE» está ahora siempre visible en la edición satírica (no se puede cerrar); la Tierra es redonda, solo el mapa es plano. Se oculta en la edición científica, donde no hay ningún elemento satírico.
+
 ## Datos y fuentes
 Las afirmaciones de «récord» (MoM-z14, z = 14,44) son válidas **a la fecha del catálogo (mayo de 2026), reverificadas el 11 de octubre de 2026**, y pueden ser superadas. Fuente: Naidu et al., arXiv:2505.11263 (preprint de mayo de 2025; publicado en el Open Journal of Astrophysics, enero de 2026). La entrada EGS-z11-R0 (marzo de 2026, arXiv:2603.15841; recogida también por phys.org, marzo de 2026) no se verificó de forma independiente en detalle. Las distancias son valores aproximados del catálogo de la aplicación (ΛCDM, Planck 2018), con fines educativos. La referencia de cita ya no contiene un DOI (la aplicación todavía no tiene uno). Bibliografía por galaxia: en curso de elaboración.
 
 ## Ejecución local / offline
 
 Descarga `index.html` y ábrelo en un navegador; funciona sin internet. La aplicación sigue siendo funcional sin internet (el service worker desde blob está inactivo).
+
+## Tamaño de los catálogos en la serie (2.0.1)
+
+- **Cifras.** Hub: 112 entradas (copia idéntica del catálogo 1D). 1D: 112. 2D: 112 (111 galaxias + el horizonte del CMB; algunos textos dicen 111). 3D: 118 («más de 115» en las descripciones). Las cifras difieren porque los catálogos son independientes, no por un error de recuento.
+- **No unificados.** La 3D tiene su propio catálogo, con otra estructura (AR en horas, otros nombres y grafías), por lo que sus nombres solo coinciden en parte con 1D/2D. No se fusionaron en un único archivo común: cada aplicación es un archivo único sin conexión y sin paso de compilación común, y fusionar cambiaría los datos de tres aplicaciones sin forma de validarlos aquí. Señalado al autor.
+- **Conflicto conocido 1D ↔ 2D (sin corregir, por verificar con fuentes).** Los dos catálogos tienen los mismos 112 nombres, pero 8 entradas tienen otra distancia (d = tiempo de retrospección, en Mal, 1D→2D): NGC 1132 330→1020, Perseus (BCG IC 310) 270→780, 3C 48 4150→5200, Abell 370 4200→5900, CL 0024+1654 4400→5500, SDSS J1004+4112 10050→7000, IC 4296 180→130, Abell 1689 2330→7200; y el signo del corrimiento al rojo de Andrómeda (M31) es −0,001 en 1D y +0,001 en 2D.
+
+## Récords JWST reverificados (27.10.2026)
+
+- **MoM-z14:** z = 14,44, aún la galaxia más lejana confirmada espectroscópicamente (Naidu et al., arXiv:2505.11263; publicado en Open Journal of Astrophysics, ene. 2026).
+- **JADES-GS-z14-0:** NIRSpec z = 14,32 (+0,08/−0,20) (Carniani et al. 2024, Nature); ALMA [OIII] 88 µm z = 14,1793 ± 0,0007 (Schouws et al. 2025, arXiv:2409.20549), compatible. El catálogo conserva el valor NIRSpec; el valor ALMA se indica en la descripción.
+- **PAN-z14-1:** z = 13,53 (+0,05/−0,06), JWST/NIRSpec (Donnan et al., arXiv:2601.11515, ene. 2026): cuarta por distancia, no un récord. No se añadió al catálogo (coordenadas sin verificar), solo se menciona en la nota de MoM-z14.
 
 ## Historial / Changelog
 
