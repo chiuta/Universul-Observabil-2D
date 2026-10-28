@@ -2,6 +2,20 @@
 
 Format: SemVer (MAJOR.MINOR.PATCH). Intrările mai vechi sunt copiate din README (secțiunea „History / Changelog”), neschimbate.
 
+## 6.2.2 — 2026-10-28 (anterior: 6.2.1)
+
+Stare: stabil
+Offline: complet
+
+Tura 4 a recenziei (revizor astrofizician): intrările cu abatere z ↔ lookback > 3 %, cercetate cu surse (WebSearch, apoi WebFetch pe URL-urile returnate).
+- Distanțe (d = lb, Mly): 3C 273 2440→2050, Mrk 421 397→430, 3C 279 5800→5470, PKS 2155-304 1400→1550, TON 618 10400→10840, MACS J0025 5200→5810, NGC 1277 220→240 (z 0,017→0,0169). Convenția rămâne d = lb = lookback(z), ΛCDM plat Planck 2018 (H0 = 67,4; Ωm = 0,315). Vechiul 2440 al lui 3C 273 era distanța de luminozitate din literatură, nu lookback.
+- Identificare: „RXCJ0232 (Pandora)” amesteca RXCJ0232.2-4420 (z = 0,2836, Dec −44°) cu Roiul Pandora = Abell 2744 (3 surse: z = 0,308, RA 3,59°, Dec −30,4°); acum „Abell 2744 (Pandora)”, RA 3,59, Dec −30,4, z 0,308, 3620 Mly; redenumit în catalog, în descrierea EN și în `GAL_TR2` (toate limbile).
+- Verificate cu surse și NEmodificate: NGC 4874 (321), Stephan's Quintet (280; fără distanță independentă, lookback(z) nefiabil la grup), Arp 220 (250). NGC 1275 (236) rămâne NEREZOLVAT (o singură sursă). Motive: `docs/DISCREPANTE.md`.
+- `tests/catalog.test.mjs` extins (valori noi, intrări neschimbate, audit z > 0,01, cheile de traducere pentru Abell 2744).
+- Versiune 6.2.2 în `index.html`, `sw.js`, `app.json`; README (8 limbi); CSP rehash (`fixcsp`), `info`, `check --lax`.
+
+---
+
 ## 6.2.1 — 2026-10-28 (anterior: 6.2.0)
 
 Stare: stabil

@@ -1,4 +1,4 @@
-// UO-2D 6.2.1 — Andromeda (M31) este spre albastru: z negativ afișat în panou și în tabel. Rulare: node tests/blueshift.test.mjs   (rețea blocată, file://)
+// UO-2D 6.2.2 — Andromeda (M31) este spre albastru: z negativ afișat în panou și în tabel. Rulare: node tests/blueshift.test.mjs   (rețea blocată, file://)
 import {createRequire} from "module"; const require = createRequire(process.env.PW_ROOT || import.meta.url); const {chromium} = require("playwright");
 import path from "node:path"; import {fileURLToPath} from "node:url";
 const HERE = path.dirname(fileURLToPath(import.meta.url)), APP = "file://" + path.join(HERE, "..", "index.html");

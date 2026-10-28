@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 6.2.1 · **Dernière mise à jour :** 2026-10-28
+**Version :** 6.2.2 · **Dernière mise à jour :** 2026-10-28
 
 **État :** stable · **Hors ligne :** complet
 
@@ -82,6 +82,10 @@ _(English only; not yet translated into this language. Machine translation inten
 - Merging the catalogues into one shared file: not done.
 
 ## Historique / Changelog
+
+### 6.2.2 — 2026-10-28
+- Distances du catalogue alignées sur z et sur des sources (revue 4) : 3C 273 2 440→2 050, Mrk 421 397→430, 3C 279 5 800→5 470, PKS 2155-304 1 400→1 550, TON 618 10 400→10 840, MACS J0025 5 200→5 810, NGC 1277 220→240 Mly (z 0,0169). « RXCJ0232 (Pandora) » confondait deux amas : c'est maintenant « Abell 2744 (Pandora) » (AD 3,59°, Déc −30,4°, z 0,308, 3 620 Mly ; clés de traduction renommées). Le Quintette de Stephan, NGC 4874 et Arp 220 sont vérifiés et inchangés ; NGC 1275 reste non résolu (une seule source). Détails et URL : `docs/DISCREPANTE.md`.
+
 
 ### 6.2.1 — 2026-10-28
 - Catalogue aligné sur z et sur les sources : NGC 1132 1020→330, IC 310 780→270, 3C 48 5200→4150, Abell 370 5900→4200, CL 0024+1654 5500→4400, SDSS J1004+4112 7000→10050, IC 4296 130→180, Abell 1689 7200→2330 Mal ; le z d'Andromède est désormais −0,001 (décalage vers le bleu) ; étiquette « IC 310 (Perseus) » ; tests `tests/catalog.test.mjs` et `tests/blueshift.test.mjs`.
