@@ -2,6 +2,20 @@
 
 Format: SemVer (MAJOR.MINOR.PATCH). Intrările mai vechi sunt copiate din README (secțiunea „History / Changelog”), neschimbate.
 
+## 6.2.1 — 2026-10-28 (anterior: 6.2.0)
+
+Stare: stabil
+Offline: complet
+
+Tura 3 a recenziei (revizor astrofizician): catalogul 2D aliniat la z și la surse.
+- Distanțe (d = lb, Mly): NGC 1132 1020→330, IC 310 780→270, 3C 48 5200→4150, Abell 370 5900→4200, CL 0024+1654 5500→4400, SDSS J1004+4112 7000→10050, IC 4296 130→180, Abell 1689 7200→2330. Convenția aplicației: d = lb = lookback(z), ΛCDM plat Planck 2018 (H0 = 67,4; Ωm = 0,315); valorile vechi nu coincideau cu lookback, comobila sau distanța de luminozitate la z-ul măsurat. Panoul „timp de privire înapoi” (din `lb`) era incoerent cu „vârsta la emisie” (calculată din z); acum coincid. Sursele: `docs/DISCREPANTE.md`.
+- Andromeda: z = +0,001 → −0,001 (M31 spre albastru, −301 km/s); panoul afișează „-0.0010 (blueshift)”, săgeata de mișcare devine albastră.
+- Identificare: „Perseus (BCG IC 310)” → „IC 310 (Perseus)” (IC 310 nu este BCG; aceea este NGC 1275); redenumit în catalog, în descrierea EN și în `GAL_TR2` (toate limbile).
+- Teste noi: `tests/catalog.test.mjs` (32/32; cade pe catalogul vechi) și `tests/blueshift.test.mjs`.
+- Versiune 6.2.1 în `index.html`, `sw.js`, `app.json`; README (8 limbi); CSP rehash (`fixcsp`).
+
+---
+
 ## 6.2.0 — 2026-10-27 (anterior: 6.1.0)
 
 Stare: stabil
