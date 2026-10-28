@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 6.2.1 · **Ultima actualizare:** 2026-10-28
+**Versiune:** 6.2.2 · **Ultima actualizare:** 2026-10-28
 
 **Stare:** stabil · **Offline:** complet
 
@@ -82,6 +82,10 @@ Descarcă `index.html` și deschide-l în browser; funcționează fără interne
 - Unificarea cataloagelor într-un fișier comun: nu s-a făcut.
 
 ## Istoric / Changelog
+
+### 6.2.2 — 2026-10-28
+- Distanțe de catalog aliniate la z și la surse (recenzia 4): 3C 273 2.440→2.050, Mrk 421 397→430, 3C 279 5.800→5.470, PKS 2155-304 1.400→1.550, TON 618 10.400→10.840, MACS J0025 5.200→5.810, NGC 1277 220→240 Mly (z 0,0169). „RXCJ0232 (Pandora)” amesteca două roiuri: acum este „Abell 2744 (Pandora)” (RA 3,59°, Dec −30,4°, z 0,308, 3.620 Mly; chei de traducere redenumite). Stephan's Quintet, NGC 4874 și Arp 220 sunt verificate și neschimbate; NGC 1275 rămâne nerezolvat (o singură sursă). Detalii și URL-uri: `docs/DISCREPANTE.md`.
+
 
 ### 6.2.1 — 2026-10-28
 - Catalog aliniat la z și la surse: NGC 1132 1020→330, IC 310 780→270, 3C 48 5200→4150, Abell 370 5900→4200, CL 0024+1654 5500→4400, SDSS J1004+4112 7000→10050, IC 4296 130→180, Abell 1689 7200→2330 Mly; z-ul Andromedei este acum −0,001 (blueshift); eticheta „IC 310 (Perseus)”; teste `tests/catalog.test.mjs` și `tests/blueshift.test.mjs`.

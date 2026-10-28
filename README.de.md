@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 6.2.1 · **Zuletzt aktualisiert:** 2026-10-28
+**Version:** 6.2.2 · **Zuletzt aktualisiert:** 2026-10-28
 
 **Status:** stabil · **Offline:** vollständig
 
@@ -82,6 +82,10 @@ _(English only; not yet translated into this language. Machine translation inten
 - Merging the catalogues into one shared file: not done.
 
 ## Verlauf / Changelog
+
+### 6.2.2 — 2026-10-28
+- Katalogentfernungen an z und Quellen angeglichen (Review 4): 3C 273 2.440→2.050, Mrk 421 397→430, 3C 279 5.800→5.470, PKS 2155-304 1.400→1.550, TON 618 10.400→10.840, MACS J0025 5.200→5.810, NGC 1277 220→240 Mly (z 0,0169). „RXCJ0232 (Pandora)“ vermischte zwei Haufen: jetzt „Abell 2744 (Pandora)“ (RA 3,59°, Dek −30,4°, z 0,308, 3.620 Mly; Übersetzungsschlüssel umbenannt). Stephans Quintett, NGC 4874 und Arp 220 sind geprüft und unverändert; NGC 1275 bleibt ungelöst (eine Quelle). Details und URLs: `docs/DISCREPANTE.md`.
+
 
 ### 6.2.1 — 2026-10-28
 - Katalog an z und Quellen angeglichen: NGC 1132 1020→330, IC 310 780→270, 3C 48 5200→4150, Abell 370 5900→4200, CL 0024+1654 5500→4400, SDSS J1004+4112 7000→10050, IC 4296 130→180, Abell 1689 7200→2330 Mio. Lj; Andromedas z ist jetzt −0,001 (Blauverschiebung); Bezeichnung „IC 310 (Perseus)“; Tests `tests/catalog.test.mjs` und `tests/blueshift.test.mjs`.
