@@ -16,8 +16,8 @@
     "universul-observabil-2d.favs",
     "universul-observabil-2d.lang"
   ],
-  "sizeBytes": 1317427,
-  "sha256": "54657540361fb57bc41f7571315eadca4667e1385c994f7f7b45b8df1297d2e3",
+  "sizeBytes": 1457861,
+  "sha256": "3c310e4f485e6ffc10e9b846d68e76b6f5ba95821707861959e5af7624044035",
   "csp": {
     "present": true,
     "directives": {
@@ -59,7 +59,11 @@
       "store",
       "dialog",
       "label",
-      "bundle"
+      "bundle",
+      "qr",
+      "p2p",
+      "sync",
+      "history"
     ]
   },
   "kit": {
@@ -69,7 +73,11 @@
       "store",
       "dialog",
       "label",
-      "bundle"
+      "bundle",
+      "qr",
+      "p2p",
+      "sync",
+      "history"
     ]
   },
   "selfSerializing": false,
