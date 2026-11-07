@@ -1,4 +1,4 @@
-// UO-2D 6.2.2 — catalog corectat în recenzia 3 (2026-10-28): distanțe, semnul z al Andromedei, eticheta IC 310.
+// UO-2D 6.2.3 — catalog corectat în recenzia 3 (2026-10-28): distanțe, semnul z al Andromedei, eticheta IC 310.
 // Rulare: node tests/catalog.test.mjs   (static, fără browser; valorile și sursele: docs/DISCREPANTE.md)
 import fs from 'node:fs'; import path from 'node:path'; import {fileURLToPath} from 'node:url';
 const HERE = path.dirname(fileURLToPath(import.meta.url)), SRC = fs.readFileSync(path.join(HERE, '..', 'index.html'), 'utf8');
